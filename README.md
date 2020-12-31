@@ -1,6 +1,6 @@
 # piStar - online iStar modelling
 
-Test1
+Test1.
 
  This is an open-source goal modelling tool. Its key distinguishing characteristics are:
   - it runs entirely on the browser, thus no installation needed
