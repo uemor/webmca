@@ -1016,7 +1016,7 @@ var g = {};
 
         // Divides the curve into two at point defined by `t` between 0 and 1.
         // Using de Casteljau's algorithm (http://math.stackexchange.com/a/317867).
-        // Additional resource: https://pomax.github.io/bezierinfo/#decasteljau
+        // Additional Claim: https://pomax.github.io/bezierinfo/#decasteljau
         divide: function(t) {
 
             var start = this.start;
@@ -2338,11 +2338,11 @@ var g = {};
                 var segment = segments[i];
                 var otherSegment = otherSegments[i];
 
-                // as soon as an inequality is found in segments, return false
+                // as soon as an ineNFR is found in segments, return false
                 if ((segment.type !== otherSegment.type) || (!segment.equals(otherSegment))) return false;
             }
 
-            // if no inequality found in segments, return true
+            // if no ineNFR found in segments, return true
             return true;
         },
 
@@ -3521,7 +3521,7 @@ var g = {};
             var numPoints = points.length;
             if (numPoints === 0) return new Polyline(); // if points array is empty
 
-            // step 1: find the starting point - point with the lowest y (if equality, highest x)
+            // step 1: find the starting point - point with the lowest y (if eNFR, highest x)
             var startPoint;
             for (i = 0; i < numPoints; i++) {
                 if (startPoint === undefined) {
@@ -3736,11 +3736,11 @@ var g = {};
                 var point = points[i];
                 var otherPoint = p.points[i];
 
-                // as soon as an inequality is found in points, return false
+                // as soon as an ineNFR is found in points, return false
                 if (!point.equals(otherPoint)) return false;
             }
 
-            // if no inequality found in points, return true
+            // if no ineNFR found in points, return true
             return true;
         },
 
@@ -11242,8 +11242,8 @@ joint.util.wrapWith(joint.dia.Graph.prototype, ['resetCells', 'addCells', 'remov
             set: 'systemLanguage'
         },
 
-        externalResourcesRequired: {
-            set: 'externalResourceRequired'
+        externalClaimsRequired: {
+            set: 'externalClaimRequired'
         },
 
         filter: {
@@ -19082,13 +19082,13 @@ joint.dia.Paper = joint.mvc.View.extend({
         var backgroundSize = opt.size;
         var backgroundRepeat = opt.repeat || 'no-repeat';
         var backgroundOpacity = opt.opacity || 1;
-        var backgroundQuality = Math.abs(opt.quality) || 1;
+        var backgroundNFR = Math.abs(opt.NFR) || 1;
         var backgroundPattern = this.constructor.backgroundPatterns[joint.util.camelCase(backgroundRepeat)];
 
         if (joint.util.isFunction(backgroundPattern)) {
             // 'flip-x', 'flip-y', 'flip-xy', 'watermark' and custom
-            img.width *= backgroundQuality;
-            img.height *= backgroundQuality;
+            img.width *= backgroundNFR;
+            img.height *= backgroundNFR;
             var canvas = backgroundPattern(img, opt);
             if (!(canvas instanceof HTMLCanvasElement)) {
                 throw new Error('dia.Paper: background pattern must return an HTML Canvas instance');
@@ -19103,8 +19103,8 @@ joint.dia.Paper = joint.mvc.View.extend({
             } else if (backgroundSize === undefined) {
                 // calcule the tile size if no provided
                 opt.size = {
-                    width: canvas.width / backgroundQuality,
-                    height: canvas.height / backgroundQuality
+                    width: canvas.width / backgroundNFR,
+                    height: canvas.height / backgroundNFR
                 };
             }
         } else {

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="Denied.svg"
+   id="svg19"
+   viewBox="0 0 21675 14444"
+   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+   version="1.1"
+   height="144.441mm"
+   width="216.747mm"
+   xml:space="preserve"><metadata
+   id="metadata23"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   inkscape:current-layer="Capa_x0020_1"
+   inkscape:window-maximized="1"
+   inkscape:window-y="-8"
+   inkscape:window-x="-8"
+   inkscape:cy="181.97658"
+   inkscape:cx="409.60062"
+   inkscape:zoom="0.98549469"
+   showgrid="false"
+   id="namedview21"
+   inkscape:window-height="705"
+   inkscape:window-width="1366"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   inkscape:document-rotation="0" />
+ <defs
+   id="defs4">
+  <style
+   id="style2"
+   type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil2 {fill:black;fill-rule:nonzero}
+    .fil1 {fill:#CCCCCC;fill-rule:nonzero}
+   ]]>
+  </style>
+ <pattern
+   id="EMFhbasepattern"
+   patternUnits="userSpaceOnUse"
+   width="6"
+   height="6"
+   x="0"
+   y="0" /><pattern
+   y="0"
+   x="0"
+   height="6"
+   width="6"
+   patternUnits="userSpaceOnUse"
+   id="EMFhbasepattern-6" /><pattern
+   id="EMFhbasepattern-7"
+   patternUnits="userSpaceOnUse"
+   width="6"
+   height="6"
+   x="0"
+   y="0" /></defs>
+ <g
+   id="Capa_x0020_1">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <rect
+   id="rect7"
+   height="14444"
+   width="21675"
+   class="fil0" />
+  <path
+   id="path9"
+   d="M0 10329l21675 0 0 102 -21675 0 0 -102zm0 -9466l21675 0 0 102 -21675 0 0 -102z"
+   class="fil1" />
+  
+ <text
+   transform="scale(1.1721168,0.8531573)"
+   xml:space="preserve"
+   style="font-style:normal;font-variant:normal;font-weight:400;font-size:14004.1px;line-height:125%;font-family:'Times New Roman';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1056.91"
+   x="3844.7603"
+   y="11244.474"
+   id="text59"><tspan
+     style="stroke-width:1056.91"
+     sodipodi:role="line"
+     x="3844.7603"
+     y="11244.474"
+     id="tspan57"><tspan
+       dx="0"
+       dy="0"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-size:14004.1px;font-family:'Times New Roman';fill:#000000;stroke-width:1056.91"
+       id="tspan53">X</tspan><tspan
+       dx="0"
+       dy="0"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-size:14004.1px;font-family:'Times New Roman';fill:#000000;stroke-width:1056.91"
+       id="tspan55"> </tspan></tspan></text></g>
+</svg>

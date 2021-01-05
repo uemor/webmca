@@ -6,6 +6,7 @@
  * https://github.com/jhcp/pistar
  */
 
+
 var ui = function() {
     'use strict';
 
@@ -89,7 +90,7 @@ var ui = function() {
             }
         },
 
-        defaultElementBackgroundColor: '#CCFACD',
+        defaultElementBackgroundColor: '#000000',
 
         getSelectedCells: function() {
             return [this.selectedCell];
@@ -120,7 +121,7 @@ var ui = function() {
                 if (toTrigger) {
                     istar.paper.trigger('change:selection', {selectedCell: cell});
                 }
-                if (cell.isElement()) {
+                if (cell.isElement() || cell.isLink()) {
                     $('#sidepanel-tab-style').show();
                 }
                 else {
@@ -203,11 +204,11 @@ ui.defineInteractions = function () {
             cell.on('change:name', function(node, newValue) {
                 node.setNodeLabel(newValue);
             });
-        }
-        else if (cell.isLink()) {
+        } else if (cell.isLink()) {
             var verticesTool = new joint.linkTools.Vertices({snapRadius: 1});
             var toolsView = new joint.dia.ToolsView({tools: [verticesTool]});
             cell.findView(istar.paper).addTools(toolsView).hideTools();
+
             cell.on('change:vertices', function(linkModel, a, b) {
                 if (! b.translateBy) {
                     //this if prevents updating the selection when the link is being translated along with its parent
@@ -228,6 +229,22 @@ ui.defineInteractions = function () {
         //hide link tools when a vertex is removed
         linkView.hideTools();
         linkView.model.attr('connection-wrap/stroke', 'transparent');
+        ui.promptColor({
+            title: 'Edit color',
+            value: chroma(linkView.model.prop('backgroundColor')).rgb().join(', '),
+            callback: function (value) {
+                const pattern = /\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*/;
+                if (value !== null && value.match(pattern)) {
+                    const color = value.match(pattern);
+                    const rgb = [parseInt(color[1]), parseInt(color[2]), parseInt(color[3])];
+                    linkView.model.prop('backgroundColor', chroma(rgb).toString());
+                    linkView.model.label(1, {attrs: {text: {text: ui.rgbLinkLabel(rgb)}}});
+                } else if (value === null) {
+                } else {
+                    alert('Invalid value');
+                }
+            }
+        });
     });
 
     istar.paper.on('link:pointerup', function(linkView) {
@@ -490,6 +507,32 @@ ui.defineInteractions = function () {
                                 //when there are no vertices defined
                                 newLink.on('change:vertices', ui._toggleSmoothness);
                             }
+
+                            const value = newLink.prop('value');
+                            if (
+                                value === 'Break' || value === 'Some-' || value === 'Hurt' ||
+                                value === 'Unknown' ||
+                                value === 'Help' || value === 'Some+' || value === 'Make'
+                            ) {
+                                let color = '#FFFFFF';
+                                if (value === 'Break') {
+                                    color = chroma(255, 0, 0).toString();
+                                } else if (value === 'Some-') {
+                                    color = chroma(170, 0, 0).toString();
+                                } else if (value === 'Hurt') {
+                                    color = chroma(85, 0, 0).toString();
+                                } else if (value === 'Unknown') {
+                                    color = chroma(0, 0, 255).toString();
+                                } else if (value === 'Help') {
+                                    color = chroma(0, 85, 0).toString();
+                                } else if (value === 'Some+') {
+                                    color = chroma(0, 170, 0).toString();
+                                } else if (value === 'Make') {
+                                    color = chroma(0, 255, 0).toString();
+                                }
+                                newLink.prop('backgroundColor', color);
+                                newLink.label(1, {attrs: {text: {text: ui.rgbLinkLabel(color)}}});
+                            }
                         }
                     }
                     if (! isValid.isValid) {
@@ -570,17 +613,51 @@ ui.defineInteractions = function () {
     });
 
     istar.paper.on('cell:contextmenu', function (cellView, evt, x, y) {
-        //highlight the contextual actions panel when users right clicks a Cell,
-        // letting they know where to find such actions
-        ui.selectCell(cellView.model);
-        $('#sidepanel-title-actions').addClass('flash-on');
-        setTimeout(function () {
-            $('#sidepanel-title-actions').removeClass('flash-on');
-            $('#sidepanel-title-actions').addClass('flash-off');
-            setTimeout(function () {
-                $('#sidepanel-title-actions').removeClass('flash-off');
-            }, 300);
-        }, 50);
+        // //highlight the contextual actions panel when users right clicks a Cell,
+        // // letting they know where to find such actions
+        // ui.selectCell(cellView.model);
+        // $('#sidepanel-title-actions').addClass('flash-on');
+        // setTimeout(function () {
+        //     $('#sidepanel-title-actions').removeClass('flash-on');
+        //     $('#sidepanel-title-actions').addClass('flash-off');
+        //     setTimeout(function () {
+        //         $('#sidepanel-title-actions').removeClass('flash-off');
+        //     }, 300);
+        // }, 50);
+        ui.showContextMenu(cellView, evt, x, y);
+    });
+
+    istar.graph.on('change', function(cellView, evt, x, y) {
+        // ignore some unimportant changes
+        if (
+            evt.propertyPath && (
+            evt.propertyPath === 'attrs/connection-wrap/stroke' ||
+            evt.propertyPath === 'attrs/connection-wrap/strokeWidth' ||
+            evt.propertyPath === 'originalSize' ||
+            evt.propertyPath === 'customProperties/Description' ||
+            evt.propertyPath === 'name' ||
+            evt.propertyPath === 'attrs/.element' ||
+            evt.propertyPath === 'attrs/.content' ||
+            evt.propertyPath === 'attrs/.content/text' ||
+            evt.propertyPath.startsWith('labels') ||
+            evt.propertyPath === 'attrs/.rgb-label' ||
+            evt.propertyPath === 'attrs/.impact-label' ||
+            evt.propertyPath === 'attrs/.satisfaction-label') ||
+            evt.translateBy
+        ) {
+            return;
+        }
+
+        if (
+            !document.propagateLimit ||
+            (new Date()) > document.propagateLimit ||
+            evt.propertyPath && evt.propertyPath === 'backgroundColor'
+        ) { // avoid propagate() triggering itself
+            document.propagateLimit = new Date();
+            document.propagateLimit.setSeconds(document.propagateLimit.getSeconds() + 1);
+
+            satPropagation.propagate();
+        }
     });
 };
 
@@ -613,6 +690,11 @@ ui.addElementOnPaper = function (options) {
 
         if (isValid.isValid) {
             var newActor = istar['add' + currentAddingElement]('', options);
+            
+            if (ui.states.editor.isAddingNode()) {
+                ui.changeColorElement('#000000', newActor);
+            }
+
             if (istar.metamodel.nodes[currentAddingElement] && istar.metamodel.nodes[currentAddingElement].customProperties) {
                 newActor.prop('customProperties', istar.metamodel.nodes[currentAddingElement].customProperties);
             }
@@ -773,6 +855,7 @@ ui.changeColorElements = function (color) {
 
     _.map(istar.getElements(), function (node) {
         node.attr('.element/fill', color);
+        node.attr('.element/.rgb-label', {text: `RGB(${chroma(color).rgb()})`});
     });
 };
 ui.changeColorElement = function (color, element) {
@@ -781,13 +864,41 @@ ui.changeColorElement = function (color, element) {
     element = element || ui.getSelectedCells()[0];
     element.attr('.element', {fill: color});
 
-    //stores the color in a property for use when saving the model
-    if (color === ui.defaultElementBackgroundColor) {
-        element.prop('backgroundColor', null);
+    if (element.isElement()) {
+        element.attr('.rgb-label', {text: `RGB(${chroma(color).rgb().join(', ')})`});
+        if (chroma(color).luminance() > 0.5) {
+            element.attr('.content', {fill: 'black'});
+        } else {
+            element.attr('.content', {fill: 'white'});
+        }
+    } else if (element.isLink() && element.prop('type') == 'ContributionLink') {
+        element.label(1, {attrs: {text: {text: ui.rgbLinkLabel(color)}}});
     }
-    else {
-        element.prop('backgroundColor', color);
+
+    element.prop('backgroundColor', color);
+};
+ui.changeLabelElement = function(color, element) {
+    'use strict';
+
+    element = element || ui.getSelectedCells()[0];
+    const rgb = chroma(color).rgb();
+    if (rgb[0] > 0 && rgb[1] > 0) {
+        element.attr('.satisfaction-label', {text: 'ϟ'});
+    } else if (rgb[2] > 0) {
+        element.attr('.satisfaction-label', {text: 'U'});
+    } else if (rgb[0] > 0) {
+        element.attr('.satisfaction-label', {text: 'X'});
+    } else if (rgb[1] > 0) {
+        element.attr('.satisfaction-label', {text: '✓'});
+    } else {
+        element.attr('.satisfaction-label', {text: ' '});
     }
+};
+ui.changeImpactElement = function(impact, element) {
+    'use strict';
+
+    element = element || ui.getSelectedCells()[0];
+    element.attr('.impact-label', {text: impact});
 };
 ui.connectLinksToShape = function () {
     'use strict';
@@ -1386,6 +1497,26 @@ ui.prompt = function (options) {
         });
 };
 
+ui.promptColor = function (options) {
+    'use strict';
+
+    //change state to prevent accidental deletes
+    ui.states.editor.transitionTo(ui.states.editor.EDITING_TEXT);
+
+    var callback = options.callback;
+    options.callback = function (value) {
+        //change state back to VIEWING after the prompt is dismissed
+        ui.states.editor.transitionTo(ui.states.editor.VIEWING);
+        callback(value);
+    };
+    options.swapButtonOrder = true;
+    bootbox.prompt(options)
+        .on('shown.bs.modal', function(e){
+            //Automatically select the content of the input, so that the user doesn't have to
+            $(this).find('input').select();
+        });
+}
+
 ui.displayInvalidLinkMessage = function (message) {
     'use strict';
 
@@ -1513,6 +1644,54 @@ ui.resetCellDisplayStates = function () {
 
     this.states.cellDisplay.dependencies.currentState = 0;
     this.states.cellDisplay.contributionLinks.currentState = 0;
+}
+
+ui.rgbLinkLabel = function (color) {
+    const rgb = chroma(color).rgb();
+    if (rgb[0] >= rgb[1] && rgb[0] >= rgb[2]) {
+        return `${rgb[0]}R`;
+    } else if (rgb[1] >= rgb[0] && rgb[1] >= rgb[2]) {
+        return `${rgb[1]}G`;
+    } else {
+        return `${rgb[2]}B`;
+    }
+}
+
+document.$contextMenu = $(`
+        <div class="context-menu">
+            <ul>
+                <li id="satisfice-menu-item" style="color: green; font-weight: bold;">Satisfice</li>
+                <li id="deny-menu-item" style="color: red; font-weight: bold;">Deny</li>
+            </ul>
+        </div>
+    `);
+$('.paper').append(document.$contextMenu);
+document.$contextMenu.jqxMenu({
+    width: '100px',
+    autoOpenPopup: false,
+    animationShowDuration: 0,
+    animationHideDuration: 0,
+    mode: 'popup'
+});
+
+ui.showContextMenu = function (cellView, evt, x, y) {
+    if (cellView.model.prop('type') != 'Operationalizing' && cellView.model.prop('type') != 'Claim') {
+        return;
+    }
+
+    document.$contextMenu.jqxMenu('open', evt.clientX - 50, evt.clientY - 25);
+
+    $('#satisfice-menu-item').unbind('click');
+    $('#satisfice-menu-item').on('click', (evt) => {
+        ui.changeColorElement('#00FF00', cellView.model);
+        document.$contextMenu.hide();
+    });
+
+    $('#deny-menu-item').unbind('click');
+    $('#deny-menu-item').on('click', (evt) => {
+        ui.changeColorElement('#FF0000', cellView.model);
+        document.$contextMenu.hide();
+    });
 }
 
 $('#menu-button-toggle-dependencies-display').click(function () {

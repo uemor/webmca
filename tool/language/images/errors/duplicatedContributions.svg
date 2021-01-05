@@ -20,7 +20,7 @@
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -220,8 +220,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(0.7892664,185.19707)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_35-5"
      model-id="86241c0b-5c6e-4c9b-9dc0-fa07967d4018">
     <g
@@ -247,13 +247,13 @@
        class="content waiting"><tspan
          id="tspan24"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(31.595246,289.92521)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_36-7"
      model-id="5b95e45e-46b5-4810-a228-69aa4910d16c">
     <g
@@ -279,7 +279,7 @@
        class="content waiting"><tspan
          id="tspan31"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      data-type="ContributionLink"
@@ -359,8 +359,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(175.76015,1.0506224)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_35-5-6"
      model-id="86241c0b-5c6e-4c9b-9dc0-fa07967d4018">
     <g
@@ -386,13 +386,13 @@
        class="content waiting"><tspan
          id="tspan24-8"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(230.76015,104.05062)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_36-7-1"
      model-id="5b95e45e-46b5-4810-a228-69aa4910d16c">
     <g
@@ -418,7 +418,7 @@
        class="content waiting"><tspan
          id="tspan31-2"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      data-type="ContributionLink"
@@ -535,8 +535,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(190.06813,184.75239)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_35-5-0"
      model-id="86241c0b-5c6e-4c9b-9dc0-fa07967d4018">
     <g
@@ -562,13 +562,13 @@
        class="content waiting"><tspan
          id="tspan24-9"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(220.8741,289.48053)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_36-7-19"
      model-id="5b95e45e-46b5-4810-a228-69aa4910d16c">
     <g
@@ -594,7 +594,7 @@
        class="content waiting"><tspan
          id="tspan31-7"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      data-type="ContributionLink"
@@ -711,8 +711,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(383.96597,180.60485)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_35-5-7"
      model-id="86241c0b-5c6e-4c9b-9dc0-fa07967d4018">
     <g
@@ -738,13 +738,13 @@
        class="content waiting"><tspan
          id="tspan24-94"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(414.77195,285.33298)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_36-7-9"
      model-id="5b95e45e-46b5-4810-a228-69aa4910d16c">
     <g
@@ -770,7 +770,7 @@
        class="content waiting"><tspan
          id="tspan31-21"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <path
      joint-selector="connection-wrap"

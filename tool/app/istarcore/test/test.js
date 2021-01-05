@@ -42,15 +42,15 @@ QUnit.test('add Goal', function() {
     istar.addAgent();
     ok(istar.getElements()[0].isAgent());
 });
-QUnit.test('add Quality', function() {
+QUnit.test('add NFR', function() {
     istar.addAgent();
     ok(istar.getElements()[0].isAgent());
 });
-QUnit.test('add Task', function() {
+QUnit.test('add Operationalizing', function() {
     istar.addAgent();
     ok(istar.getElements()[0].isAgent());
 });
-QUnit.test('add Resource', function() {
+QUnit.test('add Claim', function() {
     istar.addAgent();
     ok(istar.getElements()[0].isAgent());
 });
@@ -60,9 +60,9 @@ QUnit.test('added element is just it', function() {
     notOk(istar.getElements()[0].isRole());
     notOk(istar.getElements()[0].isAgent());
     notOk(istar.getElements()[0].isGoal());
-    notOk(istar.getElements()[0].isQuality());
-    notOk(istar.getElements()[0].isTask());
-    notOk(istar.getElements()[0].isResource());
+    notOk(istar.getElements()[0].isNFR());
+    notOk(istar.getElements()[0].isOperationalizing());
+    notOk(istar.getElements()[0].isClaim());
 });
 
 
@@ -264,86 +264,86 @@ QUnit.test('add And-Refinement from Goal to Goal', function() {
     var link1 = istar.addAndRefinementLink(this.goal1, this.goal2);
     ok(link1.isAndRefinementLink());
 });
-QUnit.test('add And-Refinement from Task to Task', function() {
-    var link1 = istar.addAndRefinementLink(this.task1, this.task2);
+QUnit.test('add And-Refinement from Operationalizing to Operationalizing', function() {
+    var link1 = istar.addAndRefinementLink(this.Operationalizing1, this.Operationalizing2);
     ok(link1.isAndRefinementLink());
 });
-QUnit.test('not add more than 1 And-Refinements between the same pair of Tasks', function() {
-    var link1 = istar.addAndRefinementLink(this.task1, this.task2);
-    var link2 = istar.addAndRefinementLink(this.task1, this.task2);
-    ok(link1.isAndRefinementLink());
-    notOk(link2);
-});
-QUnit.test('add And-Refinement from Goal to Task', function() {
-    var link1 = istar.addAndRefinementLink(this.goal1, this.task2);
-    ok(link1.isAndRefinementLink());
-});
-QUnit.test('not add more than 1 And-Refinements between the same tuple of Goal,Task', function() {
-    var link1 = istar.addAndRefinementLink(this.goal1, this.task2);
-    var link2 = istar.addAndRefinementLink(this.goal1, this.task2);
-    var link3 = istar.addAndRefinementLink(this.task2, this.goal1);
+QUnit.test('not add more than 1 And-Refinements between the same pair of Operationalizings', function() {
+    var link1 = istar.addAndRefinementLink(this.Operationalizing1, this.Operationalizing2);
+    var link2 = istar.addAndRefinementLink(this.Operationalizing1, this.Operationalizing2);
     ok(link1.isAndRefinementLink());
     notOk(link2);
-    notOk(link3);
 });
-QUnit.test('add And-Refinement from Task to Goal', function() {
-    var link1 = istar.addAndRefinementLink(this.task1, this.goal2);
+QUnit.test('add And-Refinement from Goal to Operationalizing', function() {
+    var link1 = istar.addAndRefinementLink(this.goal1, this.Operationalizing2);
     ok(link1.isAndRefinementLink());
 });
-QUnit.test('not add more than 1 And-Refinements between the same tuple of Task,Goal', function() {
-    var link1 = istar.addAndRefinementLink(this.task1, this.goal2);
-    var link2 = istar.addAndRefinementLink(this.task1, this.goal2);
-    var link3 = istar.addAndRefinementLink(this.goal2, this.task1);
+QUnit.test('not add more than 1 And-Refinements between the same tuple of Goal,Operationalizing', function() {
+    var link1 = istar.addAndRefinementLink(this.goal1, this.Operationalizing2);
+    var link2 = istar.addAndRefinementLink(this.goal1, this.Operationalizing2);
+    var link3 = istar.addAndRefinementLink(this.Operationalizing2, this.goal1);
     ok(link1.isAndRefinementLink());
     notOk(link2);
     notOk(link3);
 });
-QUnit.test('not allow to add And-Refinement between Goal and Quality', function() {
-    var link1 = istar.addAndRefinementLink(this.goal1, this.quality1);
-    var link2 = istar.addAndRefinementLink(this.quality2, this.goal2);
+QUnit.test('add And-Refinement from Operationalizing to Goal', function() {
+    var link1 = istar.addAndRefinementLink(this.Operationalizing1, this.goal2);
+    ok(link1.isAndRefinementLink());
+});
+QUnit.test('not add more than 1 And-Refinements between the same tuple of Operationalizing,Goal', function() {
+    var link1 = istar.addAndRefinementLink(this.Operationalizing1, this.goal2);
+    var link2 = istar.addAndRefinementLink(this.Operationalizing1, this.goal2);
+    var link3 = istar.addAndRefinementLink(this.goal2, this.Operationalizing1);
+    ok(link1.isAndRefinementLink());
+    notOk(link2);
+    notOk(link3);
+});
+QUnit.test('not allow to add And-Refinement between Goal and NFR', function() {
+    var link1 = istar.addAndRefinementLink(this.goal1, this.NFR1);
+    var link2 = istar.addAndRefinementLink(this.NFR2, this.goal2);
     notOk(link1);
     notOk(link2);
 });
-QUnit.test('not allow to add And-Refinement between Goal and Resource', function() {
-    var link1 = istar.addAndRefinementLink(this.goal1, this.resource1);
-    var link2 = istar.addAndRefinementLink(this.resource2, this.goal1);
+QUnit.test('not allow to add And-Refinement between Goal and Claim', function() {
+    var link1 = istar.addAndRefinementLink(this.goal1, this.Claim1);
+    var link2 = istar.addAndRefinementLink(this.Claim2, this.goal1);
     notOk(link1);
     notOk(link2);
 });
-QUnit.test('not allow to add And-Refinement between Task and Quality', function() {
-    var link1 = istar.addAndRefinementLink(this.task1, this.quality1);
-    var link2 = istar.addAndRefinementLink(this.quality2, this.task2);
+QUnit.test('not allow to add And-Refinement between Operationalizing and NFR', function() {
+    var link1 = istar.addAndRefinementLink(this.Operationalizing1, this.NFR1);
+    var link2 = istar.addAndRefinementLink(this.NFR2, this.Operationalizing2);
     notOk(link1);
     notOk(link2);
 });
-QUnit.test('not allow to add And-Refinement between Task and Resource', function() {
-    var link1 = istar.addAndRefinementLink(this.task1, this.resource1);
-    var link2 = istar.addAndRefinementLink(this.resource2, this.task2);
+QUnit.test('not allow to add And-Refinement between Operationalizing and Claim', function() {
+    var link1 = istar.addAndRefinementLink(this.Operationalizing1, this.Claim1);
+    var link2 = istar.addAndRefinementLink(this.Claim2, this.Operationalizing2);
     notOk(link1);
     notOk(link2);
 });
-QUnit.test('not allow to add And-Refinement between Quality and Quality', function() {
-    var link1 = istar.addAndRefinementLink(this.quality1, this.quality2);
+QUnit.test('not allow to add And-Refinement between NFR and NFR', function() {
+    var link1 = istar.addAndRefinementLink(this.NFR1, this.NFR2);
     notOk(link1);
 });
-QUnit.test('not allow to add And-Refinement between Resource and Resource', function() {
-    var link1 = istar.addAndRefinementLink(this.resource1, this.resource2);
+QUnit.test('not allow to add And-Refinement between Claim and Claim', function() {
+    var link1 = istar.addAndRefinementLink(this.Claim1, this.Claim2);
     notOk(link1);
 });
-QUnit.test('not allow to add And-Refinement between Quality and Resource', function() {
-    var link1 = istar.addAndRefinementLink(this.quality1, this.resource1);
-    var link2 = istar.addAndRefinementLink(this.resource1, this.quality2);
+QUnit.test('not allow to add And-Refinement between NFR and Claim', function() {
+    var link1 = istar.addAndRefinementLink(this.NFR1, this.Claim1);
+    var link2 = istar.addAndRefinementLink(this.Claim1, this.NFR2);
     notOk(link1);
     notOk(link2);
 });
 
-QUnit.test('add Needed-By from Resource to Task', function() {
-    var link1 = istar.addNeededByLink(this.resource1, this.task1);
+QUnit.test('add Needed-By from Claim to Operationalizing', function() {
+    var link1 = istar.addNeededByLink(this.Claim1, this.Operationalizing1);
     ok(link1.isNeededByLink());
 });
-QUnit.test('not add more than 1 Needed-By between the same tuple of Resource,Task', function() {
-    var link1 = istar.addNeededByLink(this.resource1, this.task1);
-    var link2 = istar.addNeededByLink(this.resource1, this.task1);
+QUnit.test('not add more than 1 Needed-By between the same tuple of Claim,Operationalizing', function() {
+    var link1 = istar.addNeededByLink(this.Claim1, this.Operationalizing1);
+    var link2 = istar.addNeededByLink(this.Claim1, this.Operationalizing1);
     ok(link1.isNeededByLink());
     notOk(link2);
 });
@@ -351,82 +351,82 @@ QUnit.test('not add more than 1 Needed-By between the same tuple of Resource,Tas
 QUnit.test('only allow valid Needed-By combinations', function() {
     var tuples = [
         {source:this.goal1, target:this.goal2, allow:false},
-        {source:this.goal1, target:this.quality1, allow:false},
-        {source:this.goal1, target:this.task1, allow:false},
-        {source:this.goal1, target:this.resource1, allow:false},
-        {source:this.quality1, target:this.goal1, allow:false},
-        {source:this.quality1, target:this.quality2, allow:false},
-        {source:this.quality1, target:this.task1, allow:false},
-        {source:this.quality1, target:this.resource1, allow:false},
-        {source:this.task1, target:this.goal1, allow:false},
-        {source:this.task1, target:this.quality1, allow:false},
-        {source:this.task1, target:this.task2, allow:false},
-        {source:this.task1, target:this.resource1, allow:false},
-        {source:this.resource1, target:this.goal1, allow:false},
-        {source:this.resource1, target:this.quality1, allow:false},
-        {source:this.resource1, target:this.task1, allow:true},
-        {source:this.resource1, target:this.resource2, allow:false},
+        {source:this.goal1, target:this.NFR1, allow:false},
+        {source:this.goal1, target:this.Operationalizing1, allow:false},
+        {source:this.goal1, target:this.Claim1, allow:false},
+        {source:this.NFR1, target:this.goal1, allow:false},
+        {source:this.NFR1, target:this.NFR2, allow:false},
+        {source:this.NFR1, target:this.Operationalizing1, allow:false},
+        {source:this.NFR1, target:this.Claim1, allow:false},
+        {source:this.Operationalizing1, target:this.goal1, allow:false},
+        {source:this.Operationalizing1, target:this.NFR1, allow:false},
+        {source:this.Operationalizing1, target:this.Operationalizing2, allow:false},
+        {source:this.Operationalizing1, target:this.Claim1, allow:false},
+        {source:this.Claim1, target:this.goal1, allow:false},
+        {source:this.Claim1, target:this.NFR1, allow:false},
+        {source:this.Claim1, target:this.Operationalizing1, allow:true},
+        {source:this.Claim1, target:this.Claim2, allow:false},
     ];
     testDifferentNodeLinksCombinations(this, tuples, 'addNeededByLink', 'isNeededByLink');
 });
 QUnit.test('only allow valid Contribution combinations', function() {
     var tuples = [
         {source:this.goal1, target:this.goal2, allow:false},
-        {source:this.goal1, target:this.quality1, allow:true},
-        {source:this.goal1, target:this.task1, allow:false},
-        {source:this.goal1, target:this.resource1, allow:false},
-        {source:this.quality1, target:this.goal1, allow:false},
-        {source:this.quality1, target:this.quality2, allow:true},
-        {source:this.quality1, target:this.task1, allow:false},
-        {source:this.quality1, target:this.resource1, allow:false},
-        {source:this.task1, target:this.goal1, allow:false},
-        {source:this.task1, target:this.quality1, allow:true},
-        {source:this.task1, target:this.task2, allow:false},
-        {source:this.task1, target:this.resource1, allow:false},
-        {source:this.resource1, target:this.goal1, allow:false},
-        {source:this.resource1, target:this.quality1, allow:true},
-        {source:this.resource1, target:this.task1, allow:false},
-        {source:this.resource1, target:this.resource2, allow:false},
+        {source:this.goal1, target:this.NFR1, allow:true},
+        {source:this.goal1, target:this.Operationalizing1, allow:false},
+        {source:this.goal1, target:this.Claim1, allow:false},
+        {source:this.NFR1, target:this.goal1, allow:false},
+        {source:this.NFR1, target:this.NFR2, allow:true},
+        {source:this.NFR1, target:this.Operationalizing1, allow:false},
+        {source:this.NFR1, target:this.Claim1, allow:false},
+        {source:this.Operationalizing1, target:this.goal1, allow:false},
+        {source:this.Operationalizing1, target:this.NFR1, allow:true},
+        {source:this.Operationalizing1, target:this.Operationalizing2, allow:false},
+        {source:this.Operationalizing1, target:this.Claim1, allow:false},
+        {source:this.Claim1, target:this.goal1, allow:false},
+        {source:this.Claim1, target:this.NFR1, allow:true},
+        {source:this.Claim1, target:this.Operationalizing1, allow:false},
+        {source:this.Claim1, target:this.Claim2, allow:false},
     ];
     testDifferentNodeLinksCombinations(this, tuples, 'addContributionLink', 'isContributionLink');
 });
 
-QUnit.test('add Qualification from Quality to Goal', function() {
-    var link1 = istar.addQualificationLink(this.quality1, this.goal1);
+QUnit.test('add Qualification from NFR to Goal', function() {
+    var link1 = istar.addQualificationLink(this.NFR1, this.goal1);
     ok(link1.isQualificationLink());
 });
-QUnit.test('add Qualification from Quality to Task', function() {
-    var link1 = istar.addQualificationLink(this.quality1, this.task1);
+QUnit.test('add Qualification from NFR to Operationalizing', function() {
+    var link1 = istar.addQualificationLink(this.NFR1, this.Operationalizing1);
     ok(link1.isQualificationLink());
 });
-QUnit.test('add Qualification from Quality to Resource', function() {
-    var link1 = istar.addQualificationLink(this.quality1, this.resource1);
+QUnit.test('add Qualification from NFR to Claim', function() {
+    var link1 = istar.addQualificationLink(this.NFR1, this.Claim1);
     ok(link1.isQualificationLink());
 });
-QUnit.test('not add more than 1 Qualification between the same tuple of Quality,Goal', function() {
-    var link1 = istar.addQualificationLink(this.quality1, this.goal1);
-    var link2 = istar.addQualificationLink(this.quality1, this.goal1);
+QUnit.test('not add more than 1 Qualification between the same tuple of NFR,Goal', function() {
+    var link1 = istar.addQualificationLink(this.NFR1, this.goal1);
+    var link2 = istar.addQualificationLink(this.NFR1, this.goal1);
     ok(link1.isQualificationLink());
     notOk(link2);
 });
 QUnit.test('only allow valid Qualification combinations', function() {
     var tuples = [
         {source:this.goal1, target:this.goal2, allow:false},
-        {source:this.goal1, target:this.quality1, allow:false},
-        {source:this.goal1, target:this.task1, allow:false},
-        {source:this.goal1, target:this.resource1, allow:false},
-        {source:this.quality1, target:this.goal1, allow:true},
-        {source:this.quality1, target:this.quality2, allow:false},
-        {source:this.quality1, target:this.task1, allow:true},
-        {source:this.quality1, target:this.resource1, allow:true},
-        {source:this.task1, target:this.goal1, allow:false},
-        {source:this.task1, target:this.quality1, allow:false},
-        {source:this.task1, target:this.task2, allow:false},
-        {source:this.task1, target:this.resource1, allow:false},
-        {source:this.resource1, target:this.goal1, allow:false},
-        {source:this.resource1, target:this.quality1, allow:false},
-        {source:this.resource1, target:this.task1, allow:false},
-        {source:this.resource1, target:this.resource2, allow:false},
+        {source:this.goal1, target:this.NFR1, allow:false},
+        {source:this.goal1, target:this.Operationalizing1, allow:false},
+        {source:this.goal1, target:this.Claim1, allow:false},
+        {source:this.NFR1, target:this.goal1, allow:true},
+        {source:this.NFR1, target:this.NFR2, allow:false},
+        {source:this.NFR1, target:this.Operationalizing1, allow:true},
+        {source:this.NFR1, target:this.Claim1, allow:true},
+        {source:this.Operationalizing1, target:this.goal1, allow:false},
+        {source:this.Operationalizing1, target:this.NFR1, allow:false},
+        {source:this.Operationalizing1, target:this.Operationalizing2, allow:false},
+        {source:this.Operationalizing1, target:this.Claim1, allow:false},
+        {source:this.Claim1, target:this.goal1, allow:false},
+        {source:this.Claim1, target:this.NFR1, allow:false},
+        {source:this.Claim1, target:this.Operationalizing1, allow:false},
+        {source:this.Claim1, target:this.Claim2, allow:false},
     ];
     testDifferentNodeLinksCombinations(this, tuples, 'addQualificationLink', 'isQualificationLink');
 });
@@ -437,12 +437,12 @@ function createGoalModel(context) {
     context.goal1 = istar.addGoal();istar.embedNode(context.goal1, actor);
     context.goal2 = istar.addGoal();istar.embedNode(context.goal2, actor);
     context.goal3 = istar.addGoal();istar.embedNode(context.goal3, actor);
-    context.quality1 = istar.addQuality();istar.embedNode(context.quality1, actor);
-    context.quality2 = istar.addQuality();istar.embedNode(context.quality2, actor);
-    context.task1 = istar.addTask();istar.embedNode(context.task1, actor);
-    context.task2 = istar.addTask();istar.embedNode(context.task2, actor);
-    context.resource1 = istar.addResource();istar.embedNode(context.resource1, actor);
-    context.resource2 = istar.addResource();istar.embedNode(context.resource2, actor);
+    context.NFR1 = istar.addNFR();istar.embedNode(context.NFR1, actor);
+    context.NFR2 = istar.addNFR();istar.embedNode(context.NFR2, actor);
+    context.Operationalizing1 = istar.addOperationalizing();istar.embedNode(context.Operationalizing1, actor);
+    context.Operationalizing2 = istar.addOperationalizing();istar.embedNode(context.Operationalizing2, actor);
+    context.Claim1 = istar.addClaim();istar.embedNode(context.Claim1, actor);
+    context.Claim2 = istar.addClaim();istar.embedNode(context.Claim2, actor);
 }
 
 function testDifferentNodeLinksCombinations (context, tuples, addFunctionName, isFunctionName) {

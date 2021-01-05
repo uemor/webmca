@@ -21,7 +21,7 @@
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -250,8 +250,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(56.948442,146.00001)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_36-3"
      model-id="1b829499-cb27-4c42-8c4e-23b988744308">
     <g
@@ -277,7 +277,7 @@
        class="content waiting"><tspan
          id="tspan28-7"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      data-type="ContributionLink"
@@ -598,8 +598,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(321.00115,420.30662)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_45"
      model-id="18f54edd-8d82-4fb5-bd78-e91bf8514875">
     <g
@@ -630,8 +630,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(297.98599,80.376373)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_51"
      model-id="bd37957b-91f9-47c0-a628-016d4fd95603">
     <g
@@ -938,8 +938,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(97,280.30778)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_35-8"
      model-id="4e956365-72c5-41f2-9f06-a92c34c43933">
     <g
@@ -965,13 +965,13 @@
        class="content waiting"><tspan
          id="tspan21"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(23,382.30778)"
-     data-type="Quality"
-     class="joint-cell joint-type-quality joint-element joint-theme-default waiting"
+     data-type="NFR"
+     class="joint-cell joint-type-NFR joint-element joint-theme-default waiting"
      id="j_36-0"
      model-id="1b829499-cb27-4c42-8c4e-23b988744308">
     <g
@@ -997,7 +997,7 @@
        class="content waiting"><tspan
          id="tspan28"
          class="v-line waiting"
-         dy="0">Quality</tspan></text>
+         dy="0">NFR</tspan></text>
   </g>
   <g
      data-type="ContributionLink"

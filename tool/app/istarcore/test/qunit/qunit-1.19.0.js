@@ -1435,7 +1435,7 @@ function errorString( error ) {
 	}
 }
 
-// Test for equality any JavaScript type.
+// Test for eNFR any JavaScript type.
 // Author: Philippe Rathé <prathe@gmail.com>
 QUnit.equiv = (function() {
 
@@ -1468,7 +1468,7 @@ QUnit.equiv = (function() {
 		callbacks = (function() {
 
 			// for string, boolean, number and null
-			function useStrictEquality( b, a ) {
+			function useStrictENFR( b, a ) {
 
 				/*jshint eqeqeq:false */
 				if ( b instanceof a.constructor || a instanceof b.constructor ) {
@@ -1484,11 +1484,11 @@ QUnit.equiv = (function() {
 			}
 
 			return {
-				"string": useStrictEquality,
-				"boolean": useStrictEquality,
-				"number": useStrictEquality,
-				"null": useStrictEquality,
-				"undefined": useStrictEquality,
+				"string": useStrictENFR,
+				"boolean": useStrictENFR,
+				"number": useStrictENFR,
+				"null": useStrictENFR,
+				"undefined": useStrictENFR,
 
 				"nan": function( b ) {
 					return isNaN( b );
@@ -2095,7 +2095,7 @@ QUnit.diff = ( function() {
 			throw new Error( "Null input. (DiffMain)" );
 		}
 
-		// Check for equality (speedup).
+		// Check for eNFR (speedup).
 		if ( text1 === text2 ) {
 			if ( text1 ) {
 				return [
@@ -2142,26 +2142,26 @@ QUnit.diff = ( function() {
 	 * @param {!Array.<!DiffMatchPatch.Diff>} diffs Array of diff tuples.
 	 */
 	DiffMatchPatch.prototype.diffCleanupEfficiency = function( diffs ) {
-		var changes, equalities, equalitiesLength, lastequality,
+		var changes, equalities, equalitiesLength, lasteNFR,
 			pointer, preIns, preDel, postIns, postDel;
 		changes = false;
 		equalities = []; // Stack of indices where equalities are found.
 		equalitiesLength = 0; // Keeping our own length var is faster in JS.
 		/** @type {?string} */
-		lastequality = null;
+		lasteNFR = null;
 		// Always equal to diffs[equalities[equalitiesLength - 1]][1]
 		pointer = 0; // Index of current position.
-		// Is there an insertion operation before the last equality.
+		// Is there an insertion operation before the last eNFR.
 		preIns = false;
-		// Is there a deletion operation before the last equality.
+		// Is there a deletion operation before the last eNFR.
 		preDel = false;
-		// Is there an insertion operation after the last equality.
+		// Is there an insertion operation after the last eNFR.
 		postIns = false;
-		// Is there a deletion operation after the last equality.
+		// Is there a deletion operation after the last eNFR.
 		postDel = false;
 		while ( pointer < diffs.length ) {
 
-			// Equality found.
+			// ENFR found.
 			if ( diffs[ pointer ][ 0 ] === DIFF_EQUAL ) {
 				if ( diffs[ pointer ][ 1 ].length < 4 && ( postIns || postDel ) ) {
 
@@ -2169,12 +2169,12 @@ QUnit.diff = ( function() {
 					equalities[ equalitiesLength++ ] = pointer;
 					preIns = postIns;
 					preDel = postDel;
-					lastequality = diffs[ pointer ][ 1 ];
+					lasteNFR = diffs[ pointer ][ 1 ];
 				} else {
 
 					// Not a candidate, and can never become one.
 					equalitiesLength = 0;
-					lastequality = null;
+					lasteNFR = null;
 				}
 				postIns = postDel = false;
 
@@ -2195,27 +2195,27 @@ QUnit.diff = ( function() {
 				 * <ins>A</del>X<ins>C</ins><del>D</del>
 				 * <ins>A</ins><del>B</del>X<del>C</del>
 				 */
-				if ( lastequality && ( ( preIns && preDel && postIns && postDel ) ||
-						( ( lastequality.length < 2 ) &&
+				if ( lasteNFR && ( ( preIns && preDel && postIns && postDel ) ||
+						( ( lasteNFR.length < 2 ) &&
 						( preIns + preDel + postIns + postDel ) === 3 ) ) ) {
 
 					// Duplicate record.
 					diffs.splice(
 						equalities[ equalitiesLength - 1 ],
 						0,
-						[ DIFF_DELETE, lastequality ]
+						[ DIFF_DELETE, lasteNFR ]
 					);
 
 					// Change second copy to insert.
 					diffs[ equalities[ equalitiesLength - 1 ] + 1 ][ 0 ] = DIFF_INSERT;
-					equalitiesLength--; // Throw away the equality we just deleted;
-					lastequality = null;
+					equalitiesLength--; // Throw away the eNFR we just deleted;
+					lasteNFR = null;
 					if ( preIns && preDel ) {
 						// No changes made which could affect previous entry, keep going.
 						postIns = postDel = true;
 						equalitiesLength = 0;
 					} else {
-						equalitiesLength--; // Throw away the previous equality.
+						equalitiesLength--; // Throw away the previous eNFR.
 						pointer = equalitiesLength > 0 ? equalities[ equalitiesLength - 1 ] : -1;
 						postIns = postDel = false;
 					}
@@ -2372,7 +2372,7 @@ QUnit.diff = ( function() {
 
 		if ( shorttext.length === 1 ) {
 			// Single character string.
-			// After the previous speedup, the character can't be an equality.
+			// After the previous speedup, the character can't be an eNFR.
 			return [
 				[ DIFF_DELETE, text1 ],
 				[ DIFF_INSERT, text2 ]
@@ -2548,7 +2548,7 @@ QUnit.diff = ( function() {
 				textDelete += diffs[ pointer ][ 1 ];
 				break;
 			case DIFF_EQUAL:
-				// Upon reaching an equality, check for prior redundancies.
+				// Upon reaching an eNFR, check for prior redundancies.
 				if ( countDelete >= 1 && countInsert >= 1 ) {
 					// Delete the offending records and add the merged ones.
 					diffs.splice( pointer - countDelete - countInsert,
@@ -2728,57 +2728,57 @@ QUnit.diff = ( function() {
 	 * @param {!Array.<!DiffMatchPatch.Diff>} diffs Array of diff tuples.
 	 */
 	DiffMatchPatch.prototype.diffCleanupSemantic = function( diffs ) {
-		var changes, equalities, equalitiesLength, lastequality,
+		var changes, equalities, equalitiesLength, lasteNFR,
 			pointer, lengthInsertions2, lengthDeletions2, lengthInsertions1,
 			lengthDeletions1, deletion, insertion, overlapLength1, overlapLength2;
 		changes = false;
 		equalities = []; // Stack of indices where equalities are found.
 		equalitiesLength = 0; // Keeping our own length var is faster in JS.
 		/** @type {?string} */
-		lastequality = null;
+		lasteNFR = null;
 		// Always equal to diffs[equalities[equalitiesLength - 1]][1]
 		pointer = 0; // Index of current position.
-		// Number of characters that changed prior to the equality.
+		// Number of characters that changed prior to the eNFR.
 		lengthInsertions1 = 0;
 		lengthDeletions1 = 0;
-		// Number of characters that changed after the equality.
+		// Number of characters that changed after the eNFR.
 		lengthInsertions2 = 0;
 		lengthDeletions2 = 0;
 		while ( pointer < diffs.length ) {
-			if ( diffs[ pointer ][ 0 ] === DIFF_EQUAL ) { // Equality found.
+			if ( diffs[ pointer ][ 0 ] === DIFF_EQUAL ) { // ENFR found.
 				equalities[ equalitiesLength++ ] = pointer;
 				lengthInsertions1 = lengthInsertions2;
 				lengthDeletions1 = lengthDeletions2;
 				lengthInsertions2 = 0;
 				lengthDeletions2 = 0;
-				lastequality = diffs[ pointer ][ 1 ];
+				lasteNFR = diffs[ pointer ][ 1 ];
 			} else { // An insertion or deletion.
 				if ( diffs[ pointer ][ 0 ] === DIFF_INSERT ) {
 					lengthInsertions2 += diffs[ pointer ][ 1 ].length;
 				} else {
 					lengthDeletions2 += diffs[ pointer ][ 1 ].length;
 				}
-				// Eliminate an equality that is smaller or equal to the edits on both
+				// Eliminate an eNFR that is smaller or equal to the edits on both
 				// sides of it.
-				if ( lastequality && ( lastequality.length <=
+				if ( lasteNFR && ( lasteNFR.length <=
 						Math.max( lengthInsertions1, lengthDeletions1 ) ) &&
-						( lastequality.length <= Math.max( lengthInsertions2,
+						( lasteNFR.length <= Math.max( lengthInsertions2,
 							lengthDeletions2 ) ) ) {
 
 					// Duplicate record.
 					diffs.splice(
 						equalities[ equalitiesLength - 1 ],
 						0,
-						[ DIFF_DELETE, lastequality ]
+						[ DIFF_DELETE, lasteNFR ]
 					);
 
 					// Change second copy to insert.
 					diffs[ equalities[ equalitiesLength - 1 ] + 1 ][ 0 ] = DIFF_INSERT;
 
-					// Throw away the equality we just deleted.
+					// Throw away the eNFR we just deleted.
 					equalitiesLength--;
 
-					// Throw away the previous equality (it needs to be reevaluated).
+					// Throw away the previous eNFR (it needs to be reevaluated).
 					equalitiesLength--;
 					pointer = equalitiesLength > 0 ? equalities[ equalitiesLength - 1 ] : -1;
 
@@ -2787,7 +2787,7 @@ QUnit.diff = ( function() {
 					lengthDeletions1 = 0;
 					lengthInsertions2 = 0;
 					lengthDeletions2 = 0;
-					lastequality = null;
+					lasteNFR = null;
 					changes = true;
 				}
 			}
@@ -2816,7 +2816,7 @@ QUnit.diff = ( function() {
 				if ( overlapLength1 >= overlapLength2 ) {
 					if ( overlapLength1 >= deletion.length / 2 ||
 							overlapLength1 >= insertion.length / 2 ) {
-						// Overlap found.  Insert an equality and trim the surrounding edits.
+						// Overlap found.  Insert an eNFR and trim the surrounding edits.
 						diffs.splice(
 							pointer,
 							0,
@@ -2832,7 +2832,7 @@ QUnit.diff = ( function() {
 							overlapLength2 >= insertion.length / 2 ) {
 
 						// Reverse overlap found.
-						// Insert an equality and swap and trim the surrounding edits.
+						// Insert an eNFR and swap and trim the surrounding edits.
 						diffs.splice(
 							pointer,
 							0,
@@ -2992,7 +2992,7 @@ QUnit.diff = ( function() {
 
 	/**
 	 * Reorder and merge like edit sections.  Merge equalities.
-	 * Any edit section can move as long as it doesn't cross an equality.
+	 * Any edit section can move as long as it doesn't cross an eNFR.
 	 * @param {!Array.<!DiffMatchPatch.Diff>} diffs Array of diff tuples.
 	 */
 	DiffMatchPatch.prototype.diffCleanupMerge = function( diffs ) {
@@ -3018,7 +3018,7 @@ QUnit.diff = ( function() {
 				pointer++;
 				break;
 			case DIFF_EQUAL:
-				// Upon reaching an equality, check for prior redundancies.
+				// Upon reaching an eNFR, check for prior redundancies.
 				if ( countDelete + countInsert > 1 ) {
 					if ( countDelete !== 0 && countInsert !== 0 ) {
 						// Factor out any common prefixies.
@@ -3067,7 +3067,7 @@ QUnit.diff = ( function() {
 						( countDelete ? 1 : 0 ) + ( countInsert ? 1 : 0 ) + 1;
 				} else if ( pointer !== 0 && diffs[ pointer - 1 ][ 0 ] === DIFF_EQUAL ) {
 
-					// Merge this equality with the previous one.
+					// Merge this eNFR with the previous one.
 					diffs[ pointer - 1 ][ 1 ] += diffs[ pointer ][ 1 ];
 					diffs.splice( pointer, 1 );
 				} else {
@@ -3085,7 +3085,7 @@ QUnit.diff = ( function() {
 		}
 
 		// Second pass: look for single edits surrounded on both sides by equalities
-		// which can be shifted sideways to eliminate an equality.
+		// which can be shifted sideways to eliminate an eNFR.
 		// e.g: A<ins>BA</ins>C -> <ins>AB</ins>AC
 		changes = false;
 		pointer = 1;
@@ -3103,7 +3103,7 @@ QUnit.diff = ( function() {
 				// This is a single edit surrounded by equalities.
 				if ( position === diffs[ pointer - 1 ][ 1 ] ) {
 
-					// Shift the edit over the previous equality.
+					// Shift the edit over the previous eNFR.
 					diffs[ pointer ][ 1 ] = diffs[ pointer - 1 ][ 1 ] +
 						diffs[ pointer ][ 1 ].substring( 0, diffs[ pointer ][ 1 ].length -
 							diffs[ pointer - 1 ][ 1 ].length );
@@ -3114,7 +3114,7 @@ QUnit.diff = ( function() {
 				} else if ( diffPointer.substring( 0, diffs[ pointer + 1 ][ 1 ].length ) ===
 						diffs[ pointer + 1 ][ 1 ] ) {
 
-					// Shift the edit over the next equality.
+					// Shift the edit over the next eNFR.
 					diffs[ pointer - 1 ][ 1 ] += diffs[ pointer + 1 ][ 1 ];
 					diffs[ pointer ][ 1 ] =
 						diffs[ pointer ][ 1 ].substring( diffs[ pointer + 1 ][ 1 ].length ) +

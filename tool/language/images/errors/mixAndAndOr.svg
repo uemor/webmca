@@ -20,7 +20,7 @@
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -88,8 +88,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(104.83009,274.5589)"
-     data-type="istar.Task"
-     class="joint-cell joint-type-istar joint-type-istar-task joint-element joint-theme-default"
+     data-type="istar.Operationalizing"
+     class="joint-cell joint-type-istar joint-type-istar-Operationalizing joint-element joint-theme-default"
      id="j_3"
      model-id="8d716a61-1ca4-44f4-934c-26166ea44d11">
     <g
@@ -116,7 +116,7 @@
          id="v-23"><tspan
            dy="0em"
            class="v-line"
-           id="v-60">task</tspan></text>
+           id="v-60">Operationalizing</tspan></text>
     </g>
   </g>
   <g
@@ -219,8 +219,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(206.83009,277.5589)"
-     data-type="istar.Task"
-     class="joint-cell joint-type-istar joint-type-istar-task joint-element joint-theme-default"
+     data-type="istar.Operationalizing"
+     class="joint-cell joint-type-istar joint-type-istar-Operationalizing joint-element joint-theme-default"
      id="j_7"
      model-id="35a832d6-b110-4618-b658-b2212e8c159e">
     <g
@@ -247,7 +247,7 @@
          id="v-64"><tspan
            dy="0em"
            class="v-line"
-           id="v-86">task</tspan></text>
+           id="v-86">Operationalizing</tspan></text>
     </g>
   </g>
   <g
@@ -463,8 +463,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(0.95124836,133.9227)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_37"
      model-id="c0977150-5c46-4bdb-86b6-de4bd4c58a3e">
     <g
@@ -490,13 +490,13 @@
        style="font-weight:bold;font-size:12px;font-family:Arial, helvetica, sans-serif;text-anchor:middle;fill:#000000"><tspan
          id="tspan4569"
          class="v-line waiting"
-         dy="0">Task</tspan></text>
+         dy="0">Operationalizing</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(98.951248,134.9227)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_38"
      model-id="34e2f379-076e-4ca8-aaf5-fd93adb45cf8">
     <g
@@ -522,7 +522,7 @@
        style="font-weight:bold;font-size:12px;font-family:Arial, helvetica, sans-serif;text-anchor:middle;fill:#000000"><tspan
          id="tspan4576"
          class="v-line waiting"
-         dy="0">Task</tspan></text>
+         dy="0">Operationalizing</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
@@ -561,8 +561,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(208.95125,135.9227)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_40"
      model-id="5433d1e4-984b-4f35-b61d-2459937fdf52">
     <g
@@ -588,13 +588,13 @@
        style="font-weight:bold;font-size:12px;font-family:Arial, helvetica, sans-serif;text-anchor:middle;fill:#000000"><tspan
          id="tspan4590"
          class="v-line waiting"
-         dy="0">Task</tspan></text>
+         dy="0">Operationalizing</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(306.95125,135.9227)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_41"
      model-id="5774bd02-c542-479c-ab72-7b5644766e76">
     <g
@@ -620,7 +620,7 @@
        style="font-weight:bold;font-size:12px;font-family:Arial, helvetica, sans-serif;text-anchor:middle;fill:#000000"><tspan
          id="tspan4597"
          class="v-line waiting"
-         dy="0">Task</tspan></text>
+         dy="0">Operationalizing</tspan></text>
   </g>
   <g
      data-type="AndRefinementLink"

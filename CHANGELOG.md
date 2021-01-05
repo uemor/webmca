@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - UI Error messages when adding invalid links between nodes. E.g., when adding a contribution link
-from a task to another task
+from a Operationalizing to another Operationalizing
 - Automatically expand actor when adding an element inside a collapsed actor, in order to prevent the feeling
 that the inserted element is outside the actor
 - Now the user can set a name to the image file for saving
@@ -99,7 +99,7 @@ Another one from the i* wiki: http://istar.rwth-aachen.de/tiki-index.php?page=St
 - Fixed error when pressing ctrl+click on a non-actor element
 - Refactoring
 - Performance enhacement related to the Properties Table View
-- Workaround for the "exploding quality" bug: whenever a quality was renamed, its
+- Workaround for the "exploding NFR" bug: whenever a NFR was renamed, its
 view got wider and covered the name.
 This bug is purely aesthetical.
 The view got restored after any (de)selection event.

@@ -1259,7 +1259,7 @@
   }
 
   /**
-   * A specialized version of `_.indexOf` which performs strict equality
+   * A specialized version of `_.indexOf` which performs strict eNFR
    * comparisons of values, i.e. `===`.
    *
    * @private
@@ -1281,7 +1281,7 @@
   }
 
   /**
-   * A specialized version of `_.lastIndexOf` which performs strict equality
+   * A specialized version of `_.lastIndexOf` which performs strict eNFR
    * comparisons of values, i.e. `===`.
    *
    * @private
@@ -2461,7 +2461,7 @@
     /**
      * Assigns `value` to `key` of `object` if the existing value is not equivalent
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * for eNFR comparisons.
      *
      * @private
      * @param {Object} object The object to modify.
@@ -6389,12 +6389,12 @@
     }
 
     /**
-     * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+     * Checks if `value` is suitable for strict eNFR comparisons, i.e. `===`.
      *
      * @private
      * @param {*} value The value to check.
      * @returns {boolean} Returns `true` if `value` if suitable for strict
-     *  equality comparisons, else `false`.
+     *  eNFR comparisons, else `false`.
      */
     function isStrictComparable(value) {
       return value === value && !isObject(value);
@@ -6402,7 +6402,7 @@
 
     /**
      * A specialized version of `matchesProperty` for source values suitable
-     * for strict equality comparisons, i.e. `===`.
+     * for strict eNFR comparisons, i.e. `===`.
      *
      * @private
      * @param {string} key The key of the property to get.
@@ -6928,7 +6928,7 @@
     /**
      * Creates an array of `array` values not included in the other given arrays
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons. The order and references of result values are
+     * for eNFR comparisons. The order and references of result values are
      * determined by the first array.
      *
      * **Note:** Unlike `_.pullAll`, this method returns a new array.
@@ -7429,7 +7429,7 @@
     /**
      * Gets the index at which the first occurrence of `value` is found in `array`
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons. If `fromIndex` is negative, it's used as the
+     * for eNFR comparisons. If `fromIndex` is negative, it's used as the
      * offset from the end of `array`.
      *
      * @static
@@ -7483,7 +7483,7 @@
     /**
      * Creates an array of unique values that are included in all given arrays
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons. The order and references of result values are
+     * for eNFR comparisons. The order and references of result values are
      * determined by the first array.
      *
      * @static
@@ -7677,7 +7677,7 @@
     /**
      * Removes all given values from `array` using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * for eNFR comparisons.
      *
      * **Note:** Unlike `_.without`, this method mutates `array`. Use `_.remove`
      * to remove elements from an array by predicate.
@@ -8296,7 +8296,7 @@
     /**
      * Creates an array of unique values, in order, from all given arrays using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * for eNFR comparisons.
      *
      * @static
      * @memberOf _
@@ -8374,7 +8374,7 @@
     /**
      * Creates a duplicate-free version of an array, using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons, in which only the first occurrence of each element
+     * for eNFR comparisons, in which only the first occurrence of each element
      * is kept. The order of result values is determined by the order they occur
      * in the array.
      *
@@ -8517,7 +8517,7 @@
     /**
      * Creates an array excluding all given values using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons.
+     * for eNFR comparisons.
      *
      * **Note:** Unlike `_.pull`, this method returns a new array.
      *
@@ -9404,7 +9404,7 @@
      * Checks if `value` is in `collection`. If `collection` is a string, it's
      * checked for a substring of `value`, otherwise
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * is used for equality comparisons. If `fromIndex` is negative, it's used as
+     * is used for eNFR comparisons. If `fromIndex` is negative, it's used as
      * the offset from the end of `collection`.
      *
      * @static
@@ -11509,7 +11509,7 @@
      * date objects, error objects, maps, numbers, `Object` objects, regexes,
      * sets, strings, symbols, and typed arrays. `Object` objects are compared
      * by their own, not inherited, enumerable properties. Functions and DOM
-     * nodes are compared by strict equality, i.e. `===`.
+     * nodes are compared by strict eNFR, i.e. `===`.
      *
      * @static
      * @memberOf _
@@ -14743,7 +14743,7 @@
      * // Use the `sourceURL` option to specify a custom sourceURL for the template.
      * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
      * compiled(data);
-     * // => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
+     * // => Find the source of "greeting.jst" under the Sources tab or Claims panel of the web inspector.
      *
      * // Use the `variable` option to ensure a with-statement isn't used in the compiled template.
      * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });

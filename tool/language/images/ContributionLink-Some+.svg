@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80.855"
+   height="57.186"
+   viewBox="0 0 75.801 53.612"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="ContributionLink-some+.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="9.4078969"
+     inkscape:cx="40.427502"
+     inkscape:cy="25.965563"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <path
+     fill="none"
+     stroke="#000"
+     d="M.287 53.202l28.388-19.918M40.26 25.156L75.286.58"
+     id="path2" />
+  <g
+     fill="none"
+     stroke="#000"
+     id="g6">
+    <path
+       d="M58.538 2.258l8.406-.88 8.4-.88M75.345.497l-3.438 7.716-3.434 7.714"
+       id="path4" />
+  </g>
+  <text
+     x="11.488705"
+     y="-7.2599535"
+     font-family="sans-serif"
+     font-size="17.112px"
+     font-weight="400"
+     letter-spacing="0"
+     style="line-height:125%;stroke-width:0.793468"
+     transform="matrix(0.56695807,0.83180704,-0.80080288,0.58890868,0,0)"
+     word-spacing="0"
+     id="text10"><tspan
+       x="11.488705"
+       y="-7.2599535"
+       id="tspan8"
+       style="stroke-width:0.793468">some+</tspan></text>
+</svg>

@@ -168,77 +168,163 @@ joint.shapes.istar.Goal = joint.shapes.basic.Rect.extend({
     }, joint.shapes.basic.Rect.prototype.defaults)
 });
 
-joint.shapes.istar.Resource = joint.shapes.basic.Rect.extend({
-    markup: '<g class="scalable"><rect class="element"/></g><text class="content"/>',
+joint.shapes.istar.Claim = joint.shapes.basic.Path.extend({
+    markup: `<g class="scalable">
+                <path class="element"/>
+            </g>
+            <text class="content"/>
+            <text class="rgb-label"/>
+            <text class="satisfaction-label"/>
+            <text class="impact-label"/>`,
     defaults: joint.util.deepSupplement({
-        type: 'Resource',
-        size: {width: 90, height: 35},
-        attrs: {
-            rect: {
-                fill: 'rgb(205,254,205)',
-                height: 30,
-                rx: 0,
-                stroke: 'black',
-                'stroke-width': 2,
-                'vector-effect': 'non-scaling-stroke', /* prevents stroke distortion when the element is resized */
-                width: 130
-            },
-            text: {
-                'font-size': 12,
-                'font-weight': 'bold',
-                text: 'Resource'
-            }
-        }
-    }, joint.shapes.basic.Rect.prototype.defaults)
-});
-
-joint.shapes.istar.Task = joint.shapes.basic.Polygon.extend({
-    markup: '<g class="scalable"><polygon class="element"/></g><text class="content"/>',
-    defaults: joint.util.deepSupplement({
-        type: 'Task',
-        size: {width: 95, height: 36},
-        attrs: {
-            'polygon': {
-                fill: 'rgb(205,254,205)',
-                height: 36,
-                points: '0,18 15,0 115,0 130,18 115,36 15,36',
-                stroke: 'black',
-                'stroke-width': 2,
-                'vector-effect': 'non-scaling-stroke', /* prevents stroke distortion when the element is resized */
-                width: 130
-            },
-            text: {
-                text: 'Task',
-                'font-size': 12,
-                'font-weight': 'bold',
-                'ref-dy': '-50%',
-            }
-        }
-    }, joint.shapes.basic.Polygon.prototype.defaults)
-});
-
-joint.shapes.istar.Quality = joint.shapes.basic.Path.extend({
-    markup: '<g class="scalable"><path class="element"/></g><text class="content"/>',
-    defaults: joint.util.deepSupplement({
-        type: 'Quality',
+        type: 'Claim',
         size: {width: 90, height: 55},
         attrs: {
             'path': {
-                d: 'm 60.637955,-4.0358 c 17.5174,2.2042 29.9953,-10.69554 41.892705,-4.7858 22.34142,10.8714 11.2203,43.7743 -2.25,47.7322 -8.276505,2.9084 -13.960205,5.1934 -46.142805,-2.1786 -6.7454,-2.2317 -28.2652,6.0799 -35.4643,4.7143 C 9.072156,39.4809 6.491756,33.7693 3.744956,28.482 c -6.3069,-15.1266 -2.5738,-28.0439 7.981099,-34.7856 10.5549,-6.74179 27.9316,-7.30796 48.9119,2.2678 z',
-                // d: 'M ' + 0 + ' ' + 0 + ' a 26.1831 26.1831 0 0 1 25 -3 a 18.8816 18.8816 0 0 1 27 -5 a 15.2684 15.2684 0 0 1 17.4999 3.25 a 19.182 19.182 0 0 1 24 -5 a 11.2361 11.2361 0 0 1 14.5 6.5 a 7.5085 7.5085 0 0 1 7 9 a 6.51159 6.51159 0 0 1 2.5 9.99998 a 7.67717 7.67717 0 0 1 -9 9.5 a 18.0487 18.0487 0 0 1 -17.25 3.625 a 41.1115 41.1115 0 0 1 -50.25 4.25 a 20.8059 20.8059 0 0 1 -22.25 0.25 a 28.5345 28.5345 0 0 1 -19.75 -6 a 12.0307 12.0307 0 0 1 -2.75 -21.75 a 6.06009 6.06009 0 0 1 3.74945 -5.62563 Z', //cloud shape
-                fill: 'rgb(205,254,205)',
+                d: 'M44.66,16.15a5.19,5.19,0,0,0-1.8-2.8A5,5,0,0,0,43.71,9a4.77,4.77,0,0,0-4.14-3.73,5.63,5.63,0,0,0-.15-1.07A4.58,4.58,0,0,0,34.11.54a4.19,4.19,0,0,0-3,3.31c-.88-2-2.69-3.27-4.39-2.85a3.64,3.64,0,0,0-2.45,3.17,5.09,5.09,0,0,0-4.38-2.11c-2.31,0-4.23,1.21-4.71,2.84a5.57,5.57,0,0,0-3.64-1.26c-2.67,0-4.83,1.62-4.83,3.63,0,.07,0,.14,0,.21-1.63.62-2.52,2.7-2.13,5C2.25,12.68.43,14.19.43,16s1.84,3.36,4.22,3.59a1.79,1.79,0,0,0,0,.23c-2,.46-3.41,1.82-3.41,3.46,0,2,2.16,3.63,4.84,3.63a6.17,6.17,0,0,0,1.63-.22,3.56,3.56,0,0,0,.11.86c.65,2.59,3.86,4,7.17,3.18a7.49,7.49,0,0,0,2.92-1.45c.71,2.52,3.87,3.89,7.14,3.07a6.23,6.23,0,0,0,4.87-4.64,7,7,0,0,0,4.71.38c3.31-.83,5.46-3.61,4.81-6.2,0-.07-.05-.14-.07-.21a3.81,3.81,0,0,0,2.36.17C44,21.31,45.31,18.74,44.66,16.15Z	', //cloud shape
+                fill: 'rgb(255,255,255)',
                 resetOffset: true,
                 stroke: 'black',
-                'stroke-width': 2,
+                'stroke-width': 1,
+				'stroke-dasharray': '3,3,3,3',
                 'vector-effect': 'non-scaling-stroke' /* prevents stroke distortion when the element is resized */
             },
             text: {
                 'font-size': 12,
                 'font-weight': 'bold',
+                text: 'Claim'
+            },
+            '.rgb-label': {
+                //y: '0.0em',
+                'ref-dy': '-30%',
+                'font-size': 11,
+                'font-family': 'monospace',
+                'font-weight': 'plain',
+                text: 'RGB(255, 255, 255)'
+            },
+            '.satisfaction-label': {
+                text: ' ',
+                'ref-dx': '-45%',
+                'ref-dy': '-95%',
+                'font-size': 24,
+                'text-align': 'middle',
+                'text-anchor': 'center',
+                'font-weight': 'plain',
+            },
+            '.impact-label': {
+                text: ' ',
+                'ref-dx': '-175%',
+                'ref-dy': '-35%',
+                'font-size': 12,
+                'text-align': 'middle',
+                'text-anchor': 'center',
+                'font-weight': 'plain'
+            }
+        }
+    }, joint.shapes.basic.Rect.prototype.defaults)
+});
+
+joint.shapes.istar.Operationalizing = joint.shapes.basic.Path.extend({
+    markup: `<g class="scalable">
+                <path class="element"/>
+            </g>
+            <text class="content"/>
+            <text class="rgb-label"/>
+            <text class="satisfaction-label"/>
+            <text class="impact-label"/>`,
+    defaults: joint.util.deepSupplement({
+        type: 'Operationalizing',
+        size: {width: 110, height: 55},
+        attrs: {
+            'path': {
+                d: 'M45.23,16.72a5.15,5.15,0,0,0-1.8-2.8,5,5,0,0,0,.85-4.36,4.74,4.74,0,0,0-4.14-3.73A4.86,4.86,0,0,0,40,4.76c-.65-2.59-3-4.23-5.31-3.65a4.21,4.21,0,0,0-3,3.3c-.87-2-2.68-3.27-4.38-2.84a3.62,3.62,0,0,0-2.46,3.17,5.08,5.08,0,0,0-4.37-2.12c-2.31,0-4.23,1.22-4.72,2.85A5.52,5.52,0,0,0,12.13,4.2c-2.67,0-4.84,1.63-4.84,3.64a1.2,1.2,0,0,0,0,.2c-1.63.62-2.52,2.7-2.13,5C2.82,13.25,1,14.75,1,16.6S2.84,20,5.21,20.19c0,.07,0,.15,0,.22-2,.47-3.41,1.83-3.41,3.46,0,2,2.16,3.64,4.83,3.64a6.25,6.25,0,0,0,1.64-.23,3.24,3.24,0,0,0,.11.87c.65,2.59,3.86,4,7.17,3.18a7.51,7.51,0,0,0,2.92-1.46c.71,2.53,3.87,3.9,7.13,3.08,2.65-.67,4.55-2.58,4.87-4.64a7.05,7.05,0,0,0,4.72.38c3.31-.84,5.46-3.61,4.8-6.2a1.66,1.66,0,0,0-.06-.21,3.88,3.88,0,0,0,2.36.17C44.56,21.88,45.88,19.31,45.23,16.72Z', //cloud shape
+                fill: 'rgb(255,255,255)',
+                resetOffset: true,
+                stroke: 'black',
+                'stroke-width': 3,
+                'vector-effect': 'non-scaling-stroke' /* prevents stroke distortion when the element is resized */
+            },
+            '.content': {
+                text: 'Operationalizing',
+                'font-size': 12,
+                'font-weight': 'bold',
+                'ref-dy': '-50%',
+            },
+            '.rgb-label': {
+                y: '0.0em',
+                'font-size': 11,
+                'font-family': 'monospace',
+                text: 'RGB(205, 254, 205)'
+            },
+            '.satisfaction-label': {
+                text: ' ',
+                'ref-dx': '-35%',
+                'ref-dy': '-50%',
+                'font-size': 24
+            },
+            '.impact-label': {
+                text: ' ',
+                'ref-dx': '-175%',
+                'ref-dy': '-50%',
+                'font-size': 12,
+                'text-align': 'middle',
+                'text-anchor': 'center',
+                'font-weight': 'bold'
+            }
+        }
+    }, joint.shapes.basic.Polygon.prototype.defaults)
+});
+
+joint.shapes.istar.NFR = joint.shapes.basic.Path.extend({
+    markup: `<g class="scalable">
+                <path class="element"/>
+            </g>
+            <text class="content"/>
+            <text class="rgb-label"/>
+            <text class="satisfaction-label"/>
+            <text class="impact-label"/>`,
+    defaults: joint.util.deepSupplement({
+        type: 'NFR',
+        size: {width: 90, height: 55},
+        attrs: {
+            'path': {
+                d: 'M44.66,16.15a5.19,5.19,0,0,0-1.8-2.8A5,5,0,0,0,43.71,9a4.77,4.77,0,0,0-4.14-3.73,5.63,5.63,0,0,0-.15-1.07A4.58,4.58,0,0,0,34.11.54a4.19,4.19,0,0,0-3,3.31c-.88-2-2.69-3.27-4.39-2.85a3.64,3.64,0,0,0-2.45,3.17,5.09,5.09,0,0,0-4.38-2.11c-2.31,0-4.23,1.21-4.71,2.84a5.57,5.57,0,0,0-3.64-1.26c-2.67,0-4.83,1.62-4.83,3.63,0,.07,0,.14,0,.21-1.63.62-2.52,2.7-2.13,5C2.25,12.68.43,14.19.43,16s1.84,3.36,4.22,3.59a1.79,1.79,0,0,0,0,.23c-2,.46-3.41,1.82-3.41,3.46,0,2,2.16,3.63,4.84,3.63a6.17,6.17,0,0,0,1.63-.22,3.56,3.56,0,0,0,.11.86c.65,2.59,3.86,4,7.17,3.18a7.49,7.49,0,0,0,2.92-1.45c.71,2.52,3.87,3.89,7.14,3.07a6.23,6.23,0,0,0,4.87-4.64,7,7,0,0,0,4.71.38c3.31-.83,5.46-3.61,4.81-6.2,0-.07-.05-.14-.07-.21a3.81,3.81,0,0,0,2.36.17C44,21.31,45.31,18.74,44.66,16.15Z', //cloud shape
+                fill: 'rgb(255,255,255)',
+                resetOffset: true,
+                stroke: 'black',
+                'stroke-width': 1,
+                'vector-effect': 'non-scaling-stroke' /* prevents stroke distortion when the element is resized */
+            },
+            '.content': {
+                'font-size': 12,
+                'font-weight': 'bold',
                 'ref-y': '-65%',
-                text: 'Quality',
+                text: 'NFR',
                 'y-alignment': 'middle'
             },
+            '.rgb-label': {
+                y: '0.0em',
+                'font-size': 11,
+                'font-family': 'monospace',
+                text: 'RGB(255, 255, 255)'
+            },
+            '.satisfaction-label': {
+                text: ' ',
+                'ref-dx': '-45%',
+                'ref-dy': '-65%',
+                'font-size': 24,
+                'text-align': 'middle',
+                'text-anchor': 'center',
+            },
+            '.impact-label': {
+                text: ' ',
+                'ref-dx': '-175%',
+                'ref-dy': '-75%',
+                'font-size': 12,
+                'text-align': 'middle',
+                'text-anchor': 'center',
+                'font-weight': 'bold'
+            }
         }
     }, joint.shapes.basic.Path.prototype.defaults)
 });
@@ -562,6 +648,7 @@ joint.shapes.istar.ContributionLink = joint.dia.Link.define('ContributionLink',
                 connection: true,
                 fill: 'none',
                 stroke: 'black',
+				/*'stroke-dasharray': '3,3,3,3',*/
                 'stroke-width': 1,
                 targetMarker: {
                     'd': 'm 10,-6 l -10,6 10,6',
@@ -587,6 +674,20 @@ joint.shapes.istar.ContributionLink = joint.dia.Link.define('ContributionLink',
                         'font-family': 'sans-serif',
                         'font-size': 12,
                         'font-weight': 'bold'
+                    },
+                    rect: {
+                        fill: 'rgb(242,242,242)',
+                    }
+                }
+            },
+            {
+                position: 0.2,
+                attrs: {
+                    text: {
+                        'font-family': 'sans-serif',
+                        'font-size': 12,
+                        'font-weight': 'normal',
+                        text: 'RGB(255, 255, 255)'
                     },
                     rect: {
                         fill: 'rgb(242,242,242)',

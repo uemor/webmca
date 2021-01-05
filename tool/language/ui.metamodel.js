@@ -20,16 +20,16 @@ ui.setupMetamodelUI = function () {
     'use strict';
 
     if (istar.metamodel.nodes.Goal) {
-        istar.metamodel.nodes.Goal.buttonStatusText = 'Adding <b>Goal</b>: Click on an actor/role/agent to add a Goal';
+        istar.metamodel.nodes.Goal.buttonStatusText = 'Adding <b>Goal</b>: Click on the canvaas to add a Goal';
     }
-    if (istar.metamodel.nodes.Quality) {
-        istar.metamodel.nodes.Quality.buttonStatusText = 'Adding <b>Quality</b>: Click on an actor/role/agent to add a Quality';
+    if (istar.metamodel.nodes.NFR) {
+        istar.metamodel.nodes.NFR.buttonStatusText = 'Adding <b>NFR</b>: Click on the canvas to add an NFR';
     }
-    if (istar.metamodel.nodes.Task) {
-        istar.metamodel.nodes.Task.buttonStatusText = 'Adding <b>Task</b>: Click on an actor/role/agent to add a Task';
+    if (istar.metamodel.nodes.Operationalizing) {
+        istar.metamodel.nodes.Operationalizing.buttonStatusText = 'Adding <b>Operationalizing</b>: Click on the canvas to add an Operationalizing';
     }
-    if (istar.metamodel.nodes.Resource) {
-        istar.metamodel.nodes.Resource.buttonStatusText = 'Adding <b>Resource</b>: Click on an actor/role/agent to add a Resource';
+    if (istar.metamodel.nodes.Claim) {
+        istar.metamodel.nodes.Claim.buttonStatusText = 'Adding <b>Claim</b>: Click on the canvas to add a Claim';
     }
 
     if (istar.metamodel.containerLinks.IsALink) {
@@ -46,38 +46,44 @@ ui.setupMetamodelUI = function () {
     if (istar.metamodel.nodeLinks.AndRefinementLink) {
         istar.metamodel.nodeLinks.AndRefinementLink.buttonLabel = 'And';
         istar.metamodel.nodeLinks.AndRefinementLink.buttonTooltip = 'Add And-Refinement link';
-        istar.metamodel.nodeLinks.AndRefinementLink.buttonStatusText = 'Adding <b>And-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or tasks.';
+        istar.metamodel.nodeLinks.AndRefinementLink.buttonStatusText = 'Adding <b>And-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or Operationalizings.';
     }
     if (istar.metamodel.nodeLinks.OrRefinementLink) {
         istar.metamodel.nodeLinks.OrRefinementLink.buttonLabel = 'Or';
         istar.metamodel.nodeLinks.OrRefinementLink.buttonTooltip = 'Add Or-Refinement link';
-        istar.metamodel.nodeLinks.OrRefinementLink.buttonStatusText = 'Adding <b>Or-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or tasks.';
+        istar.metamodel.nodeLinks.OrRefinementLink.buttonStatusText = 'Adding <b>Or-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or Operationalizings.';
     }
     if (istar.metamodel.nodeLinks.NeededByLink) {
         istar.metamodel.nodeLinks.NeededByLink.buttonLabel = 'Needed-By';
         istar.metamodel.nodeLinks.NeededByLink.buttonTooltip = 'Add Needed-By link';
-        istar.metamodel.nodeLinks.NeededByLink.buttonStatusText = 'Adding <b>Needed-By</b> link: click on the Resource that is needed and on the Task that needs it.';
+        istar.metamodel.nodeLinks.NeededByLink.buttonStatusText = 'Adding <b>Needed-By</b> link: click on the Claim that is needed and on the Operationalizing that needs it.';
     }
     if (istar.metamodel.nodeLinks.QualificationLink) {
         istar.metamodel.nodeLinks.QualificationLink.buttonLabel = 'Qualification';
         istar.metamodel.nodeLinks.QualificationLink.buttonTooltip = 'Add Qualification link';
-        istar.metamodel.nodeLinks.QualificationLink.buttonStatusText = 'Adding <b>Qualification</b> link: click on the Quality and on the element it qualifies (Goal, Task or Resource).';
+        istar.metamodel.nodeLinks.QualificationLink.buttonStatusText = 'Adding <b>Qualification</b> link: click on the NFR and on the element it qualifies (Goal, Operationalizing or Claim).';
     }
 
     if (istar.metamodel.nodeLinks.ContributionLink) {
-        istar.metamodel.nodeLinks.ContributionLink.buttonLabel = ['Contribution', 'Make (++)', 'Help (+)', 'Hurt (-)', 'Break (--)'];
+        istar.metamodel.nodeLinks.ContributionLink.buttonLabel = ['Contribution','break (--)', 'hurt (-)', 'some-','unknown','some+','help (+)', 'make (++)'];
         istar.metamodel.nodeLinks.ContributionLink.buttonTooltip = [
-            'Add Contribution link (Make, Help, Hurt or Break',
-            'Add a Make (++) Contribution link',
-            'Add a Help (+) Contribution link',
+            'Add Contribution link (Break, Hurt, Some-,Unknown, Some+, Help Or Make ',
+            'Add a Break (--) Contribution link',
             'Add a Hurt (-) Contribution link',
-            'Add a Break (--) Contribution link'];
+            'Add a Some- (s-) Contribution link',
+			'Add a Unknown (u) Contribution link',
+			'Add a Some+ (s+) Contribution link',
+			'Add a Help (+) Contribution link',
+            'Add a Make (++) Contribution link'];
         istar.metamodel.nodeLinks.ContributionLink.buttonStatusText = [
             '',
-            'Adding <b>Make (++) Contribution</b> link: click first on an element and then on the Quality it contributes to',
-            'Adding <b>Help (+) Contribution</b> link: click first on an element and then on the Quality it contributes to',
-            'Adding <b>Hurt (-) Contribution</b> link: click first on an element and then on the Quality it contributes to',
-            'Adding <b>Break (--) Contribution</b> link: click first on an element and then on the Quality it contributes to'];
+            'Adding <b>Break (--) Contribution</b> link: click first on an element and then on the NFR it contributes to',
+			'Adding <b>Hurt (-) Contribution</b> link: click first on an element and then on the NFR it contributes to',
+			'Adding <b>Some- (s-) Contribution</b> link: click first on an element and then on the NFR it contributes to',
+			'Adding <b>Unknown (u) Contribution</b> link: click first on an element and then on the NFR it contributes to',
+            'Adding <b>Some+ (s+) Contribution</b> link: click first on an element and then on the NFR it contributes to',
+            'Adding <b>Help (+) Contribution</b> link: click first on an element and then on the NFR it contributes to',
+            'Adding <b>Make (++) Contribution</b> link: click first on an element and then on the NFR it contributes to'];
     }
 }
 

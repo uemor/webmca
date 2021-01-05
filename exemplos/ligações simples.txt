@@ -1,0 +1,125 @@
+{
+  "actors": [],
+  "orphans": [
+    {
+      "id": "a180fc9a-5882-430a-a3e0-6c9d3e702893",
+      "text": "NFR",
+      "type": "istar.NFR",
+      "x": 403,
+      "y": 344,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "28bd56fe-65f9-4afb-b81d-d990460394fc",
+      "text": "Operationalizing",
+      "type": "istar.Operationalizing",
+      "x": 394,
+      "y": 84,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "d221fea5-e648-42b3-9b2a-4a6d0777f0cb",
+      "text": "NFR",
+      "type": "istar.NFR",
+      "x": 636,
+      "y": 342,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "597b3437-aca8-4d48-94ca-42cd5b43d419",
+      "text": "NFR",
+      "type": "istar.NFR",
+      "x": 632,
+      "y": 102,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "a5258684-bdc9-4154-8d6f-16c96ae349fe",
+      "text": "NFR",
+      "type": "istar.NFR",
+      "x": 860,
+      "y": 349,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "183fd383-8a98-454b-88e8-4dac41b4d44b",
+      "text": "NFR",
+      "type": "istar.NFR",
+      "x": 857,
+      "y": 113,
+      "customProperties": {
+        "Description": ""
+      }
+    }
+  ],
+  "dependencies": [],
+  "links": [
+    {
+      "id": "1c2b60bb-0920-4415-9dc7-9ec8ea05c996",
+      "type": "istar.ContributionLink",
+      "source": "a180fc9a-5882-430a-a3e0-6c9d3e702893",
+      "target": "28bd56fe-65f9-4afb-b81d-d990460394fc",
+      "color": "#00FF00",
+      "label": "Help"
+    },
+    {
+      "id": "898b44cb-b955-45a6-8014-857dd1a0c938",
+      "type": "istar.ContributionLink",
+      "source": "d221fea5-e648-42b3-9b2a-4a6d0777f0cb",
+      "target": "597b3437-aca8-4d48-94ca-42cd5b43d419",
+      "color": "#FF0000",
+      "label": "Hurt"
+    },
+    {
+      "id": "2892ae80-85b0-4e21-941d-a5a4a141d861",
+      "type": "istar.ContributionLink",
+      "source": "a5258684-bdc9-4154-8d6f-16c96ae349fe",
+      "target": "183fd383-8a98-454b-88e8-4dac41b4d44b",
+      "color": "#0000FF",
+      "label": "Unknown"
+    }
+  ],
+  "display": {
+    "a180fc9a-5882-430a-a3e0-6c9d3e702893": {
+      "backgroundColor": "#0EB82F"
+    },
+    "28bd56fe-65f9-4afb-b81d-d990460394fc": {
+      "backgroundColor": "#00b800",
+      "width": 111.79998779296875,
+      "height": 84.65081787109375
+    },
+    "d221fea5-e648-42b3-9b2a-4a6d0777f0cb": {
+      "backgroundColor": "#00FF41"
+    },
+    "597b3437-aca8-4d48-94ca-42cd5b43d419": {
+      "backgroundColor": "#ff0000"
+    },
+    "a5258684-bdc9-4154-8d6f-16c96ae349fe": {
+      "backgroundColor": "#00FF17"
+    },
+    "183fd383-8a98-454b-88e8-4dac41b4d44b": {
+      "backgroundColor": "#0000ff"
+    }
+  },
+  "tool": "pistar.2.0.0",
+  "istar": "2.0",
+  "saveDate": "Mon, 12 Oct 2020 16:12:52 GMT",
+  "diagram": {
+    "width": 2000,
+    "height": 1300,
+    "name": "Welcome Model",
+    "customProperties": {
+      "Description": "Welcome to the piStar tool! This model describe some of the recent improvements in the tool.\n\nFor help using this tool, please check the Help menu above"
+    }
+  }
+}

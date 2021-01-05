@@ -19,11 +19,11 @@ istar.fileManager = function() {
     //From https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob
     if (!HTMLCanvasElement.prototype.toBlob) {
         Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
-            value: function (callback, type, quality) {
+            value: function (callback, type, NFR) {
                 var canvas = this;
                 setTimeout(function () {
 
-                    var binStr = atob(canvas.toDataURL(type, quality).split(',')[1]),
+                    var binStr = atob(canvas.toDataURL(type, NFR).split(',')[1]),
                         len = binStr.length,
                         arr = new Uint8Array(len);
 
@@ -263,7 +263,8 @@ istar.fileManager = function() {
                     id: link.id,
                     type: istar.metamodel.prefix + '.' + link.prop('type'),
                     source: link.attributes.source.id,
-                    target: link.attributes.target.id
+                    target: link.attributes.target.id,
+                    color: link.prop('backgroundColor')
                 };
                 if (link.prop('name')) {
                     result.name = link.prop('name');
@@ -334,6 +335,7 @@ istar.fileManager = function() {
                             }
                             if (inputModel.display[actor.id].backgroundColor) {
                                 ui.changeColorElement(inputModel.display[actor.id].backgroundColor, parent);
+                                ui.changeLabelElement(inputModel.display[actor.id].backgroundColor, parent);
                             }
                         }
                     }
@@ -396,8 +398,20 @@ istar.fileManager = function() {
                         var linkJSON = inputModel.links[i];
                         if (! isDependencyLink(linkJSON)) {
                             var newLink = addLoadedLink(linkJSON);
-                            if (inputModel.display && inputModel.display[linkJSON.id] && inputModel.display[linkJSON.id].vertices) {
-                                newLink.set('vertices', inputModel.display[linkJSON.id].vertices);
+                            if (newLink) {
+                                if (newLink.prop('backgroundColor') && newLink.prop('type') === 'ContributionLink') {
+                                    newLink.label(1, {
+                                        attrs: {
+                                            text: {
+                                                text: ui.rgbLinkLabel(newLink.prop('backgroundColor'))
+                                            }
+                                        }
+                                    });
+                                }
+
+                                if (inputModel.display && inputModel.display[linkJSON.id] && inputModel.display[linkJSON.id].vertices) {
+                                    newLink.set('vertices', inputModel.display[linkJSON.id].vertices);
+                                }
                             }
                         }
                     }
@@ -411,6 +425,8 @@ istar.fileManager = function() {
             if (_.size(invalidMessages)>0) {
                 istar.displayInvalidModelMessages(invalidMessages);
             }
+
+            satPropagation.propagate();
 
             function addLoadedElement (element, display) {
                 if (element.id && element.type && element.x && element.y) {
@@ -430,6 +446,7 @@ istar.fileManager = function() {
                             var size = {};
                             if (display[element.id].backgroundColor) {
                                 ui.changeColorElement(display[element.id].backgroundColor, newElement);
+                                ui.changeLabelElement(display[element.id].backgroundColor, newElement);
                             }
                             if (display[element.id].width) {
                                 size.width = display[element.id].width;
@@ -477,6 +494,9 @@ istar.fileManager = function() {
 
                         if (linkJSON.name) {
                             newLink.prop('name', linkJSON.name);
+                        }
+                        if (linkJSON.color) {
+                            newLink.prop('backgroundColor', linkJSON.color);
                         }
                         if (linkJSON.customProperties) {
                             newLink.prop('customProperties', linkJSON.customProperties);

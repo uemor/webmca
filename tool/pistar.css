@@ -76,8 +76,8 @@ https://stackoverflow.com/questions/7492062/css-overflow-scroll-always-show-vert
 
 .menu-bar {
   align-items: stretch;
-  background-color: #246B29;
-  color: rgb(252, 255, 239);
+  background-color: #003399;
+  color: rgb(252, 255, 255);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -125,7 +125,7 @@ nav a:visited {
 }
 
 .menu-item {
-  border: solid 2px #246B29;
+  border: solid 2px #003399;
   color: rgb(252, 255, 239);
   display: inline-block;
   font-size: .97em;

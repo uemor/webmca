@@ -60,24 +60,24 @@ istar.metamodel = {
     /** @type {Object} */
     "nodes": {
         "Goal": {
-            "canBeInnerElement": true,
+            "canBeInnerElement": false,
             "canBeDependum": true,
             "canBeOnPaper": false
         },
-        "Quality": {
+        "NFR": {
             "canBeInnerElement": true,
             "canBeDependum": true,
-            "canBeOnPaper": false
+            "canBeOnPaper": true
         },
-        "Resource": {
+        "Claim": {
             "canBeInnerElement": true,
             "canBeDependum": true,
-            "canBeOnPaper": false
+            "canBeOnPaper": true
         },
-        "Task": {
+        "Operationalizing": {
             "canBeInnerElement": true,
             "canBeDependum": true,
-            "canBeOnPaper": false
+            "canBeOnPaper": true
         }
     },
 
@@ -108,15 +108,15 @@ istar.metamodel = {
     "nodeLinks": {
         "AndRefinementLink": { },
         "OrRefinementLink": { },
-        "NeededByLink": {
+        /**"NeededByLink": {
             "tryReversedWhenAdding": true
         },
         "QualificationLink": {
             "tryReversedWhenAdding": true
-        },
+        },*/
         "ContributionLink": {
             "changeableLabel": true,
-            "possibleLabels": ["make", "help", "hurt", "break"]
+            "possibleLabels": ["Break","Hurt","Some-","Unknown","Some+","Help","Make"]
         }
     }
 };

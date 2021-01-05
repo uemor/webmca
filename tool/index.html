@@ -5,7 +5,7 @@
 This is open-source. Which means that you can contribute to it, and help
 make it better! Also, feel free to use, modify, redistribute, and so on.
 
-If you are going to edit the code, always work from the source-code available for download at.
+If you are going to edit the code, always work from the source-code available for download at
 https://github.com/jhcp/pistar
 -->
 <html lang="en">
@@ -14,7 +14,7 @@ https://github.com/jhcp/pistar
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The 3 meta tags above *must* come first in the head; any other head content must come *after* these tags -->
-    <title>piStar tool</title>
+    <title>WEBMCA</title>
     <meta name="description"
           content="piStar is an online Goal Modeling tool, compliant with iStar 2.0. Useful for creating diagrams
         for requirements documents.">
@@ -26,6 +26,7 @@ https://github.com/jhcp/pistar
     <!-- library-specific styles -->
     <link href="app/istarcore/lib/joint.min.css" rel="stylesheet"> <!-- joint js -->
     <link href="app/ui/lib/bootstrap3-editable/bootstrap-editable.css" rel="stylesheet"> <!-- x-editable -->
+    <link href="app/istarcore/lib/jqx.base.css" rel="stylesheet">
     <!-- tool styles -->
     <link href="pistar.css" rel="stylesheet">
 </head>
@@ -36,13 +37,14 @@ https://github.com/jhcp/pistar
         <div id="logo">
             <img src="app/ui/images/logo-pie.svg" width="21" height="21" title="a pie" alt=""/>
             <img id="star" src="app/ui/images/logo-star.svg" width="12" height="12" title="a star" alt=""/>
-            <a id="logo-name" href="index.html" target="_blank" title="Open an instance of the tool in a new tab">piStar</a>
+            <a id="logo-name" href="index.html" target="_blank" title="Open an instance of the tool in a new tab">WEBMCA</a>
         </div>
         <nav class="menu-items">
             <a class="menu-item" href="#" id="menu-item-file" data-toggle="menu-file">File</a>
             <a class="menu-item active" href="#" id="menu-item-add" data-toggle="menu-add">Add</a>
             <a class="menu-item" href="#" id="menu-item-diagram" data-toggle="menu-diagram">Options</a>
             <a class="menu-item" href="#" id="menu-item-help" data-toggle="menu-help">Help</a>
+            <!-- <a class="menu-item" href="#" id="menu-item-propagate">Propagate</a> -->
             <a class="menu-item" href="#" id="menu-item-plugin" data-toggle="menu-plugin">Plugins</a>
         </nav>
     </div>
@@ -86,7 +88,7 @@ https://github.com/jhcp/pistar
         <div id="menu-add" class="menu-body">
             <div class="menu-group">
                 <div class="menu-line">
-
+<!--
                     <div class="add-dropdown-button dropdown">
                         <button class="btn add-button btn-default dropdown-toggle" type="button" id="menu-dropdown-actors"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Add some kind of Actor">
@@ -96,7 +98,8 @@ https://github.com/jhcp/pistar
                         </button>
                         <ul id="add-actor-dropdown" class="dropdown-menu" aria-labelledby="menu-dropdown-actors"></ul>
                     </div>
-
+-->
+<!--
                     <div class="add-dropdown-button dropdown">
                         <button class="btn add-button btn-default dropdown-toggle" type="button" id="menu-dropdown-actor-links"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
@@ -107,7 +110,8 @@ https://github.com/jhcp/pistar
                         </button>
                         <ul id="add-actor-link-dropdown" class="dropdown-menu" aria-labelledby="menu-dropdown-actor-links"></ul>
                     </div>
-
+-->
+<!--
                     <div class="add-dropdown-button dropdown">
                         <button class="btn add-button btn-default dropdown-toggle" type="button" id="menu-dropdown-dependency-links"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Add dependency link">
@@ -117,6 +121,7 @@ https://github.com/jhcp/pistar
                         </button>
                         <ul id="add-dependency-dropdown" class="dropdown-menu" aria-labelledby="menu-dropdown-dependency-links"></ul>
                     </div>
+					-->
                 </div>
             </div>
 
@@ -205,10 +210,10 @@ https://github.com/jhcp/pistar
 
                     <a id="menu-button-examples" class="btn btn-default" data-toggle="modal" data-target="#modal-examples">Examples</a>
                     <a id="menu-button-quickhelp" class="btn btn-default" data-toggle="modal" data-target="#modal-instructions">Quick Help</a>
-                    <a id="menu-button-language-guide" class="btn btn-default" href="https://sites.google.com/site/istarlanguage/" target="_blank">
-                        iStar 2.0 Language Guide <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                    <a id="menu-button-language-guide" class="btn btn-default" href="https://personal.utdallas.edu/~supakkul/tools/RE-Tools/NFR-Framework.html" target="_blank">
+                        NFR Framework <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                     </a>
-                    <a id="menu-button-research" class="btn btn-default" href="https://github.com/jhcp/piStar/blob/master/RESEARCH.md#research" target="_blank">
+                    <a id="menu-button-research" class="btn btn-default" href="http://transparencia.inf.puc-rio.br/wiki/index.php/P%C3%A1gina_principal" target="_blank">
                         Research <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                     </a>
 
@@ -446,14 +451,17 @@ https://github.com/jhcp/pistar
                     <em>Loading may take a while, please wait a few seconds after clicking on an example below.</em><br><br>
                     <div class="alert alert-danger" role="alert">WARNING! If you click on an example below, your current model will be erased.</div>
                     <ul>
-                        <li>
+                        <!-- <li>
                             <a class="modal-button-load-example" href="#" data-model="everyElementAndLink">
                                 Example with every iStar 2.0 element and link, along with its definitions
                             </a>
                         </li>
                         <li><a class="modal-button-load-example" href="#" data-model="travelReimbursement">University Travel Reimbursement (iStar 2.0 guide example)</a></li>
                         <li><a class="modal-button-load-example" href="#" data-model="smartHome">Contextual Smart Home (105 elements)</a></li>
-                        <li><a class="modal-button-load-example" href="#" data-model="buyerDrivenECommerce">Buyer Driven e-Commerce</a></li>
+                        <li><a class="modal-button-load-example" href="#" data-model="buyerDrivenECommerce">Buyer Driven e-Commerce</a></li> -->
+                        <li><a class="modal-button-load-example" href="#" data-model="designAlternative01">Design Alternative 1</a></li>
+                        <li><a class="modal-button-load-example" href="#" data-model="designAlternative02">Design Alternative 2</a></li>
+                        <li><a class="modal-button-load-example" href="#" data-model="designAlternative03">Design Alternative 3</a></li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -500,7 +508,7 @@ https://github.com/jhcp/pistar
                         <li>To add an actor/role/agent in the diagram: click on the ACTOR... button, select the respective option,
                             and then click on the diagram.
                         </li>
-                        <li>To add a goal/task/resource/quality in the diagram: click on the respective button and then click on the
+                        <li>To add a goal/Operationalizing/Claim/NFR in the diagram: click on the respective button and then click on the
                             actor that will contain the element. (OBS: all elements must be inside an actor/role/agent)
                         </li>
                         <li>To add a refinement/qualification/needed-by link: click on the respective link button, then click on the
@@ -517,9 +525,9 @@ https://github.com/jhcp/pistar
                         </li>
                     </ul>
 
-                    <em>piStar tool version 2.0.0</em><br>
-                    For more info on this project, please visit the <a href="https://github.com/jhcp/piStar/" target="_blank">
-                    piStar repository <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>.
+                    <em>WEBMCA</em><br>
+                    <!--For more info on this project, please visit the <a href="https://github.com/jhcp/piStar/" target="_blank">
+                    piStar repository <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>.-->
 
                 </div>
                 <div class="modal-footer">
@@ -536,12 +544,14 @@ https://github.com/jhcp/pistar
 <script src="app/istarcore/lib/jquery.min.js"></script>
 <script src="app/istarcore/lib/lodash.min.js"></script>
 <script src="app/istarcore/lib/backbone.min.js"></script>
-<script src="app/istarcore/lib/joint.min.js"></script>
+<script src="app/istarcore/lib/joint.js"></script>
+<script src="app/istarcore/lib/jqx-all.js"></script>
 
 <script src="app/ui/lib/jscolor/jscolor.min.js"></script>
 <script src="app/ui/lib/bootstrap/bootstrap.min.js"></script>
 <script src="app/ui/lib/bootstrap3-editable/bootstrap-editable.min.js"></script>
 <script src="app/ui/lib/bootbox/bootbox.min.js"></script>
+<script src="app/ui/lib/chroma/chroma.min.js"></script>
 
 <!-- istar core -->
 <script src="app/istarcore/istarFunctions.js"></script>
@@ -564,6 +574,9 @@ https://github.com/jhcp/pistar
 <script src="language/ui.metamodel.js"></script>
 
 <!-- insert your plugin(s) here, after this line -->
+
+<!-- nfr propagation -->
+<script src="app/satisfaction-propagation.js"></script>
 
 <!-- end of plugin(s) area -->
 

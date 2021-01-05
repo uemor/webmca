@@ -21,7 +21,7 @@
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -430,8 +430,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(55,126)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_38"
      model-id="c0606324-eb08-461d-8ebb-22e0a7b9f0e9">
     <g
@@ -529,8 +529,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(307,368)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_45"
      model-id="18f54edd-8d82-4fb5-bd78-e91bf8514875">
     <g
@@ -583,8 +583,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(274,74)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_51"
      model-id="bd37957b-91f9-47c0-a628-016d4fd95603">
     <g

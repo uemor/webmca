@@ -194,7 +194,7 @@ istar.metamodel.nodeLinks.AndRefinementLink.isValid = function (source, target) 
     'use strict';
 
     //istar 2.0:
-    //- goal->goal; goal->task; task->task; task->goal (table 1)
+    //- goal->goal; goal->Operationalizing; Operationalizing->Operationalizing; Operationalizing->goal (table 1)
     //- ...the fulfillment of all the n children (n ≥ 2)(page 10) (ignored)
     //- A parent can only be AND-refined or OR-refined, not both simultaneously (page 10)
     // - The relationships between intentional elements (contributesTo, qualifies, neededBy, refines)
@@ -206,14 +206,14 @@ istar.metamodel.nodeLinks.AndRefinementLink.isValid = function (source, target) 
 
     var result = {};
     var isValid = true;
-    if ( !(source.isTask() || source.isGoal()) ) {
+    /*if ( !(source.isOperationalizing() || source.isGoal()) ) {
         isValid = false;
-        result.message = 'the source of an AND-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
+        result.message = 'the source of an AND-refinement link must be a Goal or a Operationalizing (iStar 2.0 Guide, Table 1)';
     }
-    if ( isValid && !(target.isTask() || target.isGoal()) ) {
+    if ( isValid && !(target.isOperationalizing() || target.isGoal()) ) {
         isValid = false;
-        result.message = 'the target of an AND-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
-    }
+        result.message = 'the target of an AND-refinement link must be a Goal or a Operationalizing (iStar 2.0 Guide, Table 1)';
+    }*/
     if ( isValid && (source === target) ) {
         isValid = false;
         result.message = 'you cannot make an AND-refinement link from an element onto itself';
@@ -252,7 +252,7 @@ istar.metamodel.nodeLinks.OrRefinementLink.isValid = function (source, target) {
     'use strict';
 
     //istar 2.0:
-    //goal->goal; goal->task; task->task; task->goal (table 1)
+    //goal->goal; goal->Operationalizing; Operationalizing->Operationalizing; Operationalizing->goal (table 1)
     //- A parent can only be AND-refined or OR-refined, not both simultaneously (page 10)
     //- The relationships between intentional elements (contributesTo, qualifies, neededBy, refines)
     //  apply only to elements that are wanted by the same actor (page 14)
@@ -263,14 +263,14 @@ istar.metamodel.nodeLinks.OrRefinementLink.isValid = function (source, target) {
 
     var result = {};
     var isValid = true;
-    if ( !(source.isTask() || source.isGoal()) ) {
+    /*if ( !(source.isOperationalizing() || source.isGoal()) ) {
         isValid = false;
-        result.message = 'the source of an OR-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
+        result.message = 'the source of an OR-refinement link must be a Goal or a Operationalizing (iStar 2.0 Guide, Table 1)';
     }
-    if ( isValid && !(target.isTask() || target.isGoal()) ) {
+    if ( isValid && !(target.isOperationalizing() || target.isGoal()) ) {
         isValid = false;
-        result.message = 'the target of an OR-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
-    }
+        result.message = 'the target of an OR-refinement link must be a Goal or a Operationalizing (iStar 2.0 Guide, Table 1)';
+    }*/
     if ( isValid && (source === target) ) {
         isValid = false;
         result.message = 'you cannot make an OR-refinement link from an element onto itself';
@@ -309,20 +309,20 @@ istar.metamodel.nodeLinks.NeededByLink.isValid = function (source, target) {
     'use strict';
 
     //istar 2.0
-    //resource->task (table 1)
-    //The NeededBy relationship links a task with a resource (page 11)
+    //Claim->Operationalizing (table 1)
+    //The NeededBy relationship links a Operationalizing with a Claim (page 11)
     //- The relationships between intentional elements (contributesTo, qualifies, neededBy, refines)
     //  apply only to elements that are wanted by the same actor (page 14)
 
     var result = {};
     var isValid = true;
-    if ( !source.isResource() ) {
+    if ( !source.isClaim() ) {
         isValid = false;
-        result.message = 'the source of a Needed-By link must be a Resource (iStar 2.0 Guide, Table 1)';
+        result.message = 'the source of a Needed-By link must be a Claim (iStar 2.0 Guide, Table 1)';
     }
-    if ( isValid && !target.isTask() ) {
+    if ( isValid && !target.isOperationalizing() ) {
         isValid = false;
-        result.message = 'the target of a Needed-By link must be a Task (iStar 2.0 Guide, Table 1)';
+        result.message = 'the target of a Needed-By link must be a Operationalizing (iStar 2.0 Guide, Table 1)';
     }
     if ( isValid && (source === target) ) {
         isValid = false;
@@ -349,25 +349,25 @@ istar.metamodel.nodeLinks.ContributionLink.isValid = function (source, target) {
     'use strict';
 
     //istar 2.0
-    //goal->quality; quality->quality; task->quality; resource->quality (table 1)
+    //goal->NFR; NFR->NFR; Operationalizing->NFR; Claim->NFR (table 1)
     //- While the examples show contributions starting from goals
-    //  and tasks, it is also possible to initiate contributions
-    //  from resources and qualities (page 11)
+    //  and Operationalizings, it is also possible to initiate contributions
+    //  from Claims and qualities (page 11)
     //- The relationships between intentional elements (contributesTo, qualifies, neededBy, refines)
     //  apply only to elements that are wanted by the same actor (page 14)
-    //– An intentional element and a quality can be linked by either a contributesTo
+    //– An intentional element and a NFR can be linked by either a contributesTo
     //  relationship or a qualifies relationship, but not by both (page 15)
-    //– It is not possible for a quality to contribute to itself (page 15)
+    //– It is not possible for a NFR to contribute to itself (page 15)
 
     var result = {};
     var isValid = true;
-    if ( !(source.isGoal() || source.isQuality() || source.isTask() || source.isResource()) ) {
+    if ( !(source.isGoal() || source.isNFR() || source.isOperationalizing() || source.isClaim()) ) {
         isValid = false;
-        result.message = 'the source of a Contribution link must be a Goal, a Quality, a Task or a Resource (iStar 2.0 Guide, Table 1)';
+        result.message = 'the source of a Contribution link must be a Goal, a NFR, a Operationalizing or a Claim (iStar 2.0 Guide, Table 1)';
     }
-    if ( isValid && !(target.isQuality()) ) {
+    if ( isValid && !(target.isNFR()) ) {
         isValid = false;
-        result.message = 'the target of a Contribution link must be a Quality (iStar 2.0 Guide, Table 1)';
+        result.message = 'the target of a Contribution link must be a NFR (iStar 2.0 Guide, Table 1)';
     }
     if ( isValid && (source === target) ) {
         isValid = false;
@@ -393,7 +393,7 @@ istar.metamodel.nodeLinks.ContributionLink.isValid = function (source, target) {
     if ( isValid && istar.isElementSourceOfType(target, 'DependencyLink')) {
         isValid = false;
         result.message = 'you cannot contribute to a Depender Element; that is, an element that is the source of a Dependency (iStar 2.0 Guide, Page 14)' +
-            '. Instead, you can try to move the dependency to the sub-quality, as shown in the example below.' +
+            '. Instead, you can try to move the dependency to the sub-NFR, as shown in the example below.' +
             '<br><br><img src="language/images/errors/contributionToDependerELement.svg" alt="You cannot add a Contribution link to a Depender Element"/>';
     }
 
@@ -405,23 +405,23 @@ istar.metamodel.nodeLinks.QualificationLink.isValid = function (source, target) 
     'use strict';
 
     //istar 2.0
-    //quality->goal, quality->task, quality->resource (table 1)
-    //The qualification relationship relates a quality to its
-    //subject: a task, goal, or resource.
+    //NFR->goal, NFR->Operationalizing, NFR->Claim (table 1)
+    //The qualification relationship relates a NFR to its
+    //subject: a Operationalizing, goal, or Claim.
     //- The relationships between intentional elements (contributesTo, qualifies, neededBy, refines)
     //  apply only to elements that are wanted by the same actor (page 14)
-    //– An intentional element and a quality can be linked by either a contributesTo
+    //– An intentional element and a NFR can be linked by either a contributesTo
     //  relationship or a qualifies relationship, but not by both (page 15)
 
     var result = {};
     var isValid = true;
-    if ( !(source.isQuality()) ) {
+    if ( !(source.isNFR()) ) {
         isValid = false;
-        result.message = 'the source of a Qualification link must be a Quality (iStar 2.0 Guide, Table 1)';
+        result.message = 'the source of a Qualification link must be a NFR (iStar 2.0 Guide, Table 1)';
     }
-    if ( isValid && !(target.isGoal() || target.isTask() || target.isResource()) ) {
+    if ( isValid && !(target.isGoal() || target.isOperationalizing() || target.isClaim()) ) {
         isValid = false;
-        result.message = 'the target of a Qualification link must be a Goal, a Task or a Resource (iStar 2.0 Guide, Table 1)';
+        result.message = 'the target of a Qualification link must be a Goal, a Operationalizing or a Claim (iStar 2.0 Guide, Table 1)';
     }
     if ( isValid && (source === target) ) {
         isValid = false;

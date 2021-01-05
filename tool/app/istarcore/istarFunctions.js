@@ -335,7 +335,7 @@ var istar = function () {
             /**
              * Adds a new node to the model.
              * Instead of calling this function directly, this function is expected to be called
-             * from a specialized 'add' function, such as addActor or addTask.<br />
+             * from a specialized 'add' function, such as addActor or addOperationalizing.<br />
              * @returns the new node
              * @param {object}  nodeType    type definition of the node to be created
              * @param {string}  content     content of the node
@@ -388,7 +388,7 @@ var istar = function () {
         },
 
         /**
-         * Returns the number of elements (nodes) in the model. For instance, actors and tasks are elements
+         * Returns the number of elements (nodes) in the model. For instance, actors and Operationalizings are elements
          * @returns {number} number of elements (nodes)
          * @example
          *   istar.getNumberOfElements();

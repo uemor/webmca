@@ -20,7 +20,7 @@
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -116,8 +116,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(0.95124836,1)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_35"
      model-id="c3c124ac-cd87-40e0-aa67-7492b90f84ef">
     <g
@@ -143,13 +143,13 @@
        class="content waiting"><tspan
          id="tspan279"
          class="v-line waiting"
-         dy="0">Task</tspan></text>
+         dy="0">Operationalizing</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(21.951248,76)"
-     data-type="Resource"
-     class="joint-cell joint-type-resource joint-element joint-theme-default waiting"
+     data-type="Claim"
+     class="joint-cell joint-type-Claim joint-element joint-theme-default waiting"
      id="j_36"
      model-id="e40babd6-e371-4603-985c-9eca3a6bc6e5">
     <g
@@ -177,7 +177,7 @@
        class="content waiting"><tspan
          id="tspan286"
          class="v-line waiting"
-         dy="0">Resource</tspan></text>
+         dy="0">Claim</tspan></text>
   </g>
   <g
      data-type="NeededByLink"
@@ -204,8 +204,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(131.38471,1.5437)"
-     data-type="Task"
-     class="joint-cell joint-type-task joint-element joint-theme-default waiting"
+     data-type="Operationalizing"
+     class="joint-cell joint-type-Operationalizing joint-element joint-theme-default waiting"
      id="j_35-4"
      model-id="c3c124ac-cd87-40e0-aa67-7492b90f84ef">
     <g
@@ -231,13 +231,13 @@
        class="content waiting"><tspan
          id="tspan279-1"
          class="v-line waiting"
-         dy="0">Task</tspan></text>
+         dy="0">Operationalizing</tspan></text>
   </g>
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(152.38471,76.5437)"
-     data-type="Resource"
-     class="joint-cell joint-type-resource joint-element joint-theme-default waiting"
+     data-type="Claim"
+     class="joint-cell joint-type-Claim joint-element joint-theme-default waiting"
      id="j_36-5"
      model-id="e40babd6-e371-4603-985c-9eca3a6bc6e5">
     <g
@@ -265,7 +265,7 @@
        class="content waiting"><tspan
          id="tspan286-6"
          class="v-line waiting"
-         dy="0">Resource</tspan></text>
+         dy="0">Claim</tspan></text>
   </g>
   <g
      data-type="NeededByLink"

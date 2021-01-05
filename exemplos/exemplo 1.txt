@@ -1,0 +1,219 @@
+{
+  "actors": [],
+  "orphans": [
+    {
+      "id": "69fa9f05-a5ce-4f53-89a4-d8eb48ce8139",
+      "text": "Web Accessibility [Visually Impaired]",
+      "type": "istar.NFR",
+      "x": 491,
+      "y": 123,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "59d71f66-4fe0-48de-89c4-c31654f82306",
+      "text": "Perceive Content [Multimedia Content]",
+      "type": "istar.NFR",
+      "x": 745,
+      "y": 321.5,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "3c854892-8b59-4fe8-9149-86887bd7da04",
+      "text": "Operable Content [Multimedia Content]",
+      "type": "istar.NFR",
+      "x": 265,
+      "y": 327,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "588e1ca6-2cd1-4eff-9ed4-d523541f7375",
+      "text": "Provide text describing the functionality of each link [Form Control]",
+      "type": "istar.NFR",
+      "x": 50,
+      "y": 515,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "c3774963-03a3-4de4-b23c-e8676adb94ee",
+      "text": "Provide voice operability [Form Control]",
+      "type": "istar.NFR",
+      "x": 263,
+      "y": 652,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "883b97ad-ea74-4b8b-ac77-76c47099a1ae",
+      "text": "Provide full keyboard access [Form Control]",
+      "type": "istar.NFR",
+      "x": 422,
+      "y": 542,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "be11f594-b121-4f34-835e-5970f5e8d7e8",
+      "text": "Use \"alt\" atribute on tags containing images [HTML]",
+      "type": "istar.NFR",
+      "x": 665,
+      "y": 644,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "c2425749-90b9-4473-a6b1-6237e1eab8e3",
+      "text": "Provide image recognition [Image Processing]",
+      "type": "istar.NFR",
+      "x": 915,
+      "y": 632,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "04f3e799-885c-4d19-b7c2-92517ea54434",
+      "text": "Provide alternatives to non-text content [Multimedia]",
+      "type": "istar.NFR",
+      "x": 1057,
+      "y": 474,
+      "customProperties": {
+        "Description": ""
+      }
+    }
+  ],
+  "dependencies": [],
+  "links": [
+    {
+      "id": "20c486a6-27b9-440c-b542-7ee76ca3f0a0",
+      "type": "istar.ContributionLink",
+      "source": "59d71f66-4fe0-48de-89c4-c31654f82306",
+      "target": "69fa9f05-a5ce-4f53-89a4-d8eb48ce8139",
+      "color": "#00aa00",
+      "label": "Help"
+    },
+    {
+      "id": "5ad2cc09-173a-4c14-9b08-377bb95df2d4",
+      "type": "istar.ContributionLink",
+      "source": "3c854892-8b59-4fe8-9149-86887bd7da04",
+      "target": "69fa9f05-a5ce-4f53-89a4-d8eb48ce8139",
+      "color": "#00aa00",
+      "label": "Help"
+    },
+    {
+      "id": "a40e2278-b82c-4aac-9792-7362aa3c974a",
+      "type": "istar.ContributionLink",
+      "source": "588e1ca6-2cd1-4eff-9ed4-d523541f7375",
+      "target": "3c854892-8b59-4fe8-9149-86887bd7da04",
+      "color": "#003700",
+      "label": "Some+"
+    },
+    {
+      "id": "c2cbaa8f-6c08-493e-8d70-4a2968e3b41d",
+      "type": "istar.ContributionLink",
+      "source": "c3774963-03a3-4de4-b23c-e8676adb94ee",
+      "target": "3c854892-8b59-4fe8-9149-86887bd7da04",
+      "color": "#009600",
+      "label": "Help"
+    },
+    {
+      "id": "4e419aa1-5b99-48dc-b46e-2e791dbbf677",
+      "type": "istar.ContributionLink",
+      "source": "883b97ad-ea74-4b8b-ac77-76c47099a1ae",
+      "target": "3c854892-8b59-4fe8-9149-86887bd7da04",
+      "color": "#008c00",
+      "label": "Help"
+    },
+    {
+      "id": "e730992c-808a-4fcb-9c93-3a1070edba10",
+      "type": "istar.ContributionLink",
+      "source": "be11f594-b121-4f34-835e-5970f5e8d7e8",
+      "target": "59d71f66-4fe0-48de-89c4-c31654f82306",
+      "color": "#005000",
+      "label": "Some+"
+    },
+    {
+      "id": "a198eed4-6b6f-45a2-b607-eefdc3ad7750",
+      "type": "istar.ContributionLink",
+      "source": "c2425749-90b9-4473-a6b1-6237e1eab8e3",
+      "target": "59d71f66-4fe0-48de-89c4-c31654f82306",
+      "color": "#00a000",
+      "label": "Help"
+    },
+    {
+      "id": "c8e8230a-7174-47e0-a774-179f92802d61",
+      "type": "istar.ContributionLink",
+      "source": "04f3e799-885c-4d19-b7c2-92517ea54434",
+      "target": "59d71f66-4fe0-48de-89c4-c31654f82306",
+      "color": "#009600",
+      "label": "Help"
+    }
+  ],
+  "display": {
+    "69fa9f05-a5ce-4f53-89a4-d8eb48ce8139": {
+      "backgroundColor": "#003500",
+      "width": 164.47216796875,
+      "height": 110.41380310058594
+    },
+    "59d71f66-4fe0-48de-89c4-c31654f82306": {
+      "backgroundColor": "#005000",
+      "width": 165.47216796875,
+      "height": 92.39540100097656
+    },
+    "3c854892-8b59-4fe8-9149-86887bd7da04": {
+      "backgroundColor": "#003700",
+      "width": 161.47488403320312,
+      "height": 99.40153503417969
+    },
+    "588e1ca6-2cd1-4eff-9ed4-d523541f7375": {
+      "backgroundColor": "#00FF00",
+      "width": 204.44583892822266,
+      "height": 106.91023254394531
+    },
+    "c3774963-03a3-4de4-b23c-e8676adb94ee": {
+      "backgroundColor": "#00FF00",
+      "width": 137.4910888671875,
+      "height": 79.68142700195312
+    },
+    "883b97ad-ea74-4b8b-ac77-76c47099a1ae": {
+      "backgroundColor": "#00FF00",
+      "width": 158.47689819335938,
+      "height": 96.69876098632812
+    },
+    "be11f594-b121-4f34-835e-5970f5e8d7e8": {
+      "backgroundColor": "#00FF00",
+      "width": 172.466796875,
+      "height": 91.69467163085938
+    },
+    "c2425749-90b9-4473-a6b1-6237e1eab8e3": {
+      "backgroundColor": "#00FF00",
+      "width": 148.483642578125,
+      "height": 104.70596313476562
+    },
+    "04f3e799-885c-4d19-b7c2-92517ea54434": {
+      "backgroundColor": "#00FF00",
+      "width": 187.45660400390625,
+      "height": 101.70388793945312
+    }
+  },
+  "tool": "pistar.2.0.0",
+  "istar": "2.0",
+  "saveDate": "Tue, 17 Nov 2020 11:34:42 GMT",
+  "diagram": {
+    "width": 2111,
+    "height": 1300,
+    "customProperties": {
+      "Description": ""
+    }
+  }
+}

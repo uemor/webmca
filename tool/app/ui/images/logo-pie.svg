@@ -1,13 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-   width="411.36499"
-   height="376.40479"
-   viewBox="0 0 411.36499 376.40479"
->
-<g transform="translate(-46.069,-125.38321)">
-	<path
-   d="m 454.928,237.161 -32.273,-89.114 c -5.769,-15.921 -22.479,-25.068 -38.994,-21.332 l -51.145,11.539 c -86.49127,20.8313 -172.15628,38.84767 -259.107,58.469 -15.695,3.542 -26.84,17.482 -26.84,33.582 v 192.493 c 0,24.713 18.545,45.151 43.136,47.555 l 314.833,30.707 c 1.535,0.146 3.071,0.228 4.605,0.228 11.894,0 23.298,-4.402 32.104,-12.379 9.969,-9.034 15.687,-21.934 15.687,-35.403 V 248.599 c 0,-3.899 -0.682,-7.782 -2.006,-11.438 z m -372.566,5.086 c 1.599,-1.462 3.744,-2.161 5.905,-1.95 l 328.465,32.022 c 3.931,0.391 6.929,3.688 6.929,7.653 v 77.395 C 315.44409,350.1139 162.77547,334.53929 79.845,315.594 v -67.661 c -0.002,-2.178 0.916,-4.241 2.517,-5.686 z m 336.547,221.999 c -2.682,2.436 -6.15,3.768 -9.766,3.768 L 92.938,437.242 c -7.465,-0.73 -13.095,-6.938 -13.095,-14.444 v -66.975 c 27.40221,9.03024 210.74957,25.79744 343.819,38.493 v 59.19 c -0.002,4.093 -1.731,8.01 -4.753,10.74 z"
-   style="fill:#ffffff;"
- />
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="logo-pie.svg"
+   id="svg19"
+   viewBox="0 0 21675 14444"
+   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeNFR; fill-rule:evenodd; clip-rule:evenodd"
+   version="1.1"
+   height="144.441mm"
+   width="216.747mm"
+   xml:space="preserve"><metadata
+   id="metadata23"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:Claim="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   inkscape:current-layer="Capa_x0020_1"
+   inkscape:window-maximized="1"
+   inkscape:window-y="-8"
+   inkscape:window-x="1358"
+   inkscape:cy="272.95936"
+   inkscape:cx="409.60062"
+   inkscape:zoom="0.98549469"
+   showgrid="false"
+   id="namedview21"
+   inkscape:window-height="705"
+   inkscape:window-width="1366"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   inkscape:document-rotation="0" />
+ <defs
+   id="defs4">
+  <style
+   id="style2"
+   type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil2 {fill:black;fill-rule:nonzero}
+    .fil1 {fill:#CCCCCC;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g
+   id="Capa_x0020_1">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <rect
+   id="rect7"
+   height="14444"
+   width="21675"
+   class="fil0" />
+  
+  <g
+   transform="matrix(0.99619842,0,0,1,11760.653,-107.39257)"
+   id="_622412832">
+   <polygon
+   id="polygon11"
+   points="1678,9306 7085,9306 7085,10436 307,10436 307,9116 3434,5466 307,2136 307,864 6817,864 6817,1993 1678,1993 4943,5466 "
+   class="fil2" />
+   
+   
+  </g>
+ </g>
 </svg>

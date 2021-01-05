@@ -20,7 +20,7 @@
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+           rdf:Claim="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
@@ -88,8 +88,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(50.692308,89.166667)"
-     data-type="istar.Task"
-     class="joint-cell joint-type-istar joint-type-istar-task joint-element joint-theme-default"
+     data-type="istar.Operationalizing"
+     class="joint-cell joint-type-istar joint-type-istar-Operationalizing joint-element joint-theme-default"
      id="j_7"
      model-id="35a832d6-b110-4618-b658-b2212e8c159e">
     <g
@@ -116,7 +116,7 @@
          id="v-64"><tspan
            dy="0em"
            class="v-line"
-           id="v-86">task</tspan></text>
+           id="v-86">Operationalizing</tspan></text>
     </g>
   </g>
   <g
@@ -268,8 +268,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(202.69717,91.06699)"
-     data-type="istar.Task"
-     class="joint-cell joint-type-istar joint-type-istar-task joint-element joint-theme-default"
+     data-type="istar.Operationalizing"
+     class="joint-cell joint-type-istar joint-type-istar-Operationalizing joint-element joint-theme-default"
      id="j_7-0"
      model-id="35a832d6-b110-4618-b658-b2212e8c159e">
     <g
@@ -296,7 +296,7 @@
          id="v-64-0"><tspan
            dy="0em"
            class="v-line"
-           id="v-86-0">task</tspan></text>
+           id="v-86-0">Operationalizing</tspan></text>
     </g>
   </g>
   <g
@@ -568,8 +568,8 @@
   <g
      style="fill:#ffffff;stroke:none"
      transform="translate(358.25363,91.367948)"
-     data-type="istar.Task"
-     class="joint-cell joint-type-istar joint-type-istar-task joint-element joint-theme-default"
+     data-type="istar.Operationalizing"
+     class="joint-cell joint-type-istar joint-type-istar-Operationalizing joint-element joint-theme-default"
      id="j_7-0-5"
      model-id="35a832d6-b110-4618-b658-b2212e8c159e">
     <g
@@ -596,7 +596,7 @@
          id="v-64-0-0"><tspan
            dy="0em"
            class="v-line"
-           id="v-86-0-3">task</tspan></text>
+           id="v-86-0-3">Operationalizing</tspan></text>
     </g>
   </g>
   <g

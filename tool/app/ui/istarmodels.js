@@ -105,9 +105,9 @@ istar.models.loadPistarWelcome = function () {
 //             var priority = istar.models.util.randomIntegerFromMinToMax(1, 101);
 //
 //             var creationFunction = istar.addGoal;
-//             if (kindOfElement === 1) creationFunction = istar.addQuality;
-//             else if (kindOfElement === 2) creationFunction = istar.addTask;
-//             else if (kindOfElement === 3) creationFunction = istar.addResource;
+//             if (kindOfElement === 1) creationFunction = istar.addNFR;
+//             else if (kindOfElement === 2) creationFunction = istar.addOperationalizing;
+//             else if (kindOfElement === 3) creationFunction = istar.addClaim;
 //             var newElement = creationFunction(x, y, name);
 //             newElement.prop('customProperties/Priority', priority);
 //             actor.embedNode(newElement);
@@ -125,366 +125,488 @@ istar.models.loadPistarWelcome = function () {
 
 
 istar.models.pistarWelcome = {
-    "actors": [
-        {
-            "id": "3589ee55-603d-41ee-8bf1-2b2a54498def",
-            "text": "Researcher",
-            "type": "istar.Actor",
-            "x": 49,
-            "y": 41,
-            "customProperties": {
-                "Description": "I am a Requirements Engineering researcher. You too?"
-            },
-            "nodes": [
-                {
-                    "id": "71c7aeb6-fb99-40a1-bcd1-5a29e5b45252",
-                    "text": "i* models created",
-                    "type": "istar.Goal",
-                    "x": 249,
-                    "y": 87,
-                    "customProperties": {
-                        "Description": "This tool supports the i* 2.0 version (iStar 2.0)"
-                    }
-                },
-                {
-                    "id": "8d716a61-1ca4-44f4-934c-26166ea44d11",
-                    "text": "Use piStar",
-                    "type": "istar.Task",
-                    "x": 172,
-                    "y": 161,
-                    "customProperties": {
-                        "Description": "You can use it for free, without worrying about installations"
-                    }
-                },
-                {
-                    "id": "e159ce92-b29d-4fdc-a533-ee1e904f9f57",
-                    "text": "Good Quality",
-                    "type": "istar.Quality",
-                    "x": 126,
-                    "y": 61,
-                    "customProperties": {
-                        "Description": "By Good Quality we mean good *visual* quality:\n - no visual artefacts due to compression or rescaling;\n - aesthetically similar to the diagrams from the i* Wiki guides"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "dbe6cf9f-877d-4600-bac9-8f7bbde93426",
-            "text": "piStar tool team",
-            "type": "istar.Agent",
-            "x": 426,
-            "y": 201,
-            "nodes": [
-                {
-                    "id": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
-                    "text": "Continuous Improvement",
-                    "type": "istar.Quality",
-                    "x": 638,
-                    "y": 211,
-                    "customProperties": {
-                        "Description": "Because we all know there is much to be improved in this tool =)\n\nBtw, help us improve it by sending your feedback through the Help menu"
-                    }
-                },
-                {
-                    "id": "f69a3c4b-4d40-488d-a54a-a0e38453f077",
-                    "text": "Add properties to the diagram",
-                    "type": "istar.Task",
-                    "x": 844,
-                    "y": 311,
-                    "customProperties": {
-                        "Description": "Now you can add custom properties not only to your elements, but also to your diagram as a whole! For instance, you can give it a name, record the authors' names, provide a link for further information, provide a brief description of the project, and so on.",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "1f011a05-50ff-47b4-bdf6-e6c9227eef70",
-                    "text": "Change the color of elements",
-                    "type": "istar.Task",
-                    "x": 433,
-                    "y": 414,
-                    "customProperties": {
-                        "Description": "Now you can change the color of elements, but use this with CAUTION! because the readers of your model may not be able to guess the meaning of each color. Plus, too many colors will make it messy.",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "5562be02-998b-4a7b-8bb9-355d84b3c06b",
-                    "text": "Change the size of elements",
-                    "type": "istar.Task",
-                    "x": 427,
-                    "y": 514,
-                    "customProperties": {
-                        "Description": "Now you can change the size of elements of the model. You just need to drag the handle in the bottom-right corner of the selected element",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "17acd322-9d37-496e-b6d5-c69c497502db",
-                    "text": "Improved UI",
-                    "type": "istar.Resource",
-                    "x": 490,
-                    "y": 305,
-                    "customProperties": {
-                        "Description": "This new User Interface has been designed not only to improve usability, but also to accommodate new functionalities that are coming in the near future",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "f9035e8c-0294-44a8-a93e-85a349d2f21a",
-                    "text": "Change the type of dependums",
-                    "type": "istar.Task",
-                    "x": 568,
-                    "y": 465,
-                    "customProperties": {
-                        "Description": "Now you can change the type of dependum elements. Select the dependum and then change its type in the Properties sidepanel",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "2697c4ac-6868-42ff-9d1d-b819000f909e",
-                    "text": "Improved visuals for links",
-                    "type": "istar.Resource",
-                    "x": 725,
-                    "y": 490,
-                    "customProperties": {
-                        "Description": "Improved shape and rotation for the 'D' in dependency links, as well as for the arrows in actor links, or-refinement links, and contribution links",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "d481f512-6836-4e17-ba29-0192cb0c8ad8",
-                    "text": "Add properties to links",
-                    "type": "istar.Task",
-                    "x": 825,
-                    "y": 515,
-                    "customProperties": {
-                        "Description": "Now you can add custom properties not only to your elements, but also to your links! For instance, you can provide a rationale for the link, define context annotations, specify numerical values for contributions, etc.",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "63f3b48a-0088-4aa3-9f63-5354efefc78b",
-                    "text": "Change the value of contribution links",
-                    "type": "istar.Task",
-                    "x": 864,
-                    "y": 465,
-                    "customProperties": {
-                        "Description": "Now you can change the value of contribution links (Make, Help, Hurt or Break). Select the link and then change its type in the Properties sidepanel",
-                        "Since": "Version 2.0.0"
-                    }
-                },
-                {
-                    "id": "98275a4b-510e-4016-b985-6a25ca69079b",
-                    "text": "Stricter adherence to the language guide",
-                    "type": "istar.Resource",
-                    "x": 650,
-                    "y": 405,
-                    "customProperties": {
-                        "Description": "Previous versions of the tool allowed the creation of some invalid links:\n - mix of and/or refinements with the same target\n - refinement/contribution to depender elements\n\nThese links are no longer allowed, respecting the constraints defined in the iStar 2.0 Language Guide. The warning messages were improved, now they are much more specific.\n\nThe following links are still allowed:\n - Cyclic links\n - And-refinement with a single child",
-                        "Warning": "For the purpose of compatibility, it is still possible to load models containing these invalid links. Users are advised to correct any invalid links present in their models as soon as possible"
-                    }
-                },
-                {
-                    "id": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d",
-                    "text": "Elements modifiable",
-                    "type": "istar.Goal",
-                    "x": 551,
-                    "y": 357,
-                    "customProperties": {
-                        "Description": "Be able to modify existing elements"
-                    }
-                },
-                {
-                    "id": "3696a947-a1cd-42b1-8804-794bd01aa0f9",
-                    "text": "Improved Links",
-                    "type": "istar.Quality",
-                    "x": 752,
-                    "y": 343,
-                    "customProperties": {
-                        "Description": ""
-                    }
-                }
-            ]
+    "actors": [],
+    "orphans": [
+      {
+        "id": "64a8bf32-739c-46de-beba-e20181333a85",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 698,
+        "y": 258,
+        "customProperties": {
+          "Description": ""
         }
-    ],
-    "dependencies": [
-        {
-            "id": "2083cdfc-21c9-4a25-9a70-e65934cd588d",
-            "text": "The piStar tool",
-            "type": "istar.Resource",
-            "x": 253,
-            "y": 273,
-            "customProperties": {
-                "Cost": "$0.00"
-            },
-            "source": "8d716a61-1ca4-44f4-934c-26166ea44d11",
-            "target": "dbe6cf9f-877d-4600-bac9-8f7bbde93426"
+      },
+      {
+        "id": "2c68764d-16df-4086-b9d4-72fe7efd116d",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 253,
+        "y": 89,
+        "customProperties": {
+          "Description": ""
         }
+      },
+      {
+        "id": "b92ea83f-f32a-4996-a97d-ed656d23edd3",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 248,
+        "y": 257,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "2a9e2343-bfef-4c9e-8a6b-d9ff9debfc66",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 375,
+        "y": 257,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "d65369c3-593c-493c-8b69-0daf870056b1",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 499,
+        "y": 257,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "070d4f89-aa87-4996-b9b7-3ce42ce4dca4",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 825,
+        "y": 254,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "6cd84006-3fb7-46f6-9a94-ccf0b579731d",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 962,
+        "y": 253,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "f797debb-d191-4285-8b81-242a9f90d91d",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 382,
+        "y": 92,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "6ec7e7d8-7daa-4667-a756-0e372b43b668",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 506,
+        "y": 89,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "59951db1-9cfd-4b27-8745-c0bab6264690",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 696,
+        "y": 96.5,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "bde20796-bc17-44c7-b1b8-f139771c9a0c",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 824,
+        "y": 93,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "aef62667-df89-415e-9942-a1346e938625",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 961,
+        "y": 92,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "2960008d-efcf-494c-ace0-d97dfb627a28",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 164,
+        "y": 550,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "988fb9da-a68a-4a8c-a982-852911ec8776",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 268,
+        "y": 548,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "e7dc0fe4-41f4-4809-93cc-4eb0c94898cb",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 392,
+        "y": 544,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "c4061399-2854-4211-9b9d-d925d34aba24",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 518,
+        "y": 545,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "0ae8c89e-ba44-4d42-851c-2d2c2e7793b3",
+        "text": "✓",
+        "type": "istar.Operationalizing",
+        "x": 702,
+        "y": 545,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "2704a6fd-e163-4a26-988e-a3a4f6975ce8",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 831,
+        "y": 543,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "35be2930-ec7c-49e5-977c-5fbd2e813655",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 206,
+        "y": 436,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "5b12a7b6-c379-4ef2-b576-a515afbc1de6",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 443,
+        "y": 437,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "97f917c5-a6ae-4da2-b5a3-7c38e4d65e4c",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 755,
+        "y": 433,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "af15090d-f638-437c-8aea-aebba5c7c765",
+        "text": "Parent",
+        "type": "istar.NFR",
+        "x": 1023,
+        "y": 429,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "0f52af77-4d1d-4fb2-a8c1-278397b5eab1",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 978,
+        "y": 544,
+        "customProperties": {
+          "Description": ""
+        }
+      },
+      {
+        "id": "5ede5697-787c-4d77-8b3a-12bb1f853e1e",
+        "text": "X",
+        "type": "istar.Operationalizing",
+        "x": 1092,
+        "y": 544,
+        "customProperties": {
+          "Description": ""
+        }
+      }
     ],
+    "dependencies": [],
     "links": [
-        {
-            "id": "3b572289-bb0f-4e7e-8b01-aa40e34ca306",
-            "type": "istar.DependencyLink",
-            "source": "8d716a61-1ca4-44f4-934c-26166ea44d11",
-            "target": "2083cdfc-21c9-4a25-9a70-e65934cd588d"
-        },
-        {
-            "id": "6dd4f5f6-a66d-45f1-b688-b6a216e5739b",
-            "type": "istar.DependencyLink",
-            "source": "2083cdfc-21c9-4a25-9a70-e65934cd588d",
-            "target": "dbe6cf9f-877d-4600-bac9-8f7bbde93426"
-        },
-        {
-            "id": "a3ece632-030b-4588-a7fa-077e84ed3e44",
-            "type": "istar.AndRefinementLink",
-            "source": "8d716a61-1ca4-44f4-934c-26166ea44d11",
-            "target": "71c7aeb6-fb99-40a1-bcd1-5a29e5b45252"
-        },
-        {
-            "id": "30d2ec84-6fac-419f-83ee-d26c2352820d",
-            "type": "istar.ContributionLink",
-            "source": "8d716a61-1ca4-44f4-934c-26166ea44d11",
-            "target": "e159ce92-b29d-4fdc-a533-ee1e904f9f57",
-            "label": "help"
-        },
-        {
-            "id": "3e7c6e16-c2d0-46a2-82c6-0190f15a11e1",
-            "type": "istar.ContributionLink",
-            "source": "f69a3c4b-4d40-488d-a54a-a0e38453f077",
-            "target": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
-            "label": "help"
-        },
-        {
-            "id": "b3f49535-95da-41fc-ac88-f65a945ab3e7",
-            "type": "istar.ContributionLink",
-            "source": "17acd322-9d37-496e-b6d5-c69c497502db",
-            "target": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
-            "label": "make"
-        },
-        {
-            "id": "8db02be3-764c-49eb-a742-3729841d4ec7",
-            "type": "istar.ContributionLink",
-            "source": "98275a4b-510e-4016-b985-6a25ca69079b",
-            "target": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
-            "label": "help"
-        },
-        {
-            "id": "9fab6d1a-6445-49ef-873e-caa049e306ae",
-            "type": "istar.OrRefinementLink",
-            "source": "1f011a05-50ff-47b4-bdf6-e6c9227eef70",
-            "target": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d"
-        },
-        {
-            "id": "95a46d95-c6bd-4079-ada3-dfbd650f3fc6",
-            "type": "istar.OrRefinementLink",
-            "source": "5562be02-998b-4a7b-8bb9-355d84b3c06b",
-            "target": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d"
-        },
-        {
-            "id": "d36eb6f5-2f2e-4f42-b4f6-bce5d2f5b1d3",
-            "type": "istar.OrRefinementLink",
-            "source": "f9035e8c-0294-44a8-a93e-85a349d2f21a",
-            "target": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d"
-        },
-        {
-            "id": "d8569d6b-f285-43a8-a902-44ac50e4d868",
-            "type": "istar.ContributionLink",
-            "source": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d",
-            "target": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
-            "label": "help"
-        },
-        {
-            "id": "2bd7545b-760e-4b22-96b6-a5a25aaeb6b8",
-            "type": "istar.ContributionLink",
-            "source": "d481f512-6836-4e17-ba29-0192cb0c8ad8",
-            "target": "3696a947-a1cd-42b1-8804-794bd01aa0f9",
-            "label": "help"
-        },
-        {
-            "id": "94e0fa33-a213-4109-87bb-85630708f6c9",
-            "type": "istar.ContributionLink",
-            "source": "2697c4ac-6868-42ff-9d1d-b819000f909e",
-            "target": "3696a947-a1cd-42b1-8804-794bd01aa0f9",
-            "label": "help"
-        },
-        {
-            "id": "b4b9cbd7-ee9b-48c0-b98f-b172ba6fb2c6",
-            "type": "istar.ContributionLink",
-            "source": "63f3b48a-0088-4aa3-9f63-5354efefc78b",
-            "target": "3696a947-a1cd-42b1-8804-794bd01aa0f9",
-            "label": "help"
-        },
-        {
-            "id": "c09955af-ecde-4a66-88a2-7c881f6cab64",
-            "type": "istar.ContributionLink",
-            "source": "3696a947-a1cd-42b1-8804-794bd01aa0f9",
-            "target": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
-            "label": "help"
-        }
+      {
+        "id": "82d416d2-0d68-4e41-b3c9-ad5a7417b73b",
+        "type": "istar.ContributionLink",
+        "source": "d65369c3-593c-493c-8b69-0daf870056b1",
+        "target": "6ec7e7d8-7daa-4667-a756-0e372b43b668",
+        "color": "#0000AA",
+        "label": "Unknown"
+      },
+      {
+        "id": "646389fc-1041-49cb-af83-1060d8e5537d",
+        "type": "istar.ContributionLink",
+        "source": "b92ea83f-f32a-4996-a97d-ed656d23edd3",
+        "target": "2c68764d-16df-4086-b9d4-72fe7efd116d",
+        "color": "#AA0000",
+        "label": "Hurt"
+      },
+      {
+        "id": "572c5555-c6ba-493c-9a06-026bf9d9025a",
+        "type": "istar.ContributionLink",
+        "source": "2a9e2343-bfef-4c9e-8a6b-d9ff9debfc66",
+        "target": "f797debb-d191-4285-8b81-242a9f90d91d",
+        "color": "#00AA00",
+        "label": "Help"
+      },
+      {
+        "id": "3de35a22-ccd8-46d3-ab28-f135fe2a6c8b",
+        "type": "istar.ContributionLink",
+        "source": "64a8bf32-739c-46de-beba-e20181333a85",
+        "target": "59951db1-9cfd-4b27-8745-c0bab6264690",
+        "color": "#AA0000",
+        "label": "Hurt"
+      },
+      {
+        "id": "088f0fd9-9282-4605-8e7c-9d5bbf23136f",
+        "type": "istar.ContributionLink",
+        "source": "070d4f89-aa87-4996-b9b7-3ce42ce4dca4",
+        "target": "bde20796-bc17-44c7-b1b8-f139771c9a0c",
+        "color": "#00AA00",
+        "label": "Help"
+      },
+      {
+        "id": "ddc98a25-a22a-4c46-a22a-d20c1bbefbfe",
+        "type": "istar.ContributionLink",
+        "source": "6cd84006-3fb7-46f6-9a94-ccf0b579731d",
+        "target": "aef62667-df89-415e-9942-a1346e938625",
+        "color": "#0000AA",
+        "label": "Unknown"
+      },
+      {
+        "id": "11fdff13-2d08-4982-a885-8c476b0c0b3e",
+        "type": "istar.AndRefinementLink",
+        "source": "2960008d-efcf-494c-ace0-d97dfb627a28",
+        "target": "35be2930-ec7c-49e5-977c-5fbd2e813655",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "bc39b904-da93-4465-bb90-91b00ad481a9",
+        "type": "istar.AndRefinementLink",
+        "source": "988fb9da-a68a-4a8c-a982-852911ec8776",
+        "target": "35be2930-ec7c-49e5-977c-5fbd2e813655",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "755a2bea-be37-4323-9de3-b80c0d3b57cd",
+        "type": "istar.AndRefinementLink",
+        "source": "e7dc0fe4-41f4-4809-93cc-4eb0c94898cb",
+        "target": "5b12a7b6-c379-4ef2-b576-a515afbc1de6",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "21d9f503-eec7-429e-9236-b3df1cde9d4f",
+        "type": "istar.AndRefinementLink",
+        "source": "c4061399-2854-4211-9b9d-d925d34aba24",
+        "target": "5b12a7b6-c379-4ef2-b576-a515afbc1de6",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "39828549-9611-4c3b-ab04-96f36122e67c",
+        "type": "istar.OrRefinementLink",
+        "source": "0ae8c89e-ba44-4d42-851c-2d2c2e7793b3",
+        "target": "97f917c5-a6ae-4da2-b5a3-7c38e4d65e4c",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "0cfbf019-e388-477c-aae1-5f433f3c6883",
+        "type": "istar.OrRefinementLink",
+        "source": "2704a6fd-e163-4a26-988e-a3a4f6975ce8",
+        "target": "97f917c5-a6ae-4da2-b5a3-7c38e4d65e4c",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "c1dd6d02-7b74-4384-a9f0-dd821ec827fb",
+        "type": "istar.OrRefinementLink",
+        "source": "0f52af77-4d1d-4fb2-a8c1-278397b5eab1",
+        "target": "af15090d-f638-437c-8aea-aebba5c7c765",
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "3e3e471e-1950-44eb-8fe6-4634ad72c14d",
+        "type": "istar.OrRefinementLink",
+        "source": "5ede5697-787c-4d77-8b3a-12bb1f853e1e",
+        "target": "af15090d-f638-437c-8aea-aebba5c7c765",
+        "color": "#FFFFFF"
+      }
     ],
     "display": {
-        "f69a3c4b-4d40-488d-a54a-a0e38453f077": {
-            "width": 100.609375,
-            "height": 37.078125
-        },
-        "1f011a05-50ff-47b4-bdf6-e6c9227eef70": {
-            "backgroundColor": "#FAE573",
-            "width": 114.609375,
-            "height": 37.078125
-        },
-        "5562be02-998b-4a7b-8bb9-355d84b3c06b": {
-            "width": 179.609375,
-            "height": 31.078125
-        },
-        "63f3b48a-0088-4aa3-9f63-5354efefc78b": {
-            "width": 140.609375,
-            "height": 34.078125
-        },
-        "98275a4b-510e-4016-b985-6a25ca69079b": {
-            "width": 111.609375,
-            "height": 49.078125
-        },
-        "3b572289-bb0f-4e7e-8b01-aa40e34ca306": {
-            "vertices": [
-                {
-                    "x": 228,
-                    "y": 270
-                }
-            ]
-        },
-        "6dd4f5f6-a66d-45f1-b688-b6a216e5739b": {
-            "vertices": [
-                {
-                    "x": 332,
-                    "y": 257
-                },
-                {
-                    "x": 344,
-                    "y": 231
-                }
-            ]
-        },
-        "30d2ec84-6fac-419f-83ee-d26c2352820d": {
-            "vertices": [
-                {
-                    "x": 112,
-                    "y": 138
-                }
-            ]
-        }
+      "64a8bf32-739c-46de-beba-e20181333a85": {
+        "backgroundColor": "#FF0000",
+        "width": 70.5687255859375,
+        "height": 44.008880615234375
+      },
+      "2c68764d-16df-4086-b9d4-72fe7efd116d": {
+        "backgroundColor": "#aa0000",
+        "width": 75.46875,
+        "height": 52.05193328857422
+      },
+      "b92ea83f-f32a-4996-a97d-ed656d23edd3": {
+        "backgroundColor": "#00FF00",
+        "width": 73.96875,
+        "height": 49.0101318359375
+      },
+      "2a9e2343-bfef-4c9e-8a6b-d9ff9debfc66": {
+        "backgroundColor": "#00FF00",
+        "width": 71.26873779296875,
+        "height": 49.0101318359375
+      },
+      "d65369c3-593c-493c-8b69-0daf870056b1": {
+        "backgroundColor": "#00FF00",
+        "width": 78.86874389648438,
+        "height": 50.0101318359375
+      },
+      "070d4f89-aa87-4996-b9b7-3ce42ce4dca4": {
+        "backgroundColor": "#FF0000",
+        "width": 76.0687255859375,
+        "height": 50.010345458984375
+      },
+      "6cd84006-3fb7-46f6-9a94-ccf0b579731d": {
+        "backgroundColor": "#FF0000",
+        "width": 73.3687744140625,
+        "height": 50.510650634765625
+      },
+      "f797debb-d191-4285-8b81-242a9f90d91d": {
+        "backgroundColor": "#00aa00",
+        "width": 65.91876220703125,
+        "height": 44.044944763183594
+      },
+      "6ec7e7d8-7daa-4667-a756-0e372b43b668": {
+        "backgroundColor": "#0000aa",
+        "width": 74.31875610351562,
+        "height": 46.54644012451172
+      },
+      "59951db1-9cfd-4b27-8745-c0bab6264690": {
+        "backgroundColor": "#00aa00",
+        "width": 78.41876220703125,
+        "height": 48.5494384765625
+      },
+      "bde20796-bc17-44c7-b1b8-f139771c9a0c": {
+        "backgroundColor": "#aa0000",
+        "width": 91.3187255859375,
+        "height": 52.55243682861328
+      },
+      "aef62667-df89-415e-9942-a1346e938625": {
+        "backgroundColor": "#0000aa"
+      },
+      "2960008d-efcf-494c-ace0-d97dfb627a28": {
+        "backgroundColor": "#00FF00",
+        "width": 71.01875305175781,
+        "height": 47.50982666015625
+      },
+      "988fb9da-a68a-4a8c-a982-852911ec8776": {
+        "backgroundColor": "#00FF00",
+        "width": 73.41876220703125,
+        "height": 51.0107421875
+      },
+      "e7dc0fe4-41f4-4809-93cc-4eb0c94898cb": {
+        "backgroundColor": "#00FF00",
+        "width": 79.01873779296875,
+        "height": 56.01177978515625
+      },
+      "c4061399-2854-4211-9b9d-d925d34aba24": {
+        "backgroundColor": "#FF0000",
+        "width": 76.71875,
+        "height": 53.01092529296875
+      },
+      "0ae8c89e-ba44-4d42-851c-2d2c2e7793b3": {
+        "backgroundColor": "#00FF00",
+        "width": 77.3187255859375,
+        "height": 52.0107421875
+      },
+      "2704a6fd-e163-4a26-988e-a3a4f6975ce8": {
+        "backgroundColor": "#FF0000",
+        "width": 75.91876220703125,
+        "height": 55.51129150390625
+      },
+      "35be2930-ec7c-49e5-977c-5fbd2e813655": {
+        "backgroundColor": "#0000ff",
+        "width": 91.31875610351562,
+        "height": 51.047943115234375
+      },
+      "5b12a7b6-c379-4ef2-b576-a515afbc1de6": {
+        "backgroundColor": "#0000ff",
+        "width": 78.31875610351562,
+        "height": 53.553436279296875
+      },
+      "97f917c5-a6ae-4da2-b5a3-7c38e4d65e4c": {
+        "backgroundColor": "#0000ff",
+        "width": 87.71875,
+        "height": 54.554443359375
+      },
+      "af15090d-f638-437c-8aea-aebba5c7c765": {
+        "backgroundColor": "#0000ff",
+        "width": 84.21875,
+        "height": 58.558441162109375
+      },
+      "0f52af77-4d1d-4fb2-a8c1-278397b5eab1": {
+        "backgroundColor": "#FF0000",
+        "width": 68.91876220703125,
+        "height": 53.0107421875
+      },
+      "5ede5697-787c-4d77-8b3a-12bb1f853e1e": {
+        "backgroundColor": "#FF0000",
+        "width": 69.71875,
+        "height": 54.01116943359375
+      }
     },
     "tool": "pistar.2.0.0",
     "istar": "2.0",
-    "saveDate": "Mon, 31 Dec 2018 17:53:41 GMT",
+    "saveDate": "Sat, 17 Oct 2020 14:04:40 GMT",
     "diagram": {
-        "width": 2000,
-        "height": 1300,
-        "name": "Welcome Model",
-        "customProperties": {
-            "Description": "Welcome to the piStar tool! This model describe some of the recent improvements in the tool.\n\nFor help using this tool, please check the Help menu above"
-        }
+      "width": 2045,
+      "height": 1300,
+      "name": "Welcome Model",
+      "customProperties": {
+        "Description": "Welcome to the WEBMCA tool! This model describe some of the recent improvements in the tool.\n\nFor help using this tool, please check the Help menu above"
+      }
     }
-};
+  };
 
 istar.models.travelReimbursement = {
     "actors": [
@@ -526,42 +648,42 @@ istar.models.travelReimbursement = {
                 {
                     "id": "191249f9-d249-47db-b5f2-c09449307eb4",
                     "text": "Fill in paper form",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 244,
                     "y": 229
                 },
                 {
                     "id": "9bb7e927-3dee-4485-8fda-01954d324c88",
                     "text": "Fill in online form",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 356,
                     "y": 267
                 },
                 {
                     "id": "0055d468-1097-43b2-95bf-1781730b1985",
                     "text": "No errors",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 276,
                     "y": 378
                 },
                 {
                     "id": "37b28c3f-7554-4c62-91cd-44cac0873977",
                     "text": "Supervisor authorizes",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 431,
                     "y": 215
                 },
                 {
                     "id": "102cbb1c-5600-4058-bed9-cc9e1ad1d9e9",
                     "text": "Head-of-dept authorizes",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 546,
                     "y": 251
                 },
                 {
                     "id": "0afa08e3-2306-40c8-9d40-2c144b748664",
                     "text": "Quick booking",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 423,
                     "y": 388
                 },
@@ -582,7 +704,7 @@ istar.models.travelReimbursement = {
                 {
                     "id": "f2ad4e2a-1b6d-44ce-94d7-28aee4e08d3d",
                     "text": "Bundle booked",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 855,
                     "y": 281
                 },
@@ -603,14 +725,14 @@ istar.models.travelReimbursement = {
                 {
                     "id": "4934265e-abf6-4fe1-91c9-38c2a6aadcb0",
                     "text": "Agency buys tickets",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 592,
                     "y": 436
                 },
                 {
                     "id": "11d870d2-7987-45c9-a36a-7b177219ae50",
                     "text": "Self-book tickets",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 709,
                     "y": 406
                 },
@@ -631,49 +753,49 @@ istar.models.travelReimbursement = {
                 {
                     "id": "1747e206-fa35-4229-b4be-67b3893e84d1",
                     "text": "Buy tickets",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 631,
                     "y": 504
                 },
                 {
                     "id": "49da8a06-b243-4c6e-9c50-dded496bec94",
                     "text": "Pay for tickets",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 758,
                     "y": 498
                 },
                 {
                     "id": "8a867e08-5a70-4816-ab02-1d84cf1b79dd",
                     "text": "Credit card",
-                    "type": "istar.Resource",
+                    "type": "istar.Claim",
                     "x": 667,
                     "y": 555
                 },
                 {
                     "id": "13efea03-96a0-4162-b89e-f46efc9a96c4",
                     "text": "Buy through booking.com",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 975,
                     "y": 432
                 },
                 {
                     "id": "59d154e2-8af7-48da-9f55-195ffebab399",
                     "text": "Buy through hotel website",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1042,
                     "y": 478
                 },
                 {
                     "id": "c8e311fd-2a1a-40f1-b5e5-c62eb3e3a397",
                     "text": "Comfort",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 485,
                     "y": 580
                 },
                 {
                     "id": "685e4589-9717-487f-aa94-2eab2f7c5b46",
                     "text": "Minimal own payments",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 911,
                     "y": 596
                 }
@@ -689,7 +811,7 @@ istar.models.travelReimbursement = {
                 {
                     "id": "ac7c22c2-6538-4fe3-a14f-8f8a2233a472",
                     "text": "Process form",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 271,
                     "y": 816
                 },
@@ -703,14 +825,14 @@ istar.models.travelReimbursement = {
                 {
                     "id": "609eedc5-29e7-4360-b9ad-5ca23076033c",
                     "text": "Request authorization",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 235,
                     "y": 925
                 },
                 {
                     "id": "334c70d0-7786-4dda-8340-aa63c921bc03",
                     "text": "Notify applicant",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 321,
                     "y": 882
                 }
@@ -750,7 +872,7 @@ istar.models.travelReimbursement = {
                 {
                     "id": "9544119c-dd79-417e-8a19-6f67455d784b",
                     "text": "Book bundle via expedia",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1275,
                     "y": 731
                 }
@@ -779,7 +901,7 @@ istar.models.travelReimbursement = {
         {
             "id": "f26ec7d2-3133-42b0-b54c-2b4695e9ee1b",
             "text": "Buy flight tickets",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 707,
             "y": 800,
             "source": "4934265e-abf6-4fe1-91c9-38c2a6aadcb0",
@@ -1275,7 +1397,7 @@ istar.models.smartHome = {
                 {
                     "id": "3b1813ea-e6b1-40ec-a11d-49cda0c82324",
                     "text": "Reliability",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 883,
                     "y": 43,
                     "customProperties": {
@@ -1285,7 +1407,7 @@ istar.models.smartHome = {
                 {
                     "id": "b76387a2-ca54-468d-88d1-45227b47ff83",
                     "text": "Energy spent wisely",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 453,
                     "y": 35,
                     "customProperties": {
@@ -1295,7 +1417,7 @@ istar.models.smartHome = {
                 {
                     "id": "834513e9-a5d2-43fa-ae24-3c57f645064a",
                     "text": "Adaptability",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 1018,
                     "y": 78,
                     "customProperties": {
@@ -1305,7 +1427,7 @@ istar.models.smartHome = {
                 {
                     "id": "4692dc12-801f-4174-9afa-8e710f4d722f",
                     "text": "Prevent failures",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1180,
                     "y": 101,
                     "customProperties": {
@@ -1315,7 +1437,7 @@ istar.models.smartHome = {
                 {
                     "id": "e8239026-4607-4acc-a4ed-a771d72fbcbc",
                     "text": "Select best behaviour according to the environment",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1143,
                     "y": 174,
                     "customProperties": {
@@ -1325,7 +1447,7 @@ istar.models.smartHome = {
                 {
                     "id": "490feaca-a7f4-470f-a2db-d5c8073f5f56",
                     "text": "Control windows",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 476,
                     "y": 204,
                     "customProperties": {
@@ -1335,7 +1457,7 @@ istar.models.smartHome = {
                 {
                     "id": "3eb43835-be08-42fb-9158-0e1c45d66bbb",
                     "text": "Control fan",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 674,
                     "y": 220,
                     "customProperties": {
@@ -1345,7 +1467,7 @@ istar.models.smartHome = {
                 {
                     "id": "e54e1fd2-9c11-4097-b296-35dd65763bda",
                     "text": "Control heating device",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 811,
                     "y": 173,
                     "customProperties": {
@@ -1355,7 +1477,7 @@ istar.models.smartHome = {
                 {
                     "id": "bab3e64d-95c4-4e60-b105-8fa38aad0093",
                     "text": "Open window",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 440,
                     "y": 296,
                     "customProperties": {
@@ -1366,7 +1488,7 @@ istar.models.smartHome = {
                 {
                     "id": "b2e93b23-d7f1-48f2-be68-dafef2f9bade",
                     "text": "Close window",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 549,
                     "y": 306,
                     "customProperties": {
@@ -1376,7 +1498,7 @@ istar.models.smartHome = {
                 {
                     "id": "5e0579a1-57d6-4de1-ad56-0d7810a5b52d",
                     "text": "Turn on fan",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 651,
                     "y": 302,
                     "customProperties": {
@@ -1386,7 +1508,7 @@ istar.models.smartHome = {
                 {
                     "id": "9ddc02f7-59a9-4565-9721-6e60dc66f10c",
                     "text": "Turn off fan",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 747,
                     "y": 352,
                     "customProperties": {
@@ -1396,7 +1518,7 @@ istar.models.smartHome = {
                 {
                     "id": "623862d4-6b91-4278-83bf-342e66ef3bda",
                     "text": "Turn on heating device",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 813,
                     "y": 280,
                     "customProperties": {
@@ -1406,7 +1528,7 @@ istar.models.smartHome = {
                 {
                     "id": "9d534e15-95a0-44ea-a1b4-8bab3b1fd6c4",
                     "text": "Turn off heating device",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 901,
                     "y": 227,
                     "customProperties": {
@@ -1416,7 +1538,7 @@ istar.models.smartHome = {
                 {
                     "id": "add6b9fe-6314-4eab-bb22-61d5717c54ce",
                     "text": "Manage lights",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1079,
                     "y": 322,
                     "customProperties": {
@@ -1436,7 +1558,7 @@ istar.models.smartHome = {
                 {
                     "id": "0d89c849-6ee1-4b96-9102-103edf016542",
                     "text": "Select lights policy",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 883,
                     "y": 343,
                     "customProperties": {
@@ -1446,7 +1568,7 @@ istar.models.smartHome = {
                 {
                     "id": "ee6f36f2-01db-485d-a304-20f41f90d33b",
                     "text": "Occupancy simulation",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 815,
                     "y": 419,
                     "customProperties": {
@@ -1456,7 +1578,7 @@ istar.models.smartHome = {
                 {
                     "id": "93365266-ac6f-48ba-9c2d-c1f110ebb5dc",
                     "text": "Lights on by occupancy",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 910,
                     "y": 429,
                     "customProperties": {
@@ -1466,7 +1588,7 @@ istar.models.smartHome = {
                 {
                     "id": "83005b8f-bfe4-4378-995b-78407139c97f",
                     "text": "Control lights",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1070,
                     "y": 390,
                     "customProperties": {
@@ -1476,7 +1598,7 @@ istar.models.smartHome = {
                 {
                     "id": "e3beae74-b939-47d8-89fb-2ed6d446a2e8",
                     "text": "Turn on light",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1014,
                     "y": 455,
                     "customProperties": {
@@ -1486,7 +1608,7 @@ istar.models.smartHome = {
                 {
                     "id": "e1943868-5e88-41f4-9368-f10e48a360ca",
                     "text": "Turn off light",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1156,
                     "y": 452,
                     "customProperties": {
@@ -1496,7 +1618,7 @@ istar.models.smartHome = {
                 {
                     "id": "36f19256-e85f-48c8-a2b1-6b5c68760f93",
                     "text": "Safety",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 612,
                     "y": 340,
                     "customProperties": {
@@ -1506,7 +1628,7 @@ istar.models.smartHome = {
                 {
                     "id": "39e3358a-79c9-4a82-93c9-bc77d26c6610",
                     "text": "Manage fire incident",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 605,
                     "y": 442,
                     "customProperties": {
@@ -1516,7 +1638,7 @@ istar.models.smartHome = {
                 {
                     "id": "0e54535c-be18-4ee6-a347-40f0261a6b50",
                     "text": "Control gas valves",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 410,
                     "y": 366,
                     "customProperties": {
@@ -1526,7 +1648,7 @@ istar.models.smartHome = {
                 {
                     "id": "62659e86-92a5-4d32-842a-8a44a4646c6d",
                     "text": "Open gas valves",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 368,
                     "y": 482,
                     "customProperties": {
@@ -1536,7 +1658,7 @@ istar.models.smartHome = {
                 {
                     "id": "b9db7012-9e2d-4e85-8beb-ad3e93dc312a",
                     "text": "Close gas valves",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 453,
                     "y": 525,
                     "customProperties": {
@@ -1546,7 +1668,7 @@ istar.models.smartHome = {
                 {
                     "id": "d8c3d54b-d979-4872-a435-847c5fc11d89",
                     "text": "Unlock doors",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 583,
                     "y": 656,
                     "customProperties": {
@@ -1556,7 +1678,7 @@ istar.models.smartHome = {
                 {
                     "id": "2946613f-b8aa-4d2d-afe0-e1a5ee8bea9d",
                     "text": "Lock doors",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 470,
                     "y": 684,
                     "customProperties": {
@@ -1566,7 +1688,7 @@ istar.models.smartHome = {
                 {
                     "id": "632c6d4f-632d-4d45-b4a2-5764744184ef",
                     "text": "Control doors lock",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 465,
                     "y": 590,
                     "customProperties": {
@@ -1576,7 +1698,7 @@ istar.models.smartHome = {
                 {
                     "id": "9452a1a3-07dc-49a1-9534-3883aea9d55f",
                     "text": "Control power outlet",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 695,
                     "y": 546,
                     "customProperties": {
@@ -1586,7 +1708,7 @@ istar.models.smartHome = {
                 {
                     "id": "ca7c6b8c-e155-4c8f-a8d0-ce86cc1c1a02",
                     "text": "Deactivate power outlet",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 673,
                     "y": 631,
                     "customProperties": {
@@ -1596,7 +1718,7 @@ istar.models.smartHome = {
                 {
                     "id": "47a0c4b6-9844-4ff3-8ba7-8db7923805bd",
                     "text": "Activate power outlet",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 773,
                     "y": 609,
                     "customProperties": {
@@ -1606,7 +1728,7 @@ istar.models.smartHome = {
                 {
                     "id": "336c8a20-26f7-4dc5-a20f-8b5925c7f439",
                     "text": "Control alarm",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 836,
                     "y": 495,
                     "customProperties": {
@@ -1616,7 +1738,7 @@ istar.models.smartHome = {
                 {
                     "id": "c0384b04-9745-43a7-ad96-17cc6a83f613",
                     "text": "Activate alarm",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 807,
                     "y": 566,
                     "customProperties": {
@@ -1626,7 +1748,7 @@ istar.models.smartHome = {
                 {
                     "id": "6a12bc40-749d-49a3-a70d-84bccca84167",
                     "text": "Deactivate alarm",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 913,
                     "y": 560,
                     "customProperties": {
@@ -1636,7 +1758,7 @@ istar.models.smartHome = {
                 {
                     "id": "9126a353-2812-47fe-bfa4-c7b1c3672952",
                     "text": "Entertainment",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 1051,
                     "y": 517,
                     "customProperties": {
@@ -1646,7 +1768,7 @@ istar.models.smartHome = {
                 {
                     "id": "6824c565-ae86-4cf9-ba0a-c6922f343028",
                     "text": "Manage sound system",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 940,
                     "y": 612,
                     "customProperties": {
@@ -1656,7 +1778,7 @@ istar.models.smartHome = {
                 {
                     "id": "755356b4-962f-4dcf-8e36-1a4d2816c391",
                     "text": "Schedule social event with a friend",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1138,
                     "y": 604,
                     "customProperties": {
@@ -1666,7 +1788,7 @@ istar.models.smartHome = {
                 {
                     "id": "494a5feb-2f56-4434-832a-534ab061a6b0",
                     "text": "Play music",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 836,
                     "y": 690,
                     "customProperties": {
@@ -1676,7 +1798,7 @@ istar.models.smartHome = {
                 {
                     "id": "5af70b15-c536-435e-ad47-1f4aa592dabe",
                     "text": "Customize playlist according to preferences",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 951,
                     "y": 692,
                     "customProperties": {
@@ -1686,7 +1808,7 @@ istar.models.smartHome = {
                 {
                     "id": "12ee7e98-5582-493e-bfe5-21996c0659c2",
                     "text": "Direct sound only to occupied rooms",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1045,
                     "y": 730,
                     "customProperties": {
@@ -1696,7 +1818,7 @@ istar.models.smartHome = {
                 {
                     "id": "e929c189-5dd3-4cb3-8be9-c7a1df556170",
                     "text": "Select songs manually",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 911,
                     "y": 800,
                     "customProperties": {
@@ -1706,7 +1828,7 @@ istar.models.smartHome = {
                 {
                     "id": "7968c298-1328-4786-b6b2-0a53e38b884f",
                     "text": "Select songs by preferences",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1038,
                     "y": 797,
                     "customProperties": {
@@ -1716,7 +1838,7 @@ istar.models.smartHome = {
                 {
                     "id": "e1ca06c4-f816-4ba4-9b97-fd9b36a54511",
                     "text": "Fast response",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1090,
                     "y": 671,
                     "customProperties": {
@@ -1726,7 +1848,7 @@ istar.models.smartHome = {
                 {
                     "id": "14d4cc03-526b-4506-aefc-c8cc26b49869",
                     "text": "Invite friend",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1193,
                     "y": 677,
                     "customProperties": {
@@ -1736,7 +1858,7 @@ istar.models.smartHome = {
                 {
                     "id": "7a6b97ae-1ad6-4dcc-bff0-173f06ba3db6",
                     "text": "Manage tenant nutrition",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 618,
                     "y": 737,
                     "customProperties": {
@@ -1766,7 +1888,7 @@ istar.models.smartHome = {
                 {
                     "id": "9a938a9a-d944-48f2-b9a1-d8fc967b1d2a",
                     "text": "Save money",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 375,
                     "y": 676.5,
                     "customProperties": {
@@ -1776,7 +1898,7 @@ istar.models.smartHome = {
                 {
                     "id": "733e013c-e3d5-48f9-b1bb-47f3ba22e850",
                     "text": "Assist the tenant in cooking the meal",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 392,
                     "y": 849,
                     "customProperties": {
@@ -1786,7 +1908,7 @@ istar.models.smartHome = {
                 {
                     "id": "5d6d705c-5a25-40fb-922e-6db0e1cc78a4",
                     "text": "Provide recipe",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 365,
                     "y": 960,
                     "customProperties": {
@@ -1796,7 +1918,7 @@ istar.models.smartHome = {
                 {
                     "id": "12e93ae7-6ad0-43ed-ac4d-b24266d95cdc",
                     "text": "Request restaurant meal",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 546,
                     "y": 883,
                     "customProperties": {
@@ -1806,7 +1928,7 @@ istar.models.smartHome = {
                 {
                     "id": "425f8bb2-519c-4839-8825-85bc3c8645ab",
                     "text": "Suggest daily menu",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 575,
                     "y": 834,
                     "customProperties": {
@@ -1816,7 +1938,7 @@ istar.models.smartHome = {
                 {
                     "id": "d5631cc0-865a-4a18-b211-999a9a39037d",
                     "text": "Keep track of consumed food",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 759,
                     "y": 845,
                     "customProperties": {
@@ -1826,7 +1948,7 @@ istar.models.smartHome = {
                 {
                     "id": "63c8611d-a4a5-4a2f-a9e2-44d26375cc5f",
                     "text": "Monitor food consumption",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 809,
                     "y": 940,
                     "customProperties": {
@@ -1836,7 +1958,7 @@ istar.models.smartHome = {
                 {
                     "id": "fbe79b38-b7ab-4980-897d-d84a67f7350a",
                     "text": "Keep track of consumed medicines",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 872,
                     "y": 856,
                     "customProperties": {
@@ -1846,7 +1968,7 @@ istar.models.smartHome = {
                 {
                     "id": "a35d270d-7972-472d-8e26-14a31ba0f74b",
                     "text": "Monitor medicine consumption",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 983,
                     "y": 993,
                     "customProperties": {
@@ -1856,7 +1978,7 @@ istar.models.smartHome = {
                 {
                     "id": "1bf4a5a9-e155-427f-8bf2-cf0111dc01bd",
                     "text": "Customization",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 329,
                     "y": 1063,
                     "customProperties": {
@@ -1876,7 +1998,7 @@ istar.models.smartHome = {
                 {
                     "id": "38bf3ed6-d963-4409-8c0b-53b631332c56",
                     "text": "Buy food when required",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 537,
                     "y": 1009,
                     "customProperties": {
@@ -1886,7 +2008,7 @@ istar.models.smartHome = {
                 {
                     "id": "c03e227b-b6e2-4a38-a3a2-aaf458d0262b",
                     "text": "Order food",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 585,
                     "y": 1091,
                     "customProperties": {
@@ -1896,7 +2018,7 @@ istar.models.smartHome = {
                 {
                     "id": "62e762e3-6560-4860-89fa-66bc6f5e8ad1",
                     "text": "Get food stock status",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 441,
                     "y": 1079,
                     "customProperties": {
@@ -1906,7 +2028,7 @@ istar.models.smartHome = {
                 {
                     "id": "1623c785-fe22-4c96-8988-c9eae3b614f9",
                     "text": "Notify tenants",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 482,
                     "y": 430,
                     "customProperties": {
@@ -1916,7 +2038,7 @@ istar.models.smartHome = {
                 {
                     "id": "2ce237c5-9027-4ff4-8744-c28ca73f34f2",
                     "text": "Notify fire department",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 743,
                     "y": 459,
                     "customProperties": {
@@ -1926,7 +2048,7 @@ istar.models.smartHome = {
                 {
                     "id": "dbb5b65d-49fe-40ef-b241-7d3091f11083",
                     "text": "Make a log of food consumption",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 701,
                     "y": 931,
                     "customProperties": {
@@ -1936,7 +2058,7 @@ istar.models.smartHome = {
                 {
                     "id": "81b16c06-1d05-47c3-9412-826ac1915a32",
                     "text": "Make a log of medicine consumption",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 854.5,
                     "y": 993,
                     "customProperties": {
@@ -1946,7 +2068,7 @@ istar.models.smartHome = {
                 {
                     "id": "d04a2c15-d39b-4879-963e-a809cb7f64e2",
                     "text": "Get enviroment data",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1164,
                     "y": 272,
                     "customProperties": {
@@ -2016,7 +2138,7 @@ istar.models.smartHome = {
         {
             "id": "d59528d3-48ca-41c9-91bd-153223b4c543",
             "text": "Send fire notification to fire department",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 1358,
             "y": 892,
             "customProperties": {
@@ -2028,7 +2150,7 @@ istar.models.smartHome = {
         {
             "id": "35136956-b6f6-4876-b10c-513298f53c41",
             "text": "Send fire notification to tenants",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 1409,
             "y": 681,
             "customProperties": {
@@ -2040,7 +2162,7 @@ istar.models.smartHome = {
         {
             "id": "9f4992db-9cdd-43d5-bb43-ed6b3b6a7bb1",
             "text": "Food stock status",
-            "type": "istar.Resource",
+            "type": "istar.Claim",
             "x": 514,
             "y": 1231,
             "customProperties": {
@@ -2052,7 +2174,7 @@ istar.models.smartHome = {
         {
             "id": "4067be93-567f-44b6-b95b-a250ba4a6412",
             "text": "Store food consumption data",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 646,
             "y": 1181,
             "customProperties": {
@@ -2064,7 +2186,7 @@ istar.models.smartHome = {
         {
             "id": "05017065-0a5a-4a0a-9a38-30a7b1561a73",
             "text": "Request restaurant meal",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 1372,
             "y": 984,
             "customProperties": {
@@ -2077,7 +2199,7 @@ istar.models.smartHome = {
         {
             "id": "317873f2-af07-4ba2-a3c3-80570d62ec80",
             "text": "Store medicine consumption data",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 784,
             "y": 1166,
             "customProperties": {
@@ -2089,7 +2211,7 @@ istar.models.smartHome = {
         {
             "id": "30fa866c-3264-4986-a0b3-842a2a04edbc",
             "text": "Preferences",
-            "type": "istar.Resource",
+            "type": "istar.Claim",
             "x": 520,
             "y": 1330,
             "customProperties": {
@@ -2101,7 +2223,7 @@ istar.models.smartHome = {
         {
             "id": "c4120857-f974-419f-9494-28a05eab42d3",
             "text": "Customization",
-            "type": "istar.Quality",
+            "type": "istar.NFR",
             "x": 333,
             "y": 1213,
             "customProperties": {
@@ -2113,7 +2235,7 @@ istar.models.smartHome = {
         {
             "id": "b6b637bf-9f7e-445e-baed-368754d8a00d",
             "text": "Fast response",
-            "type": "istar.Quality",
+            "type": "istar.NFR",
             "x": 1383,
             "y": 819,
             "customProperties": {
@@ -2125,7 +2247,7 @@ istar.models.smartHome = {
         {
             "id": "d5db3cc9-b107-40a4-baba-f67cd25aeaa0",
             "text": "Get musical preferences",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 851,
             "y": 1396,
             "customProperties": {
@@ -2137,7 +2259,7 @@ istar.models.smartHome = {
         {
             "id": "afb6097a-7ea6-49b0-af1a-0f890c1033c6",
             "text": "Invite friend",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 1392,
             "y": 759,
             "customProperties": {
@@ -2161,7 +2283,7 @@ istar.models.smartHome = {
         {
             "id": "48f01a3e-a778-4fb9-84a9-4f3ced0ff4f7",
             "text": "Play music",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 195,
             "y": 1000,
             "customProperties": {
@@ -2173,7 +2295,7 @@ istar.models.smartHome = {
         {
             "id": "aae21d1f-fca0-4234-ba11-2a0609b1605a",
             "text": "Turn on light",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 215,
             "y": 425,
             "customProperties": {
@@ -2185,7 +2307,7 @@ istar.models.smartHome = {
         {
             "id": "4625d40a-0454-41e5-9f33-b242fe8977c3",
             "text": "Turn off light",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 216,
             "y": 477,
             "customProperties": {
@@ -2197,7 +2319,7 @@ istar.models.smartHome = {
         {
             "id": "4855d6bc-2d36-4fb7-adaa-81dc2e102496",
             "text": "Direct sound only to occupied rooms",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 163,
             "y": 1053,
             "customProperties": {
@@ -2209,7 +2331,7 @@ istar.models.smartHome = {
         {
             "id": "f60e5e87-4055-4fca-874b-0771bd505725",
             "text": "Turn on heating device",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 205,
             "y": 214,
             "customProperties": {
@@ -2221,7 +2343,7 @@ istar.models.smartHome = {
         {
             "id": "41771f3f-4edd-48d0-9fd1-7d4b92e2f49e",
             "text": "Turn off heating device",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 213,
             "y": 268,
             "customProperties": {
@@ -2233,7 +2355,7 @@ istar.models.smartHome = {
         {
             "id": "47134848-0da5-451a-b4e6-72e8dda02f92",
             "text": "Turn on fan",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 197,
             "y": 102,
             "customProperties": {
@@ -2245,7 +2367,7 @@ istar.models.smartHome = {
         {
             "id": "950e2c06-d4c7-48b6-a319-203a715ac444",
             "text": "Turn off fan",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 203,
             "y": 161,
             "customProperties": {
@@ -2257,7 +2379,7 @@ istar.models.smartHome = {
         {
             "id": "e6878da8-adf3-4aee-a145-0da2ed9132ab",
             "text": "Open gas valves",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 212,
             "y": 529,
             "customProperties": {
@@ -2269,7 +2391,7 @@ istar.models.smartHome = {
         {
             "id": "23ba2393-a82e-46f8-ba89-6b7e6a788779",
             "text": "Close gas valves",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 214,
             "y": 576,
             "customProperties": {
@@ -2281,7 +2403,7 @@ istar.models.smartHome = {
         {
             "id": "15be861c-4a5d-4d7a-8fda-6e088199d2e9",
             "text": "Open window",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 214,
             "y": 323,
             "customProperties": {
@@ -2293,7 +2415,7 @@ istar.models.smartHome = {
         {
             "id": "3f6b99c6-52d4-4232-b4bb-3f494c428a38",
             "text": "Close window",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 215,
             "y": 373,
             "customProperties": {
@@ -2305,7 +2427,7 @@ istar.models.smartHome = {
         {
             "id": "50e1bd14-cc99-48c9-97a5-a7ffd89a2021",
             "text": "Deactivate power outlet",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 209,
             "y": 803,
             "customProperties": {
@@ -2317,7 +2439,7 @@ istar.models.smartHome = {
         {
             "id": "f640d638-ffcf-4bb1-ae26-13a0a1ce6d68",
             "text": "Activate power outlet",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 208,
             "y": 743,
             "customProperties": {
@@ -2329,7 +2451,7 @@ istar.models.smartHome = {
         {
             "id": "016d8920-9fe1-4f69-b55f-b4b357b0b0e6",
             "text": "Lock doors",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 210,
             "y": 868,
             "customProperties": {
@@ -2341,7 +2463,7 @@ istar.models.smartHome = {
         {
             "id": "026c2b9d-d549-4abf-9eb4-acbee09cccbd",
             "text": "Unlock doors",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 202,
             "y": 938,
             "customProperties": {
@@ -2353,7 +2475,7 @@ istar.models.smartHome = {
         {
             "id": "e2b8dda0-20dc-4ad0-81c9-de5889b19757",
             "text": "Activate alarm",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 213,
             "y": 626,
             "customProperties": {
@@ -2365,7 +2487,7 @@ istar.models.smartHome = {
         {
             "id": "6850d13e-f6a1-4481-9494-d870a297c57e",
             "text": "Deactivate alarm",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 212,
             "y": 688,
             "customProperties": {
@@ -3590,23 +3712,23 @@ istar.models.everyElementAndLink = {
                 },
                 {
                     "id": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
-                    "text": "Task X",
-                    "type": "istar.Task",
+                    "text": "Operationalizing X",
+                    "type": "istar.Operationalizing",
                     "x": 297,
                     "y": 196,
                     "customProperties": {
-                        "Description": "This is a task that, if executed, will also imply the achievement of Goal X",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
+                        "Description": "This is a Operationalizing that, if executed, will also imply the achievement of Goal X",
+                        "Concept": "Operationalizings represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
                     "id": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
-                    "text": "Task Y",
-                    "type": "istar.Task",
+                    "text": "Operationalizing Y",
+                    "type": "istar.Operationalizing",
                     "x": 204,
                     "y": 213,
                     "customProperties": {
-                        "Description": "This is a task that, if executed, will imply the achievement of Goal X"
+                        "Description": "This is a Operationalizing that, if executed, will imply the achievement of Goal X"
                     }
                 }
             ]
@@ -3630,97 +3752,97 @@ istar.models.everyElementAndLink = {
                     "x": 702,
                     "y": 45,
                     "customProperties": {
-                        "Description": "This goal is OR-refined by Task A, meaning that if Task A gets executed the Goal A will ve achieved",
+                        "Description": "This goal is OR-refined by Operationalizing A, meaning that if Operationalizing A gets executed the Goal A will ve achieved",
                         "Tooltip": "You can resize an element by dragging the small circle on its bottom-right corner",
                         "Concept": "A Goal is a state of affairs that the actor wants to achieve and that has clear-cut criteria of achievement"
                     }
                 },
                 {
                     "id": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
-                    "text": "Task A",
-                    "type": "istar.Task",
+                    "text": "Operationalizing A",
+                    "type": "istar.Operationalizing",
                     "x": 700,
                     "y": 129,
                     "customProperties": {
-                        "Description": "This task is a means to achieve Goal A. It is AND-refined by tasks B and C",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
+                        "Description": "This Operationalizing is a means to achieve Goal A. It is AND-refined by Operationalizings B and C",
+                        "Concept": "Operationalizings represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
                     "id": "60d0943c-169e-41ff-85ed-e19360456863",
-                    "text": "Task B",
-                    "type": "istar.Task",
+                    "text": "Operationalizing B",
+                    "type": "istar.Operationalizing",
                     "x": 634,
                     "y": 209,
                     "customProperties": {
-                        "Description": "This task is part of the refinement of Task A",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
+                        "Description": "This Operationalizing is part of the refinement of Operationalizing A",
+                        "Concept": "Operationalizings represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
                     "id": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
-                    "text": "Task C",
-                    "type": "istar.Task",
+                    "text": "Operationalizing C",
+                    "type": "istar.Operationalizing",
                     "x": 768,
                     "y": 207,
                     "customProperties": {
-                        "Description": "This task is part of the refinement of Task A",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
+                        "Description": "This Operationalizing is part of the refinement of Operationalizing A",
+                        "Concept": "Operationalizings represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
                     "id": "df52f053-20a2-4bdf-8e23-e8c53a8ce306",
-                    "text": "Quality B",
-                    "type": "istar.Quality",
+                    "text": "NFR B",
+                    "type": "istar.NFR",
                     "x": 572,
                     "y": 322,
                     "customProperties": {
-                        "Description": "Task B provides sufficient positive evidence (make) for the satisfaction of this quality",
-                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
+                        "Description": "Operationalizing B provides sufficient positive evidence (make) for the satisfaction of this NFR",
+                        "Concept": "A NFR is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a NFR its performance; another entity could be the business being analyzed and a NFR the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 },
                 {
                     "id": "3ff6395e-86ec-4661-ba13-c0493331303b",
-                    "text": "Quality C",
-                    "type": "istar.Quality",
+                    "text": "NFR C",
+                    "type": "istar.NFR",
                     "x": 831,
                     "y": 317,
                     "customProperties": {
-                        "Description": "Task C provides sufficient evidence against the satisfaction (or for the denial) of this quality",
-                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
+                        "Description": "Operationalizing C provides sufficient evidence against the satisfaction (or for the denial) of this NFR",
+                        "Concept": "A NFR is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a NFR its performance; another entity could be the business being analyzed and a NFR the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 },
                 {
                     "id": "85940cf3-6d49-4270-9b00-51696b5790f5",
-                    "text": "Quality D",
-                    "type": "istar.Quality",
+                    "text": "NFR D",
+                    "type": "istar.NFR",
                     "x": 699,
                     "y": 455,
                     "customProperties": {
-                        "Description": "The satisfaction of Quality B provides weak evidence against the satisfaction (or for the denial) of this quality.\nOn the other hand, the satisfaction of Quality C provides weak positive evidence for the satisfaction of this quality. Quite the pickle, right?",
-                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
+                        "Description": "The satisfaction of NFR B provides weak evidence against the satisfaction (or for the denial) of this NFR.\nOn the other hand, the satisfaction of NFR C provides weak positive evidence for the satisfaction of this NFR. Quite the pickle, right?",
+                        "Concept": "A NFR is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a NFR its performance; another entity could be the business being analyzed and a NFR the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 },
                 {
                     "id": "54c01821-aa4d-4bd0-9fdf-6ddaa25c299f",
-                    "text": "Resource A",
-                    "type": "istar.Resource",
+                    "text": "Claim A",
+                    "type": "istar.Claim",
                     "x": 922,
                     "y": 233,
                     "customProperties": {
-                        "Description": "This is resource is needed for the execution of Task C",
-                        "Concept": "A Resource is a physical or informational entity that the actor requires in order to perform a task"
+                        "Description": "This is Claim is needed for the execution of Operationalizing C",
+                        "Concept": "A Claim is a physical or informational entity that the actor requires in order to perform a Operationalizing"
                     }
                 },
                 {
                     "id": "1ecba4f1-f873-466c-8074-092f612d5fed",
-                    "text": "Quality A",
-                    "type": "istar.Quality",
+                    "text": "NFR A",
+                    "type": "istar.NFR",
                     "x": 861,
                     "y": 101,
                     "customProperties": {
-                        "Description": "This quality qualifies Task A",
-                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
+                        "Description": "This NFR qualifies Operationalizing A",
+                        "Concept": "A NFR is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a NFR its performance; another entity could be the business being analyzed and a NFR the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 }
             ]
@@ -3744,12 +3866,12 @@ istar.models.everyElementAndLink = {
         {
             "id": "81fe40dc-2380-47c0-92ab-1e7281dc020c",
             "text": "Dependum C",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 323,
             "y": 309,
             "customProperties": {
-                "Description": "This is a dependum in a task dependency.\n\n– Depender: Actor A\n– dependerElmt: Task X (inside Actor A)\n– dependum: Dependum C\n– dependee: Role A\n– dependeeElmt: none",
-                "Concept": "Dependencies represent social relationships. A task dependency indicates that the dependee is expected to execute the task in a prescribed way"
+                "Description": "This is a dependum in a Operationalizing dependency.\n\n– Depender: Actor A\n– dependerElmt: Operationalizing X (inside Actor A)\n– dependum: Dependum C\n– dependee: Role A\n– dependeeElmt: none",
+                "Concept": "Dependencies represent social relationships. A Operationalizing dependency indicates that the dependee is expected to execute the Operationalizing in a prescribed way"
             },
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
             "target": "ccf83503-3c8f-4886-a30f-8a290499d8b2"
@@ -3757,13 +3879,13 @@ istar.models.everyElementAndLink = {
         {
             "id": "7b339194-6020-4c2b-86e5-cd07ab9f725d",
             "text": "Dependum D",
-            "type": "istar.Resource",
+            "type": "istar.Claim",
             "x": 453,
             "y": 169,
             "customProperties": {
-                "Description": "This is a dependum in a resource dependency.\n\n– Depender: Actor A\n– dependerElmt: Task X (inside Actor A)\n– dependum: Dependum D\n– dependee: Actor B\n– dependeeElmt: Task B (inside Actor B)",
-                "Tooltip": "You can change the type of a dependency (goal, quality, task or resource) by clicking on the type in this table",
-                "Concept": "Dependencies represent social relationships. A resource dependency indicates that the dependee is expected to make the resource available to the depender"
+                "Description": "This is a dependum in a Claim dependency.\n\n– Depender: Actor A\n– dependerElmt: Operationalizing X (inside Actor A)\n– dependum: Dependum D\n– dependee: Actor B\n– dependeeElmt: Operationalizing B (inside Actor B)",
+                "Tooltip": "You can change the type of a dependency (goal, NFR, Operationalizing or Claim) by clicking on the type in this table",
+                "Concept": "Dependencies represent social relationships. A Claim dependency indicates that the dependee is expected to make the Claim available to the depender"
             },
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
             "target": "60d0943c-169e-41ff-85ed-e19360456863"
@@ -3784,12 +3906,12 @@ istar.models.everyElementAndLink = {
         {
             "id": "49ba9425-0de8-4fbf-8ec0-6a384e844ea4",
             "text": "Dependum B",
-            "type": "istar.Quality",
+            "type": "istar.NFR",
             "x": 193,
             "y": 314,
             "customProperties": {
-                "Description": "This is a dependum in a quality dependency.\n\n– Depender: Actor A\n– dependerElmt: Goal X (inside Actor A)\n– dependum: Dependum B\n– dependee: Role A\n– dependeeElmt: none",
-                "Concept": "Dependencies represent social relationships. A quality dependency indicates that  the dependee is expected to sufficiently satisfy the quality, and is free to choose how"
+                "Description": "This is a dependum in a NFR dependency.\n\n– Depender: Actor A\n– dependerElmt: Goal X (inside Actor A)\n– dependum: Dependum B\n– dependee: Role A\n– dependeeElmt: none",
+                "Concept": "Dependencies represent social relationships. A NFR dependency indicates that  the dependee is expected to sufficiently satisfy the NFR, and is free to choose how"
             },
             "source": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
             "target": "ccf83503-3c8f-4886-a30f-8a290499d8b2"
@@ -3822,7 +3944,7 @@ istar.models.everyElementAndLink = {
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
             "target": "81fe40dc-2380-47c0-92ab-1e7281dc020c",
             "customProperties": {
-                "Description": "This link is part of a task dependency. The \"D\" is pointing from Actor A to Dependum C",
+                "Description": "This link is part of a Operationalizing dependency. The \"D\" is pointing from Actor A to Dependum C",
                 "Tooltip": "Do you see the gap between the beginning of this link and Actor A? You can remove these gaps by clicking on \"Pixel-perfect links\" in the Options menu",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
@@ -3833,7 +3955,7 @@ istar.models.everyElementAndLink = {
             "source": "81fe40dc-2380-47c0-92ab-1e7281dc020c",
             "target": "ccf83503-3c8f-4886-a30f-8a290499d8b2",
             "customProperties": {
-                "Description": "This link is part of a task dependency. The \"D\" is pointing from Dependum C to Role A",
+                "Description": "This link is part of a Operationalizing dependency. The \"D\" is pointing from Dependum C to Role A",
                 "Tooltip": "Congratulations, you found this secret tip! You can change the size of the diagram on the Options menu. But if all you want is to enlarge it, you can just drag an element to the bottom or right and the diagram will automatically expand",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
@@ -3844,7 +3966,7 @@ istar.models.everyElementAndLink = {
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
             "target": "7b339194-6020-4c2b-86e5-cd07ab9f725d",
             "customProperties": {
-                "Description": "This link is part of a resource dependency. The \"D\" is pointing from Actor A to Dependum D",
+                "Description": "This link is part of a Claim dependency. The \"D\" is pointing from Actor A to Dependum D",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3854,7 +3976,7 @@ istar.models.everyElementAndLink = {
             "source": "7b339194-6020-4c2b-86e5-cd07ab9f725d",
             "target": "60d0943c-169e-41ff-85ed-e19360456863",
             "customProperties": {
-                "Description": "This link is part of a resource dependency. The \"D\" is pointing from Dependum D to Task B (which is inside Actor B)",
+                "Description": "This link is part of a Claim dependency. The \"D\" is pointing from Dependum D to Operationalizing B (which is inside Actor B)",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3884,7 +4006,7 @@ istar.models.everyElementAndLink = {
             "source": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
             "target": "49ba9425-0de8-4fbf-8ec0-6a384e844ea4",
             "customProperties": {
-                "Description": "This link is part of a quality dependency. The \"D\" is pointing from Actor A to Dependum B",
+                "Description": "This link is part of a NFR dependency. The \"D\" is pointing from Actor A to Dependum B",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3894,7 +4016,7 @@ istar.models.everyElementAndLink = {
             "source": "49ba9425-0de8-4fbf-8ec0-6a384e844ea4",
             "target": "ccf83503-3c8f-4886-a30f-8a290499d8b2",
             "customProperties": {
-                "Description": "This link is part of a quality dependency. The \"D\" is pointing from Dependum B to Role A",
+                "Description": "This link is part of a NFR dependency. The \"D\" is pointing from Dependum B to Role A",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3904,7 +4026,7 @@ istar.models.everyElementAndLink = {
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
             "target": "e1acd9b0-c9e9-468b-845c-c7b08db3020f",
             "customProperties": {
-                "Description": "This is an (inclusive) OR-refinement linking Task X to Goal X",
+                "Description": "This is an (inclusive) OR-refinement linking Operationalizing X to Goal X",
                 "Concept": "The black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled"
             }
         },
@@ -3925,8 +4047,8 @@ istar.models.everyElementAndLink = {
             "source": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "target": "4c3ba102-6514-47a4-b21c-8a8f8cdae0cc",
             "customProperties": {
-                "Concept": "iStar 2.0 features a generic relationship called \"refinement\" that links goals and tasks hierarchically. Refinement is an n-ary relationship relating one parent to one or more children.\nA parent can only be AND-refined or OR-refined, not both simultaneously\n\nThe black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled. This relationship allows for a single child (as is the case here).\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal (which is the case here): in the case of OR-refinement, a child task is a particular way (a “means”) for fulfilling the parent goal (the “end”), while a child goal is a sub-goal that can be achieved for fulfilling the parent goal;\n• If the parent is a task: in the case of OR-refinement, a child goal is a goal whose existence that is uncovered by analyzing the parent task which may substitute for the original task, while a child task is a way to execute the parent task.",
-                "Description": "This is an OR-refinement linking Task A with Goal A"
+                "Concept": "iStar 2.0 features a generic relationship called \"refinement\" that links goals and Operationalizings hierarchically. Refinement is an n-ary relationship relating one parent to one or more children.\nA parent can only be AND-refined or OR-refined, not both simultaneously\n\nThe black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled. This relationship allows for a single child (as is the case here).\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal (which is the case here): in the case of OR-refinement, a child Operationalizing is a particular way (a “means”) for fulfilling the parent goal (the “end”), while a child goal is a sub-goal that can be achieved for fulfilling the parent goal;\n• If the parent is a Operationalizing: in the case of OR-refinement, a child goal is a goal whose existence that is uncovered by analyzing the parent Operationalizing which may substitute for the original Operationalizing, while a child Operationalizing is a way to execute the parent Operationalizing.",
+                "Description": "This is an OR-refinement linking Operationalizing A with Goal A"
             }
         },
         {
@@ -3935,7 +4057,7 @@ istar.models.everyElementAndLink = {
             "source": "60d0943c-169e-41ff-85ed-e19360456863",
             "target": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "customProperties": {
-                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal: in the case of AND-refinement, a child goal is a sub-state of affairs that is part of the parent goal, while a child task is a sub-task that must be fulfilled;\n• If the parent is a task (which is the case here): in the case of AND-refinement, a child task is a sub-task that is identified as part of the parent task, while a child goal is a goal that is uncovered by analyzing the parent task"
+                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal: in the case of AND-refinement, a child goal is a sub-state of affairs that is part of the parent goal, while a child Operationalizing is a sub-Operationalizing that must be fulfilled;\n• If the parent is a Operationalizing (which is the case here): in the case of AND-refinement, a child Operationalizing is a sub-Operationalizing that is identified as part of the parent Operationalizing, while a child goal is a goal that is uncovered by analyzing the parent Operationalizing"
             }
         },
         {
@@ -3944,7 +4066,7 @@ istar.models.everyElementAndLink = {
             "source": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
             "target": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "customProperties": {
-                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal: in the case of AND-refinement, a child goal is a sub-state of affairs that is part of the parent goal, while a child task is a sub-task that must be fulfilled;\n• If the parent is a task (which is the case here): in the case of AND-refinement, a child task is a sub-task that is identified as part of the parent task, while a child goal is a goal that is uncovered by analyzing the parent task"
+                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal: in the case of AND-refinement, a child goal is a sub-state of affairs that is part of the parent goal, while a child Operationalizing is a sub-Operationalizing that must be fulfilled;\n• If the parent is a Operationalizing (which is the case here): in the case of AND-refinement, a child Operationalizing is a sub-Operationalizing that is identified as part of the parent Operationalizing, while a child goal is a goal that is uncovered by analyzing the parent Operationalizing"
             }
         },
         {
@@ -3953,7 +4075,7 @@ istar.models.everyElementAndLink = {
             "source": "1ecba4f1-f873-466c-8074-092f612d5fed",
             "target": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "customProperties": {
-                "Concept": "The qualification relationship relates a quality to its subject: a task, goal, or resource. Placing a qualification relationship expresses a desired quality over the execution of a task, the achievement of the goal, or the provision of the resource. For example, a quality “Quick saving” may refer to the goal “Save model”, qualifying how the operation or function of this goal should be achieved",
+                "Concept": "The qualification relationship relates a NFR to its subject: a Operationalizing, goal, or Claim. Placing a qualification relationship expresses a desired NFR over the execution of a Operationalizing, the achievement of the goal, or the provision of the Claim. For example, a NFR “Quick saving” may refer to the goal “Save model”, qualifying how the operation or function of this goal should be achieved",
                 "Tooltip": "You can add vertices to a link by clicking right on top of its line"
             }
         },
@@ -3963,7 +4085,7 @@ istar.models.everyElementAndLink = {
             "source": "54c01821-aa4d-4bd0-9fdf-6ddaa25c299f",
             "target": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
             "customProperties": {
-                "Concept": "The Needed-By relationship links a task with a resource and it indicates that the actor needs the resource in order to execute the task. This relationship does not specify what is the reason for this need: consumption, reading, modification, creation, etc."
+                "Concept": "The Needed-By relationship links a Operationalizing with a Claim and it indicates that the actor needs the Claim in order to execute the Operationalizing. This relationship does not specify what is the reason for this need: consumption, reading, modification, creation, etc."
             }
         },
         {
@@ -3972,7 +4094,7 @@ istar.models.everyElementAndLink = {
             "source": "60d0943c-169e-41ff-85ed-e19360456863",
             "target": "df52f053-20a2-4bdf-8e23-e8c53a8ce306",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'make' contribution: The source provides sufficient positive evidence for the satisfaction of the target. In some i* variations this is called a ++ contribution",
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or Operationalizings. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'make' contribution: The source provides sufficient positive evidence for the satisfaction of the target. In some i* variations this is called a ++ contribution",
                 "Tooltip": "You can change the value of a contribution (make, help, hurt or break) by clicking on the value in this table"
             },
             "label": "make"
@@ -3983,7 +4105,7 @@ istar.models.everyElementAndLink = {
             "source": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
             "target": "3ff6395e-86ec-4661-ba13-c0493331303b",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'break' contribution: The source provides sufficient evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a -- contribution"
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or Operationalizings. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'break' contribution: The source provides sufficient evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a -- contribution"
             },
             "label": "break"
         },
@@ -3993,7 +4115,7 @@ istar.models.everyElementAndLink = {
             "source": "df52f053-20a2-4bdf-8e23-e8c53a8ce306",
             "target": "85940cf3-6d49-4270-9b00-51696b5790f5",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'hurt' contribution: The source provides weak evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a - contribution"
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or Operationalizings. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'hurt' contribution: The source provides weak evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a - contribution"
             },
             "label": "hurt"
         },
@@ -4003,7 +4125,7 @@ istar.models.everyElementAndLink = {
             "source": "3ff6395e-86ec-4661-ba13-c0493331303b",
             "target": "85940cf3-6d49-4270-9b00-51696b5790f5",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'help' contribution:  The source provides weak positive evidence for the satisfaction of the target.  In some i* variations this is called a + contribution"
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or Operationalizings. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'help' contribution:  The source provides weak positive evidence for the satisfaction of the target.  In some i* variations this is called a + contribution"
             },
             "label": "help"
         },
@@ -4023,7 +4145,7 @@ istar.models.everyElementAndLink = {
             "source": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
             "target": "e1acd9b0-c9e9-468b-845c-c7b08db3020f",
             "customProperties": {
-                "Description": "This is an (inclusive) OR-refinement linking Task X to Goal X",
+                "Description": "This is an (inclusive) OR-refinement linking Operationalizing X to Goal X",
                 "Concept": "The black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled"
             }
         }
@@ -4191,7 +4313,7 @@ istar.models.everyElementAndLink = {
         "height": 600,
         "name": "Every iStar 2.0 element and link",
         "customProperties": {
-            "Description": "This is an example showing every iStar 2.0 element and link.\n\nKinds of actor:\n - Actor, Agent and Role\n\nDependency links:\n - Goal, Quality, Task and Resource dependency\n\nActor links:\n - Is-A and Participates-In\n\nInner elements:\n - Goal, Quality, Task, Resource\n\nInner element links:\n - And-refinement, Or-refinement, Needed-By, Qualification, and Contribution links (make, help, hurt, break)",
+            "Description": "This is an example showing every iStar 2.0 element and link.\n\nKinds of actor:\n - Actor, Agent and Role\n\nDependency links:\n - Goal, NFR, Operationalizing and Claim dependency\n\nActor links:\n - Is-A and Participates-In\n\nInner elements:\n - Goal, NFR, Operationalizing, Claim\n\nInner element links:\n - And-refinement, Or-refinement, Needed-By, Qualification, and Contribution links (make, help, hurt, break)",
             "Tooltip": "Click on \"Toggle fullscreen\" in the Options menu to facilitate the use of the tool\n\nAlso, click on the elements and links of this model to learn more about the iStar 2.0 language",
             "Origin": "Model created by João Pimentel (UFRPE/Brazil). Concepts copied (with adaptations) from the iStar 2.0 language guide, by Fabiano Dalpiaz , Xavier Franch, and Jennifer Horkoff. You can access the full guide through the Help menu"
         }
@@ -4210,14 +4332,14 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "41f6245a-fe65-4b02-9348-1d2a5aa49b61",
                     "text": "Low Price",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 31,
                     "y": 193
                 },
                 {
                     "id": "fd9cb71e-7beb-43b4-8bb3-407b94432adb",
                     "text": "Flexibility [Purchasing]",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 88,
                     "y": 94
                 },
@@ -4234,17 +4356,17 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "c9731a43-8765-450f-aec1-5450d733a923",
                     "text": "Purchase by Naming My Own Price [Service]",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 199,
                     "y": 159,
                     "customProperties": {
-                        "Description": "One possible way to accomplish the Service Be Purchased goal is through the task Purchase By Naming My Own Price [Service]. It is connected to the goal with an or-refinement link. This task has two sub-elements connected to it through and-refinement links – the sub-task Name A Price [Service], and the sub-goal Low Price Service Provider Be Found.\n\nNaming one’s own price contributes positively (Help) to the buyer’s desired quality of Low Price, but negatively (Hurt) to Flexibility [Purchasing] because preferences about schedule, choice of airline, etc., could not be accommodated"
+                        "Description": "One possible way to accomplish the Service Be Purchased goal is through the Operationalizing Purchase By Naming My Own Price [Service]. It is connected to the goal with an or-refinement link. This Operationalizing has two sub-elements connected to it through and-refinement links – the sub-Operationalizing Name A Price [Service], and the sub-goal Low Price Service Provider Be Found.\n\nNaming one’s own price contributes positively (Help) to the buyer’s desired NFR of Low Price, but negatively (Hurt) to Flexibility [Purchasing] because preferences about schedule, choice of airline, etc., could not be accommodated"
                     }
                 },
                 {
                     "id": "ed027de5-ce0c-4544-bd6f-13da198dff2a",
                     "text": "Name a Price [Service]",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 115,
                     "y": 304
                 },
@@ -4257,8 +4379,8 @@ istar.models.buyerDrivenECommerce = {
                 },
                 {
                     "id": "e9d26ca1-da40-4f0a-a10b-f4e5ddaedcb8",
-                    "text": "Good Quality [Service]",
-                    "type": "istar.Quality",
+                    "text": "Good NFR [Service]",
+                    "type": "istar.NFR",
                     "x": 372,
                     "y": 267,
                     "customProperties": {
@@ -4277,14 +4399,14 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "66b6daf0-c676-46c2-8552-dabd042c4163",
                     "text": "Profitability",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 784,
                     "y": 48
                 },
                 {
                     "id": "b389b51d-d8ef-4b7a-9b7c-e48b9fdb528c",
                     "text": "Customer Attraction [Service]",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 801,
                     "y": 182
                 },
@@ -4298,35 +4420,35 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "be1aa6fc-66dd-40f8-af03-a652352793e1",
                     "text": "Sell in Buyer Driven Style [Service]",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1046,
                     "y": 135
                 },
                 {
                     "id": "afbabeb8-bf7c-432f-bc12-3cf1d2142ba4",
                     "text": "Accept Purchase Request with Price",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 859,
                     "y": 310
                 },
                 {
                     "id": "ef62e89b-1bdd-49ed-959c-be64f45d673a",
                     "text": "Send Modified Request to Supplier",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1122,
                     "y": 232
                 },
                 {
                     "id": "eaf58ea7-2db6-4ab1-9ed4-6b457ac0661a",
                     "text": "Get Price Agreement From Supplier",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 1075,
                     "y": 322
                 },
                 {
                     "id": "53516afe-4276-487c-b2f5-62298257e377",
                     "text": "Loyalty",
-                    "type": "istar.Quality",
+                    "type": "istar.NFR",
                     "x": 639,
                     "y": 199,
                     "customProperties": {
@@ -4336,7 +4458,7 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "05a6b113-d29d-4190-b33e-bf5d7870ba99",
                     "text": "Pay for Purchasing [Service]",
-                    "type": "istar.Task",
+                    "type": "istar.Operationalizing",
                     "x": 913,
                     "y": 183,
                     "customProperties": {
@@ -4358,11 +4480,11 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "d4beb38e-13e2-4e69-8540-d6ac5780ad36",
             "text": "Name a Price [Service]",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 488,
             "y": 232,
             "customProperties": {
-                "Description": "In a task dependency, an actor depends on another to perform an activity. The activity description specifies a particular course of action. For example, the task dependency Name a Price [Service] expresses that the customer depends on the middleman to name his own price for the service in need by specifying the standard procedure for naming a price."
+                "Description": "In a Operationalizing dependency, an actor depends on another to perform an activity. The activity description specifies a particular course of action. For example, the Operationalizing dependency Name a Price [Service] expresses that the customer depends on the middleman to name his own price for the service in need by specifying the standard procedure for naming a price."
             },
             "source": "afbabeb8-bf7c-432f-bc12-3cf1d2142ba4",
             "target": "ed027de5-ce0c-4544-bd6f-13da198dff2a"
@@ -4382,7 +4504,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "a77ec4dd-ab7d-463c-82fd-928cf3dde4c6",
             "text": "Acceptable Price [Service]",
-            "type": "istar.Quality",
+            "type": "istar.NFR",
             "x": 172,
             "y": 536,
             "source": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381",
@@ -4391,7 +4513,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "4cff68b2-92bf-4e1c-b802-44daaadfdadd",
             "text": "Attract More Customers [Service]",
-            "type": "istar.Quality",
+            "type": "istar.NFR",
             "x": 643,
             "y": 468,
             "source": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381",
@@ -4400,23 +4522,23 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "4407a764-eef0-409e-90da-668fa688b17f",
             "text": "Agreement on Price [P]",
-            "type": "istar.Resource",
+            "type": "istar.Claim",
             "x": 991,
             "y": 458,
             "customProperties": {
-                "Description": "In a resource dependency, an actor depends on another for the availability of an entity. The depender takes the availability of the resource to be unproblematic. In this example, the customer’s dependency on the supplier for agreement on price is modelled as a resource dependency"
+                "Description": "In a Claim dependency, an actor depends on another for the availability of an entity. The depender takes the availability of the Claim to be unproblematic. In this example, the customer’s dependency on the supplier for agreement on price is modelled as a Claim dependency"
             },
             "source": "eaf58ea7-2db6-4ab1-9ed4-6b457ac0661a",
             "target": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381"
         },
         {
             "id": "7c51a553-16a7-4e5d-883d-0aa0ee9ae4cf",
-            "text": "Good Quality [Service]",
-            "type": "istar.Quality",
+            "text": "Good NFR [Service]",
+            "type": "istar.NFR",
             "x": 307,
             "y": 476,
             "customProperties": {
-                "Description": "The customer’s dependency on the supplier for good quality service can be achieved in different ways. The desired degree of how good the quality should be is ultimately decided by the depender"
+                "Description": "The customer’s dependency on the supplier for good NFR service can be achieved in different ways. The desired degree of how good the NFR should be is ultimately decided by the depender"
             },
             "source": "e9d26ca1-da40-4f0a-a10b-f4e5ddaedcb8",
             "target": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381"
@@ -4424,7 +4546,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "62b11734-5a57-4b75-843c-6e1aa99bc8a5",
             "text": "Loyalty",
-            "type": "istar.Quality",
+            "type": "istar.NFR",
             "x": 495,
             "y": 147,
             "customProperties": {
@@ -4436,7 +4558,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "cf0b6aaa-a607-4e88-9065-b030e98c18f0",
             "text": "Pay for Purchasing [Service]",
-            "type": "istar.Task",
+            "type": "istar.Operationalizing",
             "x": 490,
             "y": 86,
             "customProperties": {
@@ -4888,8 +5010,1593 @@ istar.models.buyerDrivenECommerce = {
         "customProperties": {
             "Description": "Example of a buyer-driven e-commerce system. In such a system, the customer depends on a middleman to find a service provider who is willing to accept a price set by the customer. The customer submits a priced request to a middleman. The middleman forwards the request to suppliers. If a supplier decides to accept the request, it makes an agreement with the middleman. The middleman expects the customer to pay for the purchase in time.",
             "Colors": "Checkout the yellow elements, they have textual descriptions",
-            "About": "When you collapse every actor, the model becomes a *Strategic Dependency* (SD) model, consisting of a set of nodes and links. Each node represents an actor, and each link between two actors indicates that one actor depends on the other for something in order that the former may attain some goal. We call the depending actor the depender, and the actor who is depended upon the dependee. The object around which the\ndependency relationship centers is called the dependum. By depending on another actor for a dependum, an actor (the depender) is able to achieve goals that it was not able to without the dependency, or not as easily or as well. At the same time, the depender becomes vulnerable. If the dependee fails to deliver the dependum, the depender would be adversely affected in its ability to achieve its goals.\n\nWhen actors are expanded, you have a *Strategic Rationale* (SR) model, which provides a more detailed level of modelling by looking “inside” actors to model internal intentional relationships. Intentional elements (goals, tasks, resources, and qualities) appear in SR models not only as external dependencies, but also as internal elements arranged into (mostly hierarchical) structures of or-refinements, and-refinements, contribution, needed-by and qualification relationships.",
+            "About": "When you collapse every actor, the model becomes a *Strategic Dependency* (SD) model, consisting of a set of nodes and links. Each node represents an actor, and each link between two actors indicates that one actor depends on the other for something in order that the former may attain some goal. We call the depending actor the depender, and the actor who is depended upon the dependee. The object around which the\ndependency relationship centers is called the dependum. By depending on another actor for a dependum, an actor (the depender) is able to achieve goals that it was not able to without the dependency, or not as easily or as well. At the same time, the depender becomes vulnerable. If the dependee fails to deliver the dependum, the depender would be adversely affected in its ability to achieve its goals.\n\nWhen actors are expanded, you have a *Strategic Rationale* (SR) model, which provides a more detailed level of modelling by looking “inside” actors to model internal intentional relationships. Intentional elements (goals, Operationalizings, Claims, and qualities) appear in SR models not only as external dependencies, but also as internal elements arranged into (mostly hierarchical) structures of or-refinements, and-refinements, contribution, needed-by and qualification relationships.",
             "Origin": "Model and text based on Eric Yu, Lin Liu, and Ying Li. \"Modelling strategic actor relationships to support intellectual property management.\" International Conference on Conceptual Modeling, 2001. It was adapted to conform to the iStar 2.0 standard, thus it is not an exact copy of the original model."
         }
     }
+};
+
+istar.models.designAlternative01 = {
+  actors: [],
+  orphans: [
+    {
+      id: "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      text: "Security [Web]",
+      type: "istar.NFR",
+      x: 837,
+      y: 21,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "ec49152a-9c9c-4711-89ae-02afebe17d24",
+      text: "Identify User [Login]",
+      type: "istar.Operationalizing",
+      x: 721,
+      y: 181,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "08b65ead-e2be-4902-8cca-df503add9893",
+      text: "Encrypt personal data [Information security]",
+      type: "istar.Operationalizing",
+      x: 880,
+      y: 165,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      text: "Voice recognition [Login]",
+      type: "istar.Operationalizing",
+      x: 635,
+      y: 316,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      text: "Digital recognition [Login]",
+      type: "istar.Operationalizing",
+      x: 799,
+      y: 372,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      text: "Web Accessibility [Visually Impaired]",
+      type: "istar.NFR",
+      x: 1257,
+      y: 9,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      text: "Operable content [Multimedia content]",
+      type: "istar.NFR",
+      x: 1090,
+      y: 157,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      text: "Perceivable content [Multimedia content]",
+      type: "istar.NFR",
+      x: 1488,
+      y: 150,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "de6efe9b-4564-43b4-a242-69851eb79bde",
+      text:
+        "Provide text describing the functionality of each link [Form control]",
+      type: "istar.Operationalizing",
+      x: 945,
+      y: 348,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "2f5378de-b260-4b48-8f13-965cb9220831",
+      text: "Provide voice operability [Form control]",
+      type: "istar.Operationalizing",
+      x: 1108,
+      y: 417,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "5a190c39-5914-4653-af63-81a0b111f0cf",
+      text: "Provide full keyboard access [Form Control]",
+      type: "istar.Operationalizing",
+      x: 1238,
+      y: 349,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "9ed22134-9813-4cf6-acb0-59e4645aeadb",
+      text: 'Use "alt" attribute on tags containing images [HTML]',
+      type: "istar.Operationalizing",
+      x: 1396,
+      y: 346,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "34edcf52-eea6-465d-8538-00df08801463",
+      text: "Provide Image Recognition [Image Processing]",
+      type: "istar.Operationalizing",
+      x: 1559,
+      y: 433,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "f7297e12-fa5e-4a99-a417-41507697bec3",
+      text: "Provide alternatives to non-text content [Multimedia Content]",
+      type: "istar.Operationalizing",
+      x: 1703,
+      y: 321,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      text: "Attractiveness [Web]",
+      type: "istar.NFR",
+      x: 1739,
+      y: 19,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "c365f913-28e6-4a44-adc2-e063e1053df6",
+      text: "Provide multimedia content [Non-textual]",
+      type: "istar.Operationalizing",
+      x: 1684,
+      y: 156,
+      customProperties: {
+        Description: "",
+      },
+    },
+    {
+      id: "b989309a-12b6-4632-afed-d698d6c1d672",
+      text: "Cost [Financial]",
+      type: "istar.NFR",
+      x: 1909,
+      y: 13,
+      customProperties: {
+        Description: "",
+      },
+    },
+  ],
+  dependencies: [],
+  links: [
+    {
+      id: "8b2fab9f-cd87-4d8b-96c0-e80d1cc7d483",
+      type: "istar.OrRefinementLink",
+      source: "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      target: "ec49152a-9c9c-4711-89ae-02afebe17d24",
+    },
+    {
+      id: "d8a4b883-e761-4ec1-b4b1-2421f53b29b9",
+      type: "istar.OrRefinementLink",
+      source: "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      target: "ec49152a-9c9c-4711-89ae-02afebe17d24",
+    },
+    {
+      id: "d4453f19-ad1b-49e5-b128-55738d14dd6b",
+      type: "istar.ContributionLink",
+      source: "ec49152a-9c9c-4711-89ae-02afebe17d24",
+      target: "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      color: "#009100",
+      label: "Some+",
+    },
+    {
+      id: "884b97c6-ccf9-4b89-bba4-0aa260f64251",
+      type: "istar.ContributionLink",
+      source: "08b65ead-e2be-4902-8cca-df503add9893",
+      target: "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      color: "#008C00",
+      label: "Some+",
+    },
+    {
+      id: "ccace9fc-de3c-4fee-9e8b-424a3685e079",
+      type: "istar.ContributionLink",
+      source: "de6efe9b-4564-43b4-a242-69851eb79bde",
+      target: "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      color: "#003700",
+      label: "Help",
+    },
+    {
+      id: "78ca5bfa-86d0-400f-8c0c-fd5334a74b0d",
+      type: "istar.ContributionLink",
+      source: "2f5378de-b260-4b48-8f13-965cb9220831",
+      target: "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      color: "#009600",
+      label: "Some+",
+    },
+    {
+      id: "70a3abbb-7388-4f1c-8393-4829e6c4d377",
+      type: "istar.ContributionLink",
+      source: "5a190c39-5914-4653-af63-81a0b111f0cf",
+      target: "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      color: "#008C00",
+      label: "Some+",
+    },
+    {
+      id: "8f9350fd-ef46-46d2-bd9b-7fd18f80ee9a",
+      type: "istar.ContributionLink",
+      source: "9ed22134-9813-4cf6-acb0-59e4645aeadb",
+      target: "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      color: "#005000",
+      label: "Help",
+    },
+    {
+      id: "df2abce9-d76f-47e9-a48c-4648febd3f0d",
+      type: "istar.ContributionLink",
+      source: "34edcf52-eea6-465d-8538-00df08801463",
+      target: "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      color: "#00A000",
+      label: "Some+",
+    },
+    {
+      id: "e99480c1-17eb-4dec-ac8d-ae0234c96f29",
+      type: "istar.ContributionLink",
+      source: "f7297e12-fa5e-4a99-a417-41507697bec3",
+      target: "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      color: "#009600",
+      label: "Some+",
+    },
+    {
+      id: "7afdad17-3024-40ce-9545-38d8493d3710",
+      type: "istar.ContributionLink",
+      source: "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      target: "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      color: "#00aa00",
+      label: "Some+",
+    },
+    {
+      id: "9de96f63-2ab7-4ff7-8181-38a784da1832",
+      type: "istar.ContributionLink",
+      source: "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      target: "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      color: "#00AA00",
+      label: "Some+",
+    },
+    {
+      id: "db470d4f-34f4-4f1e-b134-562a6721d2db",
+      type: "istar.ContributionLink",
+      source: "c365f913-28e6-4a44-adc2-e063e1053df6",
+      target: "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      color: "#00aa00",
+      label: "Some+",
+    },
+    {
+      id: "2b1abbcf-c6f9-4693-9554-2c1fab619d46",
+      type: "istar.ContributionLink",
+      source: "c365f913-28e6-4a44-adc2-e063e1053df6",
+      target: "b989309a-12b6-4632-afed-d698d6c1d672",
+      color: "#550000",
+      label: "Hurt",
+    },
+    {
+      id: "d24b6c6c-5ee5-404b-82f9-88018522eb57",
+      type: "istar.ContributionLink",
+      source: "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      target: "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      color: "#006400",
+      label: "Some+",
+    },
+    {
+      id: "d11b0fa7-0d53-4d99-8344-78a068079ddd",
+      type: "istar.ContributionLink",
+      source: "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      target: "b989309a-12b6-4632-afed-d698d6c1d672",
+      color: "#A00000",
+      label: "Some-",
+    },
+    {
+      id: "9ff3b0e0-e966-4547-a8b7-83745eb0610c",
+      type: "istar.ContributionLink",
+      source: "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      target: "b989309a-12b6-4632-afed-d698d6c1d672",
+      color: "#780000",
+      label: "Some-",
+    },
+    {
+      id: "8cf87f14-0a75-4d64-93ea-bb6f53d1d477",
+      type: "istar.ContributionLink",
+      source: "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      target: "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      color: "#550000",
+      label: "Hurt",
+    },
+    {
+      id: "676de8df-a4e2-4564-ac7b-0e3fd4acbb61",
+      type: "istar.ContributionLink",
+      source: "f7297e12-fa5e-4a99-a417-41507697bec3",
+      target: "b989309a-12b6-4632-afed-d698d6c1d672",
+      color: "#006400",
+      label: "Some+",
+    },
+    {
+      id: "5513d8ea-19f0-4d94-be62-f6ae7d47445d",
+      type: "istar.ContributionLink",
+      source: "34edcf52-eea6-465d-8538-00df08801463",
+      target: "b989309a-12b6-4632-afed-d698d6c1d672",
+      color: "#aa0000",
+      label: "Some-",
+    },
+  ],
+  display: {
+    "24987142-6a0c-4188-8cda-77b3ef0bbb0e": {
+      backgroundColor: "#918c00",
+      width: 86.72198486328125,
+      height: 50.0499382019043,
+    },
+    "ec49152a-9c9c-4711-89ae-02afebe17d24": {
+      backgroundColor: "#FF0000",
+    },
+    "08b65ead-e2be-4902-8cca-df503add9893": {
+      backgroundColor: "#00FF00",
+      width: 123.78125,
+      height: 62.512908935546875,
+    },
+    "a9b9016a-b648-4b94-91bc-2eff94e2fdc7": {
+      backgroundColor: "#FF0000",
+    },
+    "fc26f0d7-4b4d-4545-8ea7-7586311ed68d": {
+      backgroundColor: "#FF0000",
+    },
+    "cc9af6ce-01d9-4285-b508-ac13d35d5569": {
+      backgroundColor: "#6b6400",
+      width: 123.6983642578125,
+      height: 67.56641578674316,
+    },
+    "bf8d31c4-2607-4e05-9796-ea953fcce9af": {
+      backgroundColor: "#968c00",
+      width: 128.6943359375,
+      height: 70.07191467285156,
+    },
+    "4ffc006b-1a1a-4862-9aac-d08ecca85dac": {
+      backgroundColor: "#a09600",
+      width: 137.6888427734375,
+      height: 68.06791687011719,
+    },
+    "de6efe9b-4564-43b4-a242-69851eb79bde": {
+      backgroundColor: "#00FF00",
+      width: 138.78125,
+      height: 78.01611328125,
+    },
+    "2f5378de-b260-4b48-8f13-965cb9220831": {
+      backgroundColor: "#FF0000",
+    },
+    "5a190c39-5914-4653-af63-81a0b111f0cf": {
+      backgroundColor: "#00FF00",
+      width: 124.78125,
+      height: 65.51373291015625,
+    },
+    "9ed22134-9813-4cf6-acb0-59e4645aeadb": {
+      backgroundColor: "#00FF00",
+      width: 126.78125,
+      height: 74.0155029296875,
+    },
+    "34edcf52-eea6-465d-8538-00df08801463": {
+      backgroundColor: "#FF0000",
+      width: 121.78125,
+      height: 63.013214111328125,
+    },
+    "f7297e12-fa5e-4a99-a417-41507697bec3": {
+      backgroundColor: "#00FF00",
+      width: 137.78125,
+      height: 75.0155029296875,
+    },
+    "cd1f9b54-0bd8-4522-978b-c1c97c31fb77": {
+      backgroundColor: "#00aa00",
+    },
+    "c365f913-28e6-4a44-adc2-e063e1053df6": {
+      backgroundColor: "#00FF00",
+      width: 134.78125,
+      height: 79.01632690429688,
+    },
+    "b989309a-12b6-4632-afed-d698d6c1d672": {
+      backgroundColor: "#55aa00",
+    },
+    "d8a4b883-e761-4ec1-b4b1-2421f53b29b9": {
+      vertices: [
+        {
+          x: 792,
+          y: 344,
+        },
+      ],
+    },
+    "d11b0fa7-0d53-4d99-8344-78a068079ddd": {
+      vertices: [
+        {
+          x: 821,
+          y: 535,
+        },
+        {
+          x: 930,
+          y: 576,
+        },
+        {
+          x: 1216,
+          y: 580,
+        },
+        {
+          x: 1512,
+          y: 577,
+        },
+        {
+          x: 1901,
+          y: 520,
+        },
+        {
+          x: 1980,
+          y: 321,
+        },
+        {
+          x: 1972,
+          y: 178,
+        },
+      ],
+    },
+    "9ff3b0e0-e966-4547-a8b7-83745eb0610c": {
+      vertices: [
+        {
+          x: 994,
+          y: 533,
+        },
+        {
+          x: 1260,
+          y: 547,
+        },
+        {
+          x: 1371,
+          y: 548,
+        },
+        {
+          x: 1409,
+          y: 549,
+        },
+        {
+          x: 1459,
+          y: 550,
+        },
+        {
+          x: 1496,
+          y: 551,
+        },
+        {
+          x: 1555,
+          y: 548,
+        },
+        {
+          x: 1611,
+          y: 545,
+        },
+        {
+          x: 1854,
+          y: 493,
+        },
+        {
+          x: 1936,
+          y: 372,
+        },
+        {
+          x: 1954.1,
+          y: 147,
+        },
+      ],
+    },
+    "676de8df-a4e2-4564-ac7b-0e3fd4acbb61": {
+      vertices: [
+        {
+          x: 1883,
+          y: 211,
+        },
+      ],
+    },
+    "5513d8ea-19f0-4d94-be62-f6ae7d47445d": {
+      vertices: [
+        {
+          x: 1838,
+          y: 446,
+        },
+        {
+          x: 1910,
+          y: 289,
+        },
+      ],
+    },
+  },
+  tool: "pistar.2.0.0",
+  istar: "2.0",
+  saveDate: "Tue, 24 Nov 2020 05:35:37 GMT",
+  diagram: {
+    width: 2045,
+    height: 1300,
+    customProperties: {
+      Description: "",
+    },
+  },
+};
+
+istar.models.designAlternative03 = {
+    "actors": [],
+  "orphans": [
+    {
+      "id": "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      "text": "Security [Web]",
+      "type": "istar.NFR",
+      "x": 837,
+      "y": 21,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "ec49152a-9c9c-4711-89ae-02afebe17d24",
+      "text": "Identify User [Login]",
+      "type": "istar.Operationalizing",
+      "x": 721,
+      "y": 181,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "08b65ead-e2be-4902-8cca-df503add9893",
+      "text": "Encrypt personal data [Information security]",
+      "type": "istar.Operationalizing",
+      "x": 880,
+      "y": 165,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "text": "Voice recognition [Login]",
+      "type": "istar.Operationalizing",
+      "x": 635,
+      "y": 316,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      "text": "Digital recognition [Login]",
+      "type": "istar.Operationalizing",
+      "x": 799,
+      "y": 372,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "text": "Web Accessibility [Visually Impaired]",
+      "type": "istar.NFR",
+      "x": 1257,
+      "y": 9,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "text": "Operable content [Multimedia content]",
+      "type": "istar.NFR",
+      "x": 1090,
+      "y": 157,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "text": "Perceivable content [Multimedia content]",
+      "type": "istar.NFR",
+      "x": 1488,
+      "y": 150,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "de6efe9b-4564-43b4-a242-69851eb79bde",
+      "text": "Provide text describing the functionality of each link [Form control]",
+      "type": "istar.Operationalizing",
+      "x": 945,
+      "y": 348,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "2f5378de-b260-4b48-8f13-965cb9220831",
+      "text": "Provide voice operability [Form control]",
+      "type": "istar.Operationalizing",
+      "x": 1108,
+      "y": 417,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "5a190c39-5914-4653-af63-81a0b111f0cf",
+      "text": "Provide full keyboard access [Form Control]",
+      "type": "istar.Operationalizing",
+      "x": 1238,
+      "y": 349,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "9ed22134-9813-4cf6-acb0-59e4645aeadb",
+      "text": "Use \"alt\" attribute on tags containing images [HTML]",
+      "type": "istar.Operationalizing",
+      "x": 1396,
+      "y": 346,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "34edcf52-eea6-465d-8538-00df08801463",
+      "text": "Provide Image Recognition [Image Processing]",
+      "type": "istar.Operationalizing",
+      "x": 1559,
+      "y": 433,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "f7297e12-fa5e-4a99-a417-41507697bec3",
+      "text": "Provide alternatives to non-text content [Multimedia Content]",
+      "type": "istar.Operationalizing",
+      "x": 1703,
+      "y": 321,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      "text": "Attractiveness [Web]",
+      "type": "istar.NFR",
+      "x": 1739,
+      "y": 19,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "c365f913-28e6-4a44-adc2-e063e1053df6",
+      "text": "Provide multimedia content [Non-textual]",
+      "type": "istar.Operationalizing",
+      "x": 1684,
+      "y": 156,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "text": "Cost [Financial]",
+      "type": "istar.NFR",
+      "x": 1909,
+      "y": 13,
+      "customProperties": {
+        "Description": ""
+      }
+    }
+  ],
+  "dependencies": [],
+  "links": [
+    {
+      "id": "3ef14cc9-707b-4a9a-9038-59d013ec0179",
+      "type": "istar.OrRefinementLink",
+      "source": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "target": "ec49152a-9c9c-4711-89ae-02afebe17d24"
+    },
+    {
+      "id": "e42d6bb7-e194-42ac-80ed-5df1e0b977f7",
+      "type": "istar.OrRefinementLink",
+      "source": "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      "target": "ec49152a-9c9c-4711-89ae-02afebe17d24"
+    },
+    {
+      "id": "28a5157b-05b4-4aed-8d84-7c7a29ee7d95",
+      "type": "istar.ContributionLink",
+      "source": "ec49152a-9c9c-4711-89ae-02afebe17d24",
+      "target": "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      "color": "#009100",
+      "label": "Some+"
+    },
+    {
+      "id": "7b854911-dee3-4ec2-83dc-6751cf3eaec5",
+      "type": "istar.ContributionLink",
+      "source": "08b65ead-e2be-4902-8cca-df503add9893",
+      "target": "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      "color": "#008C00",
+      "label": "Some+"
+    },
+    {
+      "id": "84faaa33-cd09-4c81-aa20-555ce7b1e5d4",
+      "type": "istar.ContributionLink",
+      "source": "de6efe9b-4564-43b4-a242-69851eb79bde",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#003700",
+      "label": "Help"
+    },
+    {
+      "id": "5f67dc9a-03b5-4902-bfba-c4fd1cdbbc60",
+      "type": "istar.ContributionLink",
+      "source": "2f5378de-b260-4b48-8f13-965cb9220831",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#009600",
+      "label": "Some+"
+    },
+    {
+      "id": "feae06d9-1f1f-4aca-bb41-7ec4167a50fb",
+      "type": "istar.ContributionLink",
+      "source": "5a190c39-5914-4653-af63-81a0b111f0cf",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#008C00",
+      "label": "Some+"
+    },
+    {
+      "id": "ec7855de-c2ac-4660-9304-7ce538f84d07",
+      "type": "istar.ContributionLink",
+      "source": "9ed22134-9813-4cf6-acb0-59e4645aeadb",
+      "target": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "color": "#005000",
+      "label": "Help"
+    },
+    {
+      "id": "aaceaef6-dc3a-4078-b643-db854a08fc5f",
+      "type": "istar.ContributionLink",
+      "source": "34edcf52-eea6-465d-8538-00df08801463",
+      "target": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "color": "#00A000",
+      "label": "Some+"
+    },
+    {
+      "id": "b00bfd91-8a1b-4438-b977-f9c159ad5798",
+      "type": "istar.ContributionLink",
+      "source": "f7297e12-fa5e-4a99-a417-41507697bec3",
+      "target": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "color": "#009600",
+      "label": "Some+"
+    },
+    {
+      "id": "49471a93-264c-4887-b31b-cc1757e4634e",
+      "type": "istar.ContributionLink",
+      "source": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "target": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "color": "#00aa00",
+      "label": "Some+"
+    },
+    {
+      "id": "bb4e1ff0-4927-49b7-8c1d-0dd70ff5f0c6",
+      "type": "istar.ContributionLink",
+      "source": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "target": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "color": "#00AA00",
+      "label": "Some+"
+    },
+    {
+      "id": "484651b3-cc56-417a-8652-d464c36f3618",
+      "type": "istar.ContributionLink",
+      "source": "c365f913-28e6-4a44-adc2-e063e1053df6",
+      "target": "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      "color": "#00aa00",
+      "label": "Some+"
+    },
+    {
+      "id": "e08fbb16-7797-4367-9fb8-90de22bc52fa",
+      "type": "istar.ContributionLink",
+      "source": "c365f913-28e6-4a44-adc2-e063e1053df6",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#550000",
+      "label": "Hurt"
+    },
+    {
+      "id": "72a784d2-8374-4ce9-9554-16da887f5a08",
+      "type": "istar.ContributionLink",
+      "source": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#006400",
+      "label": "Some+"
+    },
+    {
+      "id": "a075fead-eae2-4404-a4df-6bc4b1778637",
+      "type": "istar.ContributionLink",
+      "source": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#A00000",
+      "label": "Some-"
+    },
+    {
+      "id": "29689a21-650b-48ee-a897-7b1cda62c0cf",
+      "type": "istar.ContributionLink",
+      "source": "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#780000",
+      "label": "Some-"
+    },
+    {
+      "id": "a3964fb4-055f-4632-a947-435ab1f71076",
+      "type": "istar.ContributionLink",
+      "source": "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      "target": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "color": "#550000",
+      "label": "Hurt"
+    },
+    {
+      "id": "1d48a7a9-4d6c-4aff-a1c0-f0c07b74f9c2",
+      "type": "istar.ContributionLink",
+      "source": "f7297e12-fa5e-4a99-a417-41507697bec3",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#006400",
+      "label": "Some+"
+    },
+    {
+      "id": "5bb43a60-0ad3-49a3-9f49-6a52dd28b744",
+      "type": "istar.ContributionLink",
+      "source": "34edcf52-eea6-465d-8538-00df08801463",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#aa0000",
+      "label": "Some-"
+    }
+  ],
+  "display": {
+    "24987142-6a0c-4188-8cda-77b3ef0bbb0e": {
+      "backgroundColor": "#009100",
+      "width": 86.72198486328125,
+      "height": 50.0499382019043
+    },
+    "ec49152a-9c9c-4711-89ae-02afebe17d24": {
+      "backgroundColor": "#00FF00"
+    },
+    "08b65ead-e2be-4902-8cca-df503add9893": {
+      "backgroundColor": "#00FF00",
+      "width": 123.78125,
+      "height": 62.512908935546875
+    },
+    "a9b9016a-b648-4b94-91bc-2eff94e2fdc7": {
+      "backgroundColor": "#FF0000"
+    },
+    "fc26f0d7-4b4d-4545-8ea7-7586311ed68d": {
+      "backgroundColor": "#00FF00"
+    },
+    "cc9af6ce-01d9-4285-b508-ac13d35d5569": {
+      "backgroundColor": "#6b3500",
+      "width": 123.6983642578125,
+      "height": 67.56641578674316
+    },
+    "bf8d31c4-2607-4e05-9796-ea953fcce9af": {
+      "backgroundColor": "#963700",
+      "width": 128.6943359375,
+      "height": 70.07191467285156
+    },
+    "4ffc006b-1a1a-4862-9aac-d08ecca85dac": {
+      "backgroundColor": "#a05000",
+      "width": 137.6888427734375,
+      "height": 68.06791687011719
+    },
+    "de6efe9b-4564-43b4-a242-69851eb79bde": {
+      "backgroundColor": "#00FF00",
+      "width": 138.78125,
+      "height": 78.01611328125
+    },
+    "2f5378de-b260-4b48-8f13-965cb9220831": {
+      "backgroundColor": "#FF0000"
+    },
+    "5a190c39-5914-4653-af63-81a0b111f0cf": {
+      "backgroundColor": "#FF0000",
+      "width": 124.78125,
+      "height": 65.51373291015625
+    },
+    "9ed22134-9813-4cf6-acb0-59e4645aeadb": {
+      "backgroundColor": "#00FF00",
+      "width": 126.78125,
+      "height": 74.0155029296875
+    },
+    "34edcf52-eea6-465d-8538-00df08801463": {
+      "backgroundColor": "#FF0000",
+      "width": 121.78125,
+      "height": 63.013214111328125
+    },
+    "f7297e12-fa5e-4a99-a417-41507697bec3": {
+      "backgroundColor": "#FF0000",
+      "width": 137.78125,
+      "height": 75.0155029296875
+    },
+    "cd1f9b54-0bd8-4522-978b-c1c97c31fb77": {
+      "backgroundColor": "#00aa00"
+    },
+    "c365f913-28e6-4a44-adc2-e063e1053df6": {
+      "backgroundColor": "#00FF00",
+      "width": 134.78125,
+      "height": 79.01632690429688
+    },
+    "b989309a-12b6-4632-afed-d698d6c1d672": {
+      "backgroundColor": "#78aa00"
+    },
+    "e42d6bb7-e194-42ac-80ed-5df1e0b977f7": {
+      "vertices": [
+        {
+          "x": 792,
+          "y": 344
+        }
+      ]
+    },
+    "a075fead-eae2-4404-a4df-6bc4b1778637": {
+      "vertices": [
+        {
+          "x": 821,
+          "y": 535
+        },
+        {
+          "x": 930,
+          "y": 576
+        },
+        {
+          "x": 1216,
+          "y": 580
+        },
+        {
+          "x": 1512,
+          "y": 577
+        },
+        {
+          "x": 1901,
+          "y": 520
+        },
+        {
+          "x": 1980,
+          "y": 321
+        },
+        {
+          "x": 1972,
+          "y": 178
+        }
+      ]
+    },
+    "29689a21-650b-48ee-a897-7b1cda62c0cf": {
+      "vertices": [
+        {
+          "x": 994,
+          "y": 533
+        },
+        {
+          "x": 1260,
+          "y": 547
+        },
+        {
+          "x": 1371,
+          "y": 548
+        },
+        {
+          "x": 1409,
+          "y": 549
+        },
+        {
+          "x": 1459,
+          "y": 550
+        },
+        {
+          "x": 1496,
+          "y": 551
+        },
+        {
+          "x": 1555,
+          "y": 548
+        },
+        {
+          "x": 1611,
+          "y": 545
+        },
+        {
+          "x": 1854,
+          "y": 493
+        },
+        {
+          "x": 1936,
+          "y": 372
+        },
+        {
+          "x": 1954.1,
+          "y": 147
+        }
+      ]
+    },
+    "1d48a7a9-4d6c-4aff-a1c0-f0c07b74f9c2": {
+      "vertices": [
+        {
+          "x": 1883,
+          "y": 211
+        }
+      ]
+    },
+    "5bb43a60-0ad3-49a3-9f49-6a52dd28b744": {
+      "vertices": [
+        {
+          "x": 1838,
+          "y": 446
+        },
+        {
+          "x": 1910,
+          "y": 289
+        }
+      ]
+    }
+  },
+  "tool": "pistar.2.0.0",
+  "istar": "2.0",
+  "saveDate": "Tue, 24 Nov 2020 05:44:20 GMT",
+  "diagram": {
+    "width": 2045,
+    "height": 1300,
+    "customProperties": {
+      "Description": ""
+    }
+  }
+};
+
+istar.models.designAlternative02 = {
+    "actors": [],
+  "orphans": [
+    {
+      "id": "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      "text": "Security [Web]",
+      "type": "istar.NFR",
+      "x": 837,
+      "y": 21,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "ec49152a-9c9c-4711-89ae-02afebe17d24",
+      "text": "Identify User [Login]",
+      "type": "istar.Operationalizing",
+      "x": 721,
+      "y": 181,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "08b65ead-e2be-4902-8cca-df503add9893",
+      "text": "Encrypt personal data [Information security]",
+      "type": "istar.Operationalizing",
+      "x": 880,
+      "y": 165,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "text": "Voice recognition [Login]",
+      "type": "istar.Operationalizing",
+      "x": 635,
+      "y": 316,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      "text": "Digital recognition [Login]",
+      "type": "istar.Operationalizing",
+      "x": 799,
+      "y": 372,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "text": "Web Accessibility [Visually Impaired]",
+      "type": "istar.NFR",
+      "x": 1257,
+      "y": 9,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "text": "Operable content [Multimedia content]",
+      "type": "istar.NFR",
+      "x": 1090,
+      "y": 157,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "text": "Perceivable content [Multimedia content]",
+      "type": "istar.NFR",
+      "x": 1488,
+      "y": 150,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "de6efe9b-4564-43b4-a242-69851eb79bde",
+      "text": "Provide text describing the functionality of each link [Form control]",
+      "type": "istar.Operationalizing",
+      "x": 945,
+      "y": 348,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "2f5378de-b260-4b48-8f13-965cb9220831",
+      "text": "Provide voice operability [Form control]",
+      "type": "istar.Operationalizing",
+      "x": 1108,
+      "y": 417,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "5a190c39-5914-4653-af63-81a0b111f0cf",
+      "text": "Provide full keyboard access [Form Control]",
+      "type": "istar.Operationalizing",
+      "x": 1238,
+      "y": 349,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "9ed22134-9813-4cf6-acb0-59e4645aeadb",
+      "text": "Use \"alt\" attribute on tags containing images [HTML]",
+      "type": "istar.Operationalizing",
+      "x": 1396,
+      "y": 346,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "34edcf52-eea6-465d-8538-00df08801463",
+      "text": "Provide Image Recognition [Image Processing]",
+      "type": "istar.Operationalizing",
+      "x": 1559,
+      "y": 433,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "f7297e12-fa5e-4a99-a417-41507697bec3",
+      "text": "Provide alternatives to non-text content [Multimedia Content]",
+      "type": "istar.Operationalizing",
+      "x": 1703,
+      "y": 321,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      "text": "Attractiveness [Web]",
+      "type": "istar.NFR",
+      "x": 1739,
+      "y": 19,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "c365f913-28e6-4a44-adc2-e063e1053df6",
+      "text": "Provide multimedia content [Non-textual]",
+      "type": "istar.Operationalizing",
+      "x": 1684,
+      "y": 156,
+      "customProperties": {
+        "Description": ""
+      }
+    },
+    {
+      "id": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "text": "Cost [Financial]",
+      "type": "istar.NFR",
+      "x": 1909,
+      "y": 13,
+      "customProperties": {
+        "Description": ""
+      }
+    }
+  ],
+  "dependencies": [],
+  "links": [
+    {
+      "id": "10385bd2-84b7-410e-a6fb-916d98e37c04",
+      "type": "istar.OrRefinementLink",
+      "source": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "target": "ec49152a-9c9c-4711-89ae-02afebe17d24"
+    },
+    {
+      "id": "b511495d-e03d-4a6a-ad7f-1759340bd290",
+      "type": "istar.OrRefinementLink",
+      "source": "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      "target": "ec49152a-9c9c-4711-89ae-02afebe17d24"
+    },
+    {
+      "id": "70bb7957-dccc-4d93-9be3-13257c597682",
+      "type": "istar.ContributionLink",
+      "source": "ec49152a-9c9c-4711-89ae-02afebe17d24",
+      "target": "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      "color": "#009100",
+      "label": "Some+"
+    },
+    {
+      "id": "09cdf364-8d45-4eae-b1ab-7ef8deaa6bf8",
+      "type": "istar.ContributionLink",
+      "source": "08b65ead-e2be-4902-8cca-df503add9893",
+      "target": "24987142-6a0c-4188-8cda-77b3ef0bbb0e",
+      "color": "#008C00",
+      "label": "Some+"
+    },
+    {
+      "id": "4ba8942e-a5e1-40c2-b8fd-76f155cbedd3",
+      "type": "istar.ContributionLink",
+      "source": "de6efe9b-4564-43b4-a242-69851eb79bde",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#003700",
+      "label": "Help"
+    },
+    {
+      "id": "6af4e32e-7061-407b-9b36-68d97628c804",
+      "type": "istar.ContributionLink",
+      "source": "2f5378de-b260-4b48-8f13-965cb9220831",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#009600",
+      "label": "Some+"
+    },
+    {
+      "id": "1e01e9c1-309a-4e9e-ac2b-dcffadd3403e",
+      "type": "istar.ContributionLink",
+      "source": "5a190c39-5914-4653-af63-81a0b111f0cf",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#008C00",
+      "label": "Some+"
+    },
+    {
+      "id": "ca5a82bb-267b-4b10-918c-984c2f4e3011",
+      "type": "istar.ContributionLink",
+      "source": "9ed22134-9813-4cf6-acb0-59e4645aeadb",
+      "target": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "color": "#005000",
+      "label": "Help"
+    },
+    {
+      "id": "79198512-bc29-4c18-b475-211229a08759",
+      "type": "istar.ContributionLink",
+      "source": "34edcf52-eea6-465d-8538-00df08801463",
+      "target": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "color": "#00A000",
+      "label": "Some+"
+    },
+    {
+      "id": "ffb25d97-5ee4-4891-aa68-8d37e535c833",
+      "type": "istar.ContributionLink",
+      "source": "f7297e12-fa5e-4a99-a417-41507697bec3",
+      "target": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "color": "#009600",
+      "label": "Some+"
+    },
+    {
+      "id": "ef9de686-b024-496a-96d7-599936374ef8",
+      "type": "istar.ContributionLink",
+      "source": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "target": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "color": "#00aa00",
+      "label": "Some+"
+    },
+    {
+      "id": "8e6ad9c7-b555-4767-a276-814b6823b849",
+      "type": "istar.ContributionLink",
+      "source": "4ffc006b-1a1a-4862-9aac-d08ecca85dac",
+      "target": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "color": "#00AA00",
+      "label": "Some+"
+    },
+    {
+      "id": "97f68205-434f-442c-a2eb-c081ef40f9c2",
+      "type": "istar.ContributionLink",
+      "source": "c365f913-28e6-4a44-adc2-e063e1053df6",
+      "target": "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      "color": "#00aa00",
+      "label": "Some+"
+    },
+    {
+      "id": "382644b8-3e23-40bd-baa2-102129cf26ab",
+      "type": "istar.ContributionLink",
+      "source": "c365f913-28e6-4a44-adc2-e063e1053df6",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#550000",
+      "label": "Hurt"
+    },
+    {
+      "id": "56278b07-731b-4063-aa42-4cba1f08274c",
+      "type": "istar.ContributionLink",
+      "source": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "target": "bf8d31c4-2607-4e05-9796-ea953fcce9af",
+      "color": "#006400",
+      "label": "Some+"
+    },
+    {
+      "id": "54f069ca-4375-495f-b672-83ac53d2daf4",
+      "type": "istar.ContributionLink",
+      "source": "a9b9016a-b648-4b94-91bc-2eff94e2fdc7",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#A00000",
+      "label": "Some-"
+    },
+    {
+      "id": "b2dd7f79-571a-4c9b-ab39-649e91d80459",
+      "type": "istar.ContributionLink",
+      "source": "fc26f0d7-4b4d-4545-8ea7-7586311ed68d",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#780000",
+      "label": "Some-"
+    },
+    {
+      "id": "c0e1c778-b03a-4877-b6b0-749443952803",
+      "type": "istar.ContributionLink",
+      "source": "cd1f9b54-0bd8-4522-978b-c1c97c31fb77",
+      "target": "cc9af6ce-01d9-4285-b508-ac13d35d5569",
+      "color": "#550000",
+      "label": "Hurt"
+    },
+    {
+      "id": "ac741607-4ad9-463a-a14b-27bd76a5957f",
+      "type": "istar.ContributionLink",
+      "source": "f7297e12-fa5e-4a99-a417-41507697bec3",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#006400",
+      "label": "Some+"
+    },
+    {
+      "id": "dc4843fe-74fa-45fe-a3bc-9c5e95737135",
+      "type": "istar.ContributionLink",
+      "source": "34edcf52-eea6-465d-8538-00df08801463",
+      "target": "b989309a-12b6-4632-afed-d698d6c1d672",
+      "color": "#aa0000",
+      "label": "Some-"
+    }
+  ],
+  "display": {
+    "24987142-6a0c-4188-8cda-77b3ef0bbb0e": {
+      "backgroundColor": "#009100",
+      "width": 86.72198486328125,
+      "height": 50.0499382019043
+    },
+    "ec49152a-9c9c-4711-89ae-02afebe17d24": {
+      "backgroundColor": "#00FF00"
+    },
+    "08b65ead-e2be-4902-8cca-df503add9893": {
+      "backgroundColor": "#00FF00",
+      "width": 123.78125,
+      "height": 62.512908935546875
+    },
+    "a9b9016a-b648-4b94-91bc-2eff94e2fdc7": {
+      "backgroundColor": "#00FF00"
+    },
+    "fc26f0d7-4b4d-4545-8ea7-7586311ed68d": {
+      "backgroundColor": "#FF0000"
+    },
+    "cc9af6ce-01d9-4285-b508-ac13d35d5569": {
+      "backgroundColor": "#646b00",
+      "width": 123.6983642578125,
+      "height": 67.56641578674316
+    },
+    "bf8d31c4-2607-4e05-9796-ea953fcce9af": {
+      "backgroundColor": "#8c9600",
+      "width": 128.6943359375,
+      "height": 70.07191467285156
+    },
+    "4ffc006b-1a1a-4862-9aac-d08ecca85dac": {
+      "backgroundColor": "#96a000",
+      "width": 137.6888427734375,
+      "height": 68.06791687011719
+    },
+    "de6efe9b-4564-43b4-a242-69851eb79bde": {
+      "backgroundColor": "#FF0000",
+      "width": 138.78125,
+      "height": 78.01611328125
+    },
+    "2f5378de-b260-4b48-8f13-965cb9220831": {
+      "backgroundColor": "#00FF00"
+    },
+    "5a190c39-5914-4653-af63-81a0b111f0cf": {
+      "backgroundColor": "#FF0000",
+      "width": 124.78125,
+      "height": 65.51373291015625
+    },
+    "9ed22134-9813-4cf6-acb0-59e4645aeadb": {
+      "backgroundColor": "#FF0000",
+      "width": 126.78125,
+      "height": 74.0155029296875
+    },
+    "34edcf52-eea6-465d-8538-00df08801463": {
+      "backgroundColor": "#00FF00",
+      "width": 121.78125,
+      "height": 63.013214111328125
+    },
+    "f7297e12-fa5e-4a99-a417-41507697bec3": {
+      "backgroundColor": "#FF0000",
+      "width": 137.78125,
+      "height": 75.0155029296875
+    },
+    "cd1f9b54-0bd8-4522-978b-c1c97c31fb77": {
+      "backgroundColor": "#aa0000"
+    },
+    "c365f913-28e6-4a44-adc2-e063e1053df6": {
+      "backgroundColor": "#FF0000",
+      "width": 134.78125,
+      "height": 79.01632690429688
+    },
+    "b989309a-12b6-4632-afed-d698d6c1d672": {
+      "backgroundColor": "#aa7800"
+    },
+    "b511495d-e03d-4a6a-ad7f-1759340bd290": {
+      "vertices": [
+        {
+          "x": 792,
+          "y": 344
+        }
+      ]
+    },
+    "54f069ca-4375-495f-b672-83ac53d2daf4": {
+      "vertices": [
+        {
+          "x": 821,
+          "y": 535
+        },
+        {
+          "x": 930,
+          "y": 576
+        },
+        {
+          "x": 1216,
+          "y": 580
+        },
+        {
+          "x": 1512,
+          "y": 577
+        },
+        {
+          "x": 1901,
+          "y": 520
+        },
+        {
+          "x": 1980,
+          "y": 321
+        },
+        {
+          "x": 1972,
+          "y": 178
+        }
+      ]
+    },
+    "b2dd7f79-571a-4c9b-ab39-649e91d80459": {
+      "vertices": [
+        {
+          "x": 994,
+          "y": 533
+        },
+        {
+          "x": 1260,
+          "y": 547
+        },
+        {
+          "x": 1371,
+          "y": 548
+        },
+        {
+          "x": 1409,
+          "y": 549
+        },
+        {
+          "x": 1459,
+          "y": 550
+        },
+        {
+          "x": 1496,
+          "y": 551
+        },
+        {
+          "x": 1555,
+          "y": 548
+        },
+        {
+          "x": 1611,
+          "y": 545
+        },
+        {
+          "x": 1854,
+          "y": 493
+        },
+        {
+          "x": 1936,
+          "y": 372
+        },
+        {
+          "x": 1954.1,
+          "y": 147
+        }
+      ]
+    },
+    "ac741607-4ad9-463a-a14b-27bd76a5957f": {
+      "vertices": [
+        {
+          "x": 1883,
+          "y": 211
+        }
+      ]
+    },
+    "dc4843fe-74fa-45fe-a3bc-9c5e95737135": {
+      "vertices": [
+        {
+          "x": 1838,
+          "y": 446
+        },
+        {
+          "x": 1910,
+          "y": 289
+        }
+      ]
+    }
+  },
+  "tool": "pistar.2.0.0",
+  "istar": "2.0",
+  "saveDate": "Tue, 24 Nov 2020 05:48:34 GMT",
+  "diagram": {
+    "width": 2045,
+    "height": 1300,
+    "customProperties": {
+      "Description": ""
+    }
+  }
 };
